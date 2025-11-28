@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PostgreSQL High Availability Setup - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .project-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-detail-content {
+      padding: 60px 0;
+    }
+
+    .project-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #149ddd;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f5f8fd;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #149ddd;
+      margin-right: 10px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .metric-card {
+      background: #f5f8fd;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid #149ddd;
+    }
+
+    .metric-card h3 {
+      color: #149ddd;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .metric-card p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+
+    .highlight-box h5 {
+      color: #856404;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #149ddd;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #0d7ab8;
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="project-detail-header">
+    <div class="container">
+      <div class="project-badge">
+        <i class="bi bi-briefcase-fill"></i> DATABASE PROJECT
+      </div>
+      <h1>PostgreSQL High Availability Setup</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Enterprise-grade HA solution with automatic failover and comprehensive backup strategy</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="project-image-container">
+              <img src="assets/img/projects/ha-setup.jpg" alt="High Availability Architecture">
+            </div>
+
+            <div class="info-box">
+              <h4>Project Information</h4>
+              <div class="info-item">
+                <strong>Client:</strong> Enterprise Application
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 3 months
+              </div>
+              <div class="info-item">
+                <strong>Role:</strong> Lead Database Administrator
+              </div>
+              <div class="info-item">
+                <strong>Team Size:</strong> 3 members
+              </div>
+              <div class="info-item">
+                <strong>Status:</strong> Production (Live)
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Technologies Used</h4>
+              <div class="tech-stack">
+                <div class="tech-tag">PostgreSQL 15</div>
+                <div class="tech-tag">Streaming Replication</div>
+                <div class="tech-tag">pgBackRest</div>
+                <div class="tech-tag">HAProxy</div>
+                <div class="tech-tag">Patroni</div>
+                <div class="tech-tag">Shell Scripting</div>
+                <div class="tech-tag">Linux (Ubuntu)</div>
+                <div class="tech-tag">Ansible</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>Project Overview</h3>
+              <p>
+                Designed and implemented a robust PostgreSQL High Availability (HA) setup for a mission-critical enterprise application serving 10,000+ concurrent users. The solution ensures 99.9% uptime through automated failover mechanisms, comprehensive backup strategies, and real-time monitoring.
+              </p>
+              <p>
+                The project addressed the client's need for zero-tolerance downtime and data loss prevention while maintaining optimal performance under high transaction loads. The architecture supports automatic failover in under 30 seconds and provides point-in-time recovery capabilities.
+              </p>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <h3>99.9%</h3>
+                <p>Uptime Achieved</p>
+              </div>
+              <div class="metric-card">
+                <h3>&lt; 30s</h3>
+                <p>Failover Time</p>
+              </div>
+              <div class="metric-card">
+                <h3>500GB+</h3>
+                <p>Database Size</p>
+              </div>
+              <div class="metric-card">
+                <h3>10K+</h3>
+                <p>Concurrent Users</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Problem Statement</h3>
+              <p>The client's legacy single-node PostgreSQL database faced several critical challenges:</p>
+              <ul>
+                <li>Single point of failure with no redundancy</li>
+                <li>Manual failover process taking 15-20 minutes</li>
+                <li>Inconsistent backup procedures leading to potential data loss</li>
+                <li>No disaster recovery plan in place</li>
+                <li>Performance degradation during peak hours</li>
+                <li>Limited visibility into database health and performance</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-exclamation-triangle-fill"></i> Business Impact</h5>
+                <p>Database downtime was costing the client approximately $50,000 per hour in lost revenue and customer dissatisfaction. The lack of proper backup and recovery procedures posed significant risks to business continuity.</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Solution Architecture</h3>
+              
+              <h4>1. Streaming Replication Setup</h4>
+              <p>Implemented PostgreSQL streaming replication with the following architecture:</p>
+              <ul>
+                <li><strong>Primary Server:</strong> Main database handling all write operations</li>
+                <li><strong>Standby Servers:</strong> Two hot standby replicas for read operations and failover</li>
+                <li><strong>Synchronous Commit:</strong> Configured for zero data loss</li>
+                <li><strong>Replication Slots:</strong> Prevent WAL segment deletion before replication</li>
+              </ul>
+
+              <div class="code-block">
+# postgresql.conf on Primary
+wal_level = replica
+max_wal_senders = 10
+wal_keep_size = 1GB
+synchronous_commit = on
+synchronous_standby_names = 'standby1'
+
+# recovery.conf on Standby
+primary_conninfo = 'host=primary port=5432 user=replicator'
+hot_standby = on
+              </div>
+
+              <h4>2. Automatic Failover with Patroni</h4>
+              <p>Deployed Patroni for automated failover management:</p>
+              <ul>
+                <li>Continuous health checks every 10 seconds</li>
+                <li>Automatic promotion of standby to primary on failure</li>
+                <li>Distributed consensus using etcd for cluster coordination</li>
+                <li>Configurable failover policies and timeout settings</li>
+              </ul>
+
+              <h4>3. Load Balancing with HAProxy</h4>
+              <p>Implemented HAProxy for intelligent traffic routing:</p>
+              <ul>
+                <li>Write operations directed to primary server</li>
+                <li>Read operations distributed across standby replicas</li>
+                <li>Health checks to detect node failures</li>
+                <li>Automatic traffic rerouting during failover</li>
+              </ul>
+
+              <h4>4. Backup Strategy with pgBackRest</h4>
+              <p>Designed comprehensive backup solution:</p>
+              <ul>
+                <li><strong>Full Backups:</strong> Weekly full backups retained for 4 weeks</li>
+                <li><strong>Incremental Backups:</strong> Daily incremental backups</li>
+                <li><strong>Differential Backups:</strong> Differential backups every 6 hours</li>
+                <li><strong>Point-in-Time Recovery:</strong> PITR capability with WAL archiving</li>
+                <li><strong>Backup Validation:</strong> Automated restore testing weekly</li>
+                <li><strong>Off-site Storage:</strong> Backups replicated to remote location</li>
+              </ul>
+
+              <div class="code-block">
+# pgBackRest configuration
+[global]
+repo1-path=/backup/pgbackrest
+repo1-retention-full=4
+
+[db-primary]
+pg1-path=/var/lib/postgresql/15/main
+pg1-port=5432
+
+# Backup schedule (cron)
+0 2 * * 0 pgbackrest --stanza=main backup --type=full
+0 2 * * 1-6 pgbackrest --stanza=main backup --type=incr
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Implementation Process</h3>
+              
+              <h4>Phase 1: Planning & Design (2 weeks)</h4>
+              <ul>
+                <li>Conducted detailed assessment of existing infrastructure</li>
+                <li>Designed HA architecture based on client requirements</li>
+                <li>Capacity planning for hardware and network resources</li>
+                <li>Created comprehensive documentation and runbooks</li>
+              </ul>
+
+              <h4>Phase 2: Infrastructure Setup (3 weeks)</h4>
+              <ul>
+                <li>Provisioned and configured servers (1 primary + 2 standby)</li>
+                <li>Set up network connectivity and security groups</li>
+                <li>Installed and configured PostgreSQL on all nodes</li>
+                <li>Implemented streaming replication</li>
+              </ul>
+
+              <h4>Phase 3: Automation & Tools (2 weeks)</h4>
+              <ul>
+                <li>Deployed Patroni for automatic failover</li>
+                <li>Configured HAProxy for load balancing</li>
+                <li>Set up pgBackRest for backup management</li>
+                <li>Developed monitoring and alerting scripts</li>
+              </ul>
+
+              <h4>Phase 4: Testing & Migration (3 weeks)</h4>
+              <ul>
+                <li>Comprehensive failover testing in staging environment</li>
+                <li>Performance testing under various load conditions</li>
+                <li>Backup and restore testing</li>
+                <li>Planned migration with minimal downtime (&lt; 2 hours)</li>
+              </ul>
+
+              <h4>Phase 5: Monitoring & Optimization (2 weeks)</h4>
+              <ul>
+                <li>Implemented real-time monitoring dashboards</li>
+                <li>Set up alerting for critical events</li>
+                <li>Performance tuning and optimization</li>
+                <li>Knowledge transfer and documentation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Challenges & Solutions</h3>
+
+              <h4>Challenge 1: Replication Lag During Peak Hours</h4>
+              <p><strong>Problem:</strong> Standby servers experiencing significant replication lag (5-10 seconds) during peak traffic periods.</p>
+              <p><strong>Solution:</strong> Optimized network bandwidth, adjusted WAL sender processes, and implemented connection pooling. Reduced lag to &lt;100ms.</p>
+
+              <h4>Challenge 2: Large Database Migration</h4>
+              <p><strong>Problem:</strong> Migrating 500GB+ database with minimal downtime requirement.</p>
+              <p><strong>Solution:</strong> Used pg_basebackup with concurrent replication setup, allowing migration to complete in under 2 hours with zero data loss.</p>
+
+              <h4>Challenge 3: Failover Testing Without Disruption</h4>
+              <p><strong>Problem:</strong> Need to test failover mechanisms without impacting production.</p>
+              <p><strong>Solution:</strong> Created staging environment mirroring production, conducted extensive testing, and automated failover procedures.</p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Results & Impact</h3>
+              <ul>
+                <li><strong>Uptime Improvement:</strong> Achieved 99.9% uptime from previous 98.5%, reducing downtime by 75%</li>
+                <li><strong>Failover Speed:</strong> Reduced failover time from 15-20 minutes to under 30 seconds (98% improvement)</li>
+                <li><strong>Data Protection:</strong> Zero data loss with synchronous replication and comprehensive backup strategy</li>
+                <li><strong>Performance:</strong> 40% improvement in read query performance through load distribution</li>
+                <li><strong>Cost Savings:</strong> Estimated $600,000 annual savings by preventing downtime-related revenue loss</li>
+                <li><strong>Scalability:</strong> Infrastructure ready to scale horizontally by adding more read replicas</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-check-circle-fill"></i> Client Testimonial</h5>
+                <p>"The HA setup has been a game-changer for our business. We've had zero unplanned downtime since implementation, and the automated failover has proven itself during two unplanned hardware failures. The team's expertise and attention to detail were exceptional."</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Lessons Learned</h3>
+              <ul>
+                <li>Importance of thorough failover testing before production deployment</li>
+                <li>Need for comprehensive monitoring to detect issues before they impact users</li>
+                <li>Value of automation in reducing human error and response time</li>
+                <li>Regular disaster recovery drills ensure team readiness</li>
+                <li>Documentation and runbooks are critical for incident response</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Enhancements</h3>
+              <ul>
+                <li>Implement multi-region disaster recovery setup</li>
+                <li>Add read replicas in different geographic locations</li>
+                <li>Integrate with container orchestration (Kubernetes)</li>
+                <li>Implement automated performance tuning</li>
+                <li>Enhance monitoring with machine learning for predictive maintenance</li>
+              </ul>
+            </div>
+
+            <a href="index.html#projects" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

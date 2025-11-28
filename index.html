@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Yash Shrivastava - Database Administrator Portfolio</title>
+  <meta content="Database Administrator specializing in PostgreSQL and MySQL" name="description">
+  <meta content="PostgreSQL, MySQL, DBA, Database Administrator, Shell Scripting, Java" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Certifications Section Styles */
+    .certifications {
+      padding: 60px 0;
+      background: #f5f8fd;
+    }
+
+    .certification-item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      margin: 20px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .certification-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .cert-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .cert-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cert-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-content h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #173b6c;
+      margin-bottom: 10px;
+    }
+
+    .cert-issuer {
+      color: #149ddd;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .cert-description {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .btn-view-more {
+      display: inline-block;
+      padding: 8px 20px;
+      background: #149ddd;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.3s;
+      margin-top: 15px;
+      align-self: flex-start;
+    }
+
+    .btn-view-more:hover {
+      background: #0d7ab8;
+      color: #fff;
+    }
+
+    /* Projects Section Styles */
+    .projects {
+      padding: 60px 0;
+    }
+
+    .project-item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      margin: 20px;
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 25px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content h4 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #173b6c;
+      margin-bottom: 10px;
+    }
+
+    .project-tech {
+      color: #149ddd;
+      font-size: 13px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .project-description {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    /* Patents Section Styles */
+    .patents {
+      padding: 60px 0;
+      background: #f5f8fd;
+    }
+
+    .patent-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s;
+    }
+
+    .patent-item:hover {
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .patent-img {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .patent-img img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .patent-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .patent-badge i {
+      margin-right: 5px;
+    }
+
+    .patent-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #173b6c;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .patent-status {
+      color: #149ddd;
+      font-size: 14px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .patent-description {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .patent-features h5,
+    .patent-impact h5 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #173b6c;
+      margin-bottom: 15px;
+      margin-top: 25px;
+    }
+
+    .patent-features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .patent-features ul li {
+      padding: 8px 0;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .patent-features ul li i {
+      color: #149ddd;
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    .patent-impact p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .btn-view-details {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: transform 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn-view-details:hover {
+      transform: translateY(-3px);
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Swiper Navigation Buttons */
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #149ddd !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #149ddd !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Yash Shrivastava</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/yash-shrivastava-8388561a0" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/yashshrivastava" target="_blank" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:yash.shrivastava.2206@gmail.com" class="email"><i class="bx bx-envelope"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-code-block"></i> <span>Skills</span></a></li>
+          <li><a href="#certifications" class="nav-link scrollto"><i class="bx bx-award"></i> <span>Certifications</span></a></li>
+          <li><a href="#projects" class="nav-link scrollto"><i class="bx bx-briefcase"></i> <span>Projects</span></a></li>
+          <li><a href="#patents" class="nav-link scrollto"><i class="bx bx-bulb"></i> <span>Patents</span></a></li>
+          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Yash Shrivastava</h1>
+      <p>I'm <span class="typed" data-typed-items="PostgreSQL DBA, MySQL DBA, Shell Script Developer, Linux Administrator"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Results-driven Database Administrator with hands-on expertise in PostgreSQL and MySQL administration, performance optimization, high-availability setups, and end-to-end database lifecycle management. I bring strong programming capability in Java, Shell scripting, and Linux, enabling me to automate routine tasks, build efficient tools, and improve database reliability.
+<br>
+<br>I have worked on multiple projects involving database migrations, disaster recovery planning, backup & restore strategies, replication configuration, monitoring, and tuning slow queries. I'm also experienced in log analysis, version control, and system optimization, ensuring stable and scalable application performance.
+<br>
+<br>With a foundation in data structures, algorithms, and software development, I combine DBA expertise with engineering mindset—resulting in clean solutions, reduced downtime, and better system performance. I continually enhance my skills through hands-on learning, certifications, and real-world projects.
+<br>
+<br><b>Core Strengths:</b> Ownership mindset, strong problem-solving, automation-first thinking, and the ability to collaborate effectively with cross-functional teams.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>PostgreSQL &amp; MySQL DBA</h3>
+            <p class="fst-italic">
+              Results-driven Database Administrator specializing in PostgreSQL and MySQL with expertise in performance optimization, high-availability setups, and automation. I combine DBA skills with strong programming capabilities in Java and Shell scripting to build reliable, scalable database solutions.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>22 June 2000</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span><a href="https://www.linkedin.com/in/yash-shrivastava-8388561a0" target="_blank">Profile</a></span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 7237092938</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Noida, Uttar Pradesh, India</span></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>24</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master Of Computer Applications (MCA)</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>yash.shrivastava.2206@gmail.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              I bring hands-on experience in database migrations, disaster recovery planning, backup & restore strategies, replication configuration, monitoring, and tuning slow queries. With a foundation in data structures, algorithms, and software development, I combine DBA expertise with an engineering mindset—resulting in clean solutions, reduced downtime, and better system performance.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Professional Highlights</h2>
+          <p>As a dedicated Database Administrator, I've built expertise through continuous learning, hands-on projects, and professional experience in managing enterprise-level database systems.</p>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+            <div class="count-box">
+              <i class="bi bi-journal-code"></i>
+              <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Years of Experience</strong> in Database Administration</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="bi bi-server"></i>
+              <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Database Instances</strong> managed and optimized</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="bi bi-award"></i>
+              <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Certifications</strong> in SQL, Java, and Linux</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="count-box">
+              <i class="bi bi-file-earmark-code"></i>
+              <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Patent</strong> for sustainable waste management</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Facts Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Technical Skills</h2>
+          <p>My expertise spans across database administration, programming, system optimization, and DevOps practices, enabling me to deliver comprehensive database solutions.</p>
+        </div>
+
+        <div class="row skills-content">
+
+          <div class="col-lg-6" data-aos="fade-up">
+
+            <div class="progress">
+              <span class="skill">PostgreSQL Administration <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">MySQL Administration <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Shell Scripting <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Java <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="progress">
+              <span class="skill">Linux (Ubuntu) <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">SQL & Query Optimization <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Backup & Recovery (pgBackRest) <i class="val">90%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div class="progress">
+              <span class="skill">Database Replication & HA <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Skills Section -->
+
+    <!-- ======= Certifications Section ======= -->
+    <section id="certifications" class="certifications">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Licenses & Certifications</h2>
+          <p>Continuously expanding my expertise through professional certifications in database technologies, programming, and system administration.</p>
+        </div>
+
+        <div class="certifications-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/sql-cert.png" class="img-fluid" alt="SQL Essential Training">
+                </div>
+                <div class="cert-content">
+                  <h4>SQL Essential Training</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Comprehensive course covering SQL fundamentals, query optimization, joins, subqueries, and database design principles.</p>
+                  <a href="certification-sql.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/java-cert-oops.png" class="img-fluid" alt="Java Object-Oriented Programming">
+                </div>
+                <div class="cert-content">
+                  <h4>Java Object-Oriented Programming</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Advanced Java programming focusing on OOP concepts, design patterns, inheritance, polymorphism, and best practices.</p>
+                  <a href="certification-java.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+
+            
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/javascript-cert.jpg" class="img-fluid" alt="JavaScript Essentials 1">
+                </div>
+                <div class="cert-content">
+                  <h4>JavaScript Essentials 1 (JSE)</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> Cisco Networking Academy</p>
+                  <p class="cert-description">Foundation course in JavaScript covering syntax, functions, DOM manipulation, events, and modern ES6+ features.</p>
+                  <a href="certification-javascript.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/linux-cert.jpg" class="img-fluid" alt="Linux Unhatched">
+                </div>
+                <div class="cert-content">
+                  <h4>Linux Unhatched</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> Cisco Networking Academy</p>
+                  <p class="cert-description">Introduction to Linux operating system, command-line interface, file systems, shell scripting, and system administration basics.</p>
+                  <a href="certification-linux.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="certification-item">
+                <div class="cert-img">
+                  <img src="assets/img/certifications/negotiation-cert.jpg" class="img-fluid" alt="Negotiation Success">
+                </div>
+                <div class="cert-content">
+                  <h4>Mindsets and Strategies for Negotiation Success</h4>
+                  <p class="cert-issuer"><strong>Issuer:</strong> LinkedIn Learning</p>
+                  <p class="cert-description">Professional development course on effective negotiation techniques, communication strategies, and conflict resolution.</p>
+                  <a href="certification-negotiation.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+      </div>
+    </section><!-- End Certifications Section -->
+
+    <!-- ======= Projects Section ======= -->
+    <section id="projects" class="projects section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Hands-on projects demonstrating expertise in database administration, performance optimization, automation, and system architecture.</p>
+        </div>
+
+        <div class="projects-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="project-item">
+                <div class="project-img">
+                  <img src="assets/img/projects/ha-setup.jpg" class="img-fluid" alt="High Availability Setup">
+                </div>
+                <div class="project-content">
+                  <h4>PostgreSQL High Availability Setup</h4>
+                  <p class="project-tech"><strong>Technologies:</strong> PostgreSQL, Streaming Replication, pgBackRest, Linux</p>
+                  <p class="project-description">Designed and implemented a robust HA setup with streaming replication, automatic failover, and comprehensive backup strategy ensuring 99.9% uptime.</p>
+                  <a href="project-ha-setup.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-item">
+                <div class="project-img">
+                  <img src="assets/img/projects/db-migration.jpg" class="img-fluid" alt="Database Migration">
+                </div>
+                <div class="project-content">
+                  <h4>Zero-Downtime Database Migration</h4>
+                  <p class="project-tech"><strong>Technologies:</strong> PostgreSQL, MySQL, Shell Scripting, Python</p>
+                  <p class="project-description">Successfully migrated 500GB+ database from MySQL to PostgreSQL with minimal downtime using logical replication and custom migration scripts.</p>
+                  <a href="project-db-migration.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-item">
+                <div class="project-img">
+                  <img src="assets/img/projects/automation.jpg" class="img-fluid" alt="DBA Automation">
+                </div>
+                <div class="project-content">
+                  <h4>DBA Task Automation Framework</h4>
+                  <p class="project-tech"><strong>Technologies:</strong> Shell Scripting, Java, Cron, Ansible</p>
+                  <p class="project-description">Built comprehensive automation framework for routine DBA tasks including backups, health checks, and alerting, reducing manual effort by 70%.</p>
+                  <a href="project-automation.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-item">
+                <div class="project-img">
+                  <img src="assets/img/projects/performance.jpg" class="img-fluid" alt="Performance Optimization">
+                </div>
+                <div class="project-content">
+                  <h4>Query Performance Optimization</h4>
+                  <p class="project-tech"><strong>Technologies:</strong> PostgreSQL, MySQL, SQL, Indexing</p>
+                  <p class="project-description">Optimized slow-running queries and database schema, achieving 80% reduction in query execution time through strategic indexing and query rewriting.</p>
+                  <a href="project-performance.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="project-item">
+                <div class="project-img">
+                  <img src="assets/img/projects/monitoring.jpg" class="img-fluid" alt="Monitoring System">
+                </div>
+                <div class="project-content">
+                  <h4>Database Monitoring & Alerting System</h4>
+                  <p class="project-tech"><strong>Technologies:</strong> Prometheus, Grafana, PostgreSQL Exporter, Shell Scripts</p>
+                  <p class="project-description">Implemented comprehensive monitoring solution with custom dashboards and intelligent alerting for proactive issue detection and resolution.</p>
+                  <a href="project-monitoring.html" class="btn-view-more">View More <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
+      </div>
+    </section><!-- End Projects Section -->
+
+    <!-- ======= Patents Section ======= -->
+    <section id="patents" class="patents">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Patents</h2>
+          <p>Innovation in sustainable technology and intelligent systems for environmental management.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="patent-item">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="patent-img">
+                    <img src="assets/img/patents/envirogas.jpg" class="img-fluid" alt="ENVIROGAS Patent">
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="patent-content">
+                    <div class="patent-badge">
+                      <i class="bi bi-patch-check-fill"></i> PATENTED
+                    </div>
+                    <h3>ENVIROGAS: AN INTELLIGENT BIOGAS-EXTRACTING WASTE BIN SYSTEM FOR SUSTAINABLE ORGANIC WASTE MANAGEMENT</h3>
+                    <p class="patent-status"><strong>Status:</strong> Patent Granted</p>
+                    <p class="patent-description">
+                      An innovative intelligent waste management system that combines IoT technology with biogas extraction capabilities. The system automatically segregates organic waste and converts it into biogas through an integrated extraction mechanism, promoting sustainable waste management and renewable energy generation.
+                    </p>
+                    <div class="patent-features">
+                      <h5>Key Features:</h5>
+                      <ul>
+                        <li><i class="bi bi-check-circle"></i> Automated organic waste detection and segregation</li>
+                        <li><i class="bi bi-check-circle"></i> Real-time biogas extraction and monitoring</li>
+                        <li><i class="bi bi-check-circle"></i> IoT-enabled smart bin with remote management</li>
+                        <li><i class="bi bi-check-circle"></i> Sustainable energy generation from waste</li>
+                        <li><i class="bi bi-check-circle"></i> Reduced environmental impact and carbon footprint</li>
+                      </ul>
+                    </div>
+                    <div class="patent-impact">
+                      <h5>Impact:</h5>
+                      <p>This innovation addresses critical challenges in urban waste management by providing an eco-friendly solution that not only manages waste effectively but also generates renewable energy. The system can be deployed in residential complexes, commercial establishments, and public spaces to promote sustainable practices.</p>
+                    </div>
+                    <a href="patent-envirogas.html" class="btn-view-details">View Full Details <i class="bi bi-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Patents Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>My professional journey reflects a strong commitment to database excellence, continuous learning, and delivering high-quality solutions in PostgreSQL and MySQL environments.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Yash Shrivastava</h4>
+              <p><em>Results-driven Database Administrator with 2+ years of experience in PostgreSQL and MySQL administration, performance optimization, automation, and high-availability setups. Strong programming skills in Java and Shell scripting combined with deep database expertise.</em></p>
+              <ul>
+                <li>Noida, Uttar Pradesh, India</li>
+                <li>+91 7237092938</li>
+                <li>yash.shrivastava.2206@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Master of Computer Applications (MCA)</h4>
+              <h5>November 2022 - July 2024</h5>
+              <p><em>KIET Group of Institutions</em></p>
+              <p>Focused on advanced database management, algorithms, data structures, and software engineering principles. Completed projects on database optimization and system architecture.</p>
+            </div>
+            <div class="resume-item">
+              <h4>Bachelor of Computer Applications (BCA Hons)</h4>
+              <h5>August 2018 - September 2021</h5>
+              <p><em>Bundelkhand University</em></p>
+              <p>Major in Computer Science and Information Technology. Built foundational knowledge in programming, databases, networking, and web development.</p>
+            </div>
+
+            <h3 class="resume-title">Certifications</h3>
+            <div class="resume-item">
+              <ul>
+                <li>JavaScript Essentials 1 (JSE)</li>
+                <li>Java Object-Oriented Programming</li>
+                <li>Linux Unhatched</li>
+                <li>SQL Essential Training</li>
+                <li>Mindsets and Strategies for Negotiation Success</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Patent</h3>
+            <div class="resume-item">
+              <h4>ENVIROGAS</h4>
+              <p><em>An intelligent biogas-extracting waste bin system for sustainable organic waste management</em></p>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Database Administrator</h4>
+              <h5>January 2025 - Present</h5>
+              <p><em>ANR Software Pvt. Ltd., Noida, Uttar Pradesh</em></p>
+              <ul>
+                <li>Manage end-to-end administration of PostgreSQL and MySQL environments including installation, configuration, patching, and upgrades</li>
+                <li>Design and manage backup & recovery strategies with PITR, logical/physical backups, and automated restore validation</li>
+                <li>Perform performance tuning through query optimization, indexing strategies, and execution plan analysis</li>
+                <li>Set up and maintain streaming and logical replication with comprehensive failover planning</li>
+                <li>Execute database migrations with minimal downtime ensuring data integrity</li>
+                <li>Build automation scripts using Shell scripting to streamline DBA tasks</li>
+                <li>Implement monitoring solutions for logs, performance metrics, and alerting systems</li>
+                <li>Collaborate with development teams to optimize schema design and query patterns</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Database Administrator Trainee</h4>
+              <h5>January 2024 - January 2025</h5>
+              <p><em>ANR Software Pvt. Ltd., Noida, Uttar Pradesh</em></p>
+              <ul>
+                <li>Learned and applied core DBA concepts under senior mentorship</li>
+                <li>Assisted in database maintenance, backup operations, and monitoring</li>
+                <li>Participated in performance tuning exercises and troubleshooting</li>
+                <li>Gained hands-on experience with replication setup and disaster recovery</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Cyber Security Virtual Internship</h4>
+              <h5>May 2023 - August 2023</h5>
+              <p><em>Cisco, Remote</em></p>
+              <ul>
+                <li>Gained exposure to security fundamentals and log analysis</li>
+                <li>Learned network monitoring and vulnerability identification</li>
+                <li>Understood incident response basics and security best practices</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Web Development & Java Development Internships</h4>
+              <h5>2023</h5>
+              <p><em>Prodigy InfoTech & Oasis Infobyte</em></p>
+              <ul>
+                <li>Developed web applications and Java-based projects</li>
+                <li>Enhanced programming skills and software development practices</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>I offer comprehensive database administration services focused on reliability, performance, and scalability. From initial setup to ongoing optimization, I ensure your database systems run smoothly and efficiently.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+            <div class="icon"><i class="bi bi-database"></i></div>
+            <h4 class="title"><a href="">Database Administration</a></h4>
+            <p class="description">Complete PostgreSQL and MySQL administration including installation, configuration, patching, upgrades, and day-to-day maintenance</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bi bi-speedometer2"></i></div>
+            <h4 class="title"><a href="">Performance Optimization</a></h4>
+            <p class="description">Query tuning, indexing strategies, execution plan analysis, and system-level optimizations to enhance database performance</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bi bi-shield-check"></i></div>
+            <h4 class="title"><a href="">Backup & Recovery</a></h4>
+            <p class="description">Design and implement robust backup strategies with PITR, automated testing, and disaster recovery planning using pgBackRest</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bi bi-arrow-repeat"></i></div>
+            <h4 class="title"><a href="">Replication & High Availability</a></h4>
+            <p class="description">Setup and maintain streaming/logical replication, configure failover systems, and ensure maximum uptime for critical databases</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bi bi-code-slash"></i></div>
+            <h4 class="title"><a href="">Automation & Scripting</a></h4>
+            <p class="description">Develop Shell scripts and Java tools to automate routine DBA tasks, improve efficiency, and reduce manual intervention</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon"><i class="bi bi-arrow-left-right"></i></div>
+            <h4 class="title"><a href="">Database Migration</a></h4>
+            <p class="description">Plan and execute seamless database migrations with minimal downtime, ensuring data integrity and application continuity</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>I'm always open to discussing database administration opportunities, consulting projects, or collaborations. Feel free to reach out—I'd love to hear from you!</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>Noida, Uttar Pradesh, India</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>yash.shrivastava.2206@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 7237092938</p>
+              </div>
+
+              <div class="linkedin">
+                <i class="bi bi-linkedin"></i>
+                <h4>LinkedIn:</h4>
+                <p><a href="https://www.linkedin.com/in/yash-shrivastava-8388561a0" target="_blank">Connect with me</a></p>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224357.5015184676!2d77.20902465!3d28.52758415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1234567890123" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Yash Shrivastava</span></strong>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Initialize Swiper for Certifications and Projects -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Certifications Slider
+      if (document.querySelector('.certifications-slider')) {
+        new Swiper('.certifications-slider', {
+          speed: 600,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+          },
+          slidesPerView: 'auto',
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 20
+            }
+          }
+        });
+      }
+
+      // Projects Slider
+      if (document.querySelector('.projects-slider')) {
+        new Swiper('.projects-slider', {
+          speed: 600,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false
+          },
+          slidesPerView: 'auto',
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 20
+            }
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
