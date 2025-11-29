@@ -326,22 +326,22 @@
               </ul>
 
               <div class="code-block">
-# pgBackRest full backup from AWS
-pgbackrest --stanza=prod-db \
-  --type=full \
-  --repo1-path=/backup/repo \
-  backup
-
-# Transfer backup to Data Center
-rsync -avz --progress \
-  /backup/repo/ \
-  datacenter-server:/backup/repo/
-
-# Restore on Data Center
-pgbackrest --stanza=prod-db \
-  --delta \
-  --type=default \
-  restore
+<br># pgBackRest full backup from AWS
+<br>pgbackrest --stanza=prod-db \
+<br>  --type=full \
+<br>  --repo1-path=/backup/repo \
+<br>  backup
+<br>
+<br># Transfer backup to Data Center
+<br>rsync -avz --progress \
+<br>  /backup/repo/ \
+<br>  datacenter-server:/backup/repo/
+<br>
+<br># Restore on Data Center
+<br>pgbackrest --stanza=prod-db \
+<br>  --delta \
+<br>  --type=default \
+<br>  restore
               </div>
 
               <h4>2. Replication-Based Synchronization</h4>
@@ -356,19 +356,19 @@ pgbackrest --stanza=prod-db \
               </ul>
 
               <div class="code-block">
-# Set up replication from AWS to Data Center
-# On AWS (primary)
-wal_level = replica
-max_wal_senders = 10
-wal_keep_size = 2GB
-
-# On Data Center (standby)
-primary_conninfo = 'host=aws-db.example.com port=5432 user=replicator'
-restore_command = 'pgbackrest --stanza=prod-db archive-get %f "%p"'
-hot_standby = on
-
-# Monitor replication lag
-SELECT pg_last_wal_receive_lsn() - pg_last_wal_replay_lsn() AS lag_bytes;
+<br># Set up replication from AWS to Data Center
+<br># On AWS (primary)
+<br>wal_level = replica
+<br>max_wal_senders = 10
+<br>wal_keep_size = 2GB
+<br>
+<br># On Data Center (standby)
+<br>primary_conninfo = 'host=aws-db.example.com port=5432 user=replicator'
+<br>restore_command = 'pgbackrest --stanza=prod-db archive-get %f "%p"'
+<br>hot_standby = on
+<br>
+<br># Monitor replication lag
+<br>SELECT pg_last_wal_receive_lsn() - pg_last_wal_replay_lsn() AS lag_bytes;
               </div>
 
               <h4>3. Parallel Migration Workflows</h4>
@@ -472,26 +472,26 @@ SELECT pg_last_wal_receive_lsn() - pg_last_wal_replay_lsn() AS lag_bytes;
               </ul>
 
               <div class="code-block">
-# Data validation script
-#!/bin/bash
-
-# Compare row counts
-echo "Comparing row counts..."
-for table in $(psql -h aws-db -U postgres -d mydb -tAc \
-  "SELECT tablename FROM pg_tables WHERE schemaname='public'"); do
-  
-  aws_count=$(psql -h aws-db -U postgres -d mydb -tAc \
-    "SELECT COUNT(*) FROM $table")
-  dc_count=$(psql -h dc-db -U postgres -d mydb -tAc \
-    "SELECT COUNT(*) FROM $table")
-  
-  if [ "$aws_count" != "$dc_count" ]; then
-    echo "ERROR: Row count mismatch in $table"
-    echo "AWS: $aws_count, DC: $dc_count"
-  else
-    echo "OK: $table ($aws_count rows)"
-  fi
-done
+<br># Data validation script
+<br>#!/bin/bash
+<br>
+<br># Compare row counts
+<br>echo "Comparing row counts..."
+<br>for table in $(psql -h aws-db -U postgres -d mydb -tAc \
+<br>  "SELECT tablename FROM pg_tables WHERE schemaname='public'"); do
+<br>  
+<br>  aws_count=$(psql -h aws-db -U postgres -d mydb -tAc \
+<br>    "SELECT COUNT(*) FROM $table")
+<br>  dc_count=$(psql -h dc-db -U postgres -d mydb -tAc \
+<br>    "SELECT COUNT(*) FROM $table")
+<br>  
+<br>  if [ "$aws_count" != "$dc_count" ]; then
+<br>    echo "ERROR: Row count mismatch in $table"
+<br>    echo "AWS: $aws_count, DC: $dc_count"
+<br>  else
+<br>    echo "OK: $table ($aws_count rows)"
+<br>  fi
+<br>done
               </div>
             </div>
 

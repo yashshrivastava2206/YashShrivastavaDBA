@@ -339,23 +339,23 @@
               </ul>
 
               <div class="code-block">
-# EC2 Instance Configuration
-Instance Type: r5.4xlarge
-vCPUs: 16
-Memory: 128 GB
-Network: Up to 10 Gbps
-
-# EBS Volume Configuration
-Volume Type: gp3
-Size: 5 TB (for 4 TB database + growth)
-IOPS: 16,000
-Throughput: 1,000 MB/s
-
-# PostgreSQL Tuning for AWS
-shared_buffers = 32GB
-effective_cache_size = 96GB
-maintenance_work_mem = 2GB
-max_connections = 500
+<br># EC2 Instance Configuration
+<br>Instance Type: r5.4xlarge
+<br>vCPUs: 48
+<br>Memory: 512 GB
+<br>Network: Up to 10 Gbps
+<br>
+<br># EBS Volume Configuration
+<br>Volume Type: gp3
+<br>Size: 5 TB (for 4 TB database + growth)
+<br>IOPS: 16,000
+<br>Throughput: 1,000 MB/s
+<br>
+<br># PostgreSQL Tuning for AWS
+<br>shared_buffers = 130GB
+<br>effective_cache_size = 380GB
+<br>maintenance_work_mem = 13GB
+<br>max_connections = 5000
               </div>
 
               <h4>3. Load Testing and Performance Validation</h4>
@@ -461,30 +461,30 @@ max_connections = 500
               </ul>
 
               <div class="code-block">
-# Migration workflow script
-#!/bin/bash
-
-DB_NAME=$1
-DC_HOST="datacenter-db.local"
-AWS_HOST="ec2-xx-xxx-xxx-xxx.compute.amazonaws.com"
-
-# Step 1: Create base backup
-pg_basebackup -h $DC_HOST -D /backup/$DB_NAME -Fp -Xs -P
-
-# Step 2: Transfer to AWS
-rsync -avz --progress /backup/$DB_NAME/ $AWS_HOST:/var/lib/postgresql/14/main/
-
-# Step 3: Configure replication
-ssh $AWS_HOST "cat > /var/lib/postgresql/14/main/recovery.conf << EOF
-primary_conninfo = 'host=$DC_HOST port=5432 user=replicator'
-restore_command = 'cp /backup/wal/%f %p'
-standby_mode = on
-EOF"
-
-# Step 4: Start AWS instance in standby mode
-ssh $AWS_HOST "pg_ctl start -D /var/lib/postgresql/14/main"
-
-echo "Migration setup complete. Monitor replication lag before cutover."
+<br># Migration workflow script
+<br>#!/bin/bash
+<br>
+<br>DB_NAME=$1
+<br>DC_HOST="datacenter-db.local"
+<br>AWS_HOST="ec2-xx-xxx-xxx-xxx.compute.amazonaws.com"
+<br>
+<br># Step 1: Create base backup
+<br>pg_basebackup -h $DC_HOST -D /backup/$DB_NAME -Fp -Xs -P
+<br>
+<br># Step 2: Transfer to AWS
+<br>rsync -avz --progress /backup/$DB_NAME/ $AWS_HOST:/var/lib/postgresql/14/main/
+<br>
+<br># Step 3: Configure replication
+<br>ssh $AWS_HOST "cat > /var/lib/postgresql/14/main/recovery.conf << EOF
+<br>primary_conninfo = 'host=$DC_HOST port=5432 user=replicator'
+<br>restore_command = 'cp /backup/wal/%f %p'
+<br>standby_mode = on
+<br>EOF"
+<br>
+<br># Step 4: Start AWS instance in standby mode
+<br>ssh $AWS_HOST "pg_ctl start -D /var/lib/postgresql/14/main"
+<br>
+<br>echo "Migration setup complete. Monitor replication lag before cutover."
               </div>
             </div>
 

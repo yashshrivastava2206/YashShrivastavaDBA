@@ -337,19 +337,19 @@
               </ul>
 
               <div class="code-block">
-# ora2pg configuration
-TYPE            SCHEMA TABLE VIEW SEQUENCE TRIGGER FUNCTION PROCEDURE
-SCHEMA          PRODUCTION_SCHEMA
-OUTPUT          migration_output.sql
-PG_VERSION      14
-
-# Common data type conversions
-Oracle NUMBER → PostgreSQL NUMERIC
-Oracle VARCHAR2 → PostgreSQL VARCHAR
-Oracle DATE → PostgreSQL TIMESTAMP
-Oracle CLOB → PostgreSQL TEXT
-Oracle BLOB → PostgreSQL BYTEA
-Oracle RAW → PostgreSQL BYTEA
+<br># ora2pg configuration
+<br>TYPE            SCHEMA TABLE VIEW SEQUENCE TRIGGER FUNCTION PROCEDURE
+<br>SCHEMA          PRODUCTION_SCHEMA
+<br>OUTPUT          migration_output.sql
+<br>PG_VERSION      16
+<br>
+<br># Common data type conversions
+<br>Oracle NUMBER → PostgreSQL NUMERIC
+<br>Oracle VARCHAR2 → PostgreSQL VARCHAR
+<br>Oracle DATE → PostgreSQL TIMESTAMP
+<br>Oracle CLOB → PostgreSQL TEXT
+<br>Oracle BLOB → PostgreSQL BYTEA
+<br>Oracle RAW → PostgreSQL BYTEA
               </div>
 
               <h4>3. Stored Procedure Conversion</h4>

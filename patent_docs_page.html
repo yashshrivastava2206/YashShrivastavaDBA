@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Patent Documents - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .patent-docs-header {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .patent-docs-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .patent-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .patent-docs-content {
+      padding: 60px 0;
+    }
+
+    .info-note {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+    }
+
+    .info-note strong {
+      color: #856404;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .info-note p {
+      color: #856404;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .documents-table {
+      width: 100%;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .documents-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .documents-table thead {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+    }
+
+    .documents-table thead th {
+      padding: 20px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 16px;
+      border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .documents-table tbody tr {
+      border-bottom: 1px solid #e0e0e0;
+      transition: background-color 0.3s;
+    }
+
+    .documents-table tbody tr:hover {
+      background-color: #f5fff5;
+    }
+
+    .documents-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .documents-table tbody td {
+      padding: 18px 20px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .doc-link {
+      color: #11998e;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-link:hover {
+      color: #38ef7d;
+      text-decoration: underline;
+    }
+
+    .doc-link i {
+      font-size: 18px;
+    }
+
+    .date-cell {
+      color: #888;
+      font-size: 13px;
+    }
+
+    .doc-type-badge {
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+      color: white;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      border-left: 4px solid #11998e;
+    }
+
+    .stat-card h3 {
+      color: #11998e;
+      font-size: 36px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .stat-card p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .documents-table {
+        overflow-x: auto;
+      }
+
+      .documents-table table {
+        min-width: 600px;
+      }
+
+      .patent-docs-header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="patent-docs-header">
+    <div class="container">
+      <div class="patent-badge">
+        <i class="bi bi-file-earmark-text-fill"></i> OFFICIAL DOCUMENTS
+      </div>
+      <h1>ENVIROGAS Patent Documents</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Complete documentation and official filings for Patent Application No. 202311057285</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="patent-docs-content">
+      <div class="container">
+        
+        <a href="patent-envirogas.html" class="back-button">
+          <i class="bi bi-arrow-left"></i> Back to Patent Details
+        </a>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <h3>11</h3>
+            <p>Total Documents</p>
+          </div>
+          <div class="stat-card">
+            <h3>2023-2024</h3>
+            <p>Filing Period</p>
+          </div>
+          <div class="stat-card">
+            <h3>100%</h3>
+            <p>Compliance Status</p>
+          </div>
+        </div>
+
+        <div class="info-note">
+          <strong>Note:</strong>
+          <p>The displayed "Created Date/Uploaded Date" is dynamic in nature and depends upon the operating system environment of storage. For more information, please contact the Patent office of the Government of India.</p>
+        </div>
+
+        <div class="documents-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Document Name</th>
+                <th>Created Date/Uploaded Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-FORM 18 [14-12-2024(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-FORM 18 [14-12-2024(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">14/12/2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-COMPLETE SPECIFICATION [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-COMPLETE SPECIFICATION [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-DECLARATION OF INVENTORSHIP (FORM 5) [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-DECLARATION OF INVENTORSHIP (FORM 5) [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-DRAWINGS [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-DRAWINGS [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-EDUCATIONAL INSTITUTION(S) [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-EDUCATIONAL INSTITUTION(S) [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-EVIDENCE FOR REGISTRATION UNDER 55(FORM-28) [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-EVIDENCE FOR REGISTRATION UNDER 55(FORM-28) [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-FORM 1 [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-FORM 1 [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-FORM FOR SMALL ENTITY(FORM-28) [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-FORM FOR SMALL ENTITY(FORM-28) [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-FORM 9 [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-FORM 9 [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-REQUEST FOR EARLY PUBLICATION(FORM-9) [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-REQUEST FOR EARLY PUBLICATION(FORM-9) [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="assets\Docs\patent/202311057285-STATEMENT OF UNDERTAKING (FORM 3) [26-08-2023(online)].pdf" class="doc-link" target="_blank">
+                    <i class="bi bi-file-pdf"></i>
+                    202311057285-STATEMENT OF UNDERTAKING (FORM 3) [26-08-2023(online)].pdf
+                  </a>
+                </td>
+                <td class="date-cell">26/08/2023</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 40px; padding: 30px; background: #f5fff5; border-radius: 10px; border-left: 4px solid #11998e;">
+          <h4 style="color: #11998e; margin-bottom: 15px;"><i class="bi bi-info-circle"></i> Document Information</h4>
+          <ul style="color: #666; line-height: 1.8;">
+            <li><strong>Patent Application Number:</strong> 202311057285</li>
+            <li><strong>Application Type:</strong> Ordinary Application</li>
+            <li><strong>Filing Date:</strong> August 26, 2023</li>
+            <li><strong>Patent Title:</strong> ENVIROGAS: An Intelligent Biogas-Extracting Waste Bin System for Sustainable Organic Waste Management</li>
+            <li><strong>Status:</strong> Under Examination</li>
+            <li><strong>Classification:</strong> Environmental Technology / IoT</li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center;">
+          <a href="patent-envirogas.html" class="back-button">
+            <i class="bi bi-arrow-left"></i> Return to Patent Details
+          </a>
+          <a href="index.html#patents" class="back-button" style="margin-left: 15px;">
+            <i class="bi bi-house"></i> Go to Homepage
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

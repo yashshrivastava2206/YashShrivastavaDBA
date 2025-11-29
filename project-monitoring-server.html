@@ -256,7 +256,8 @@
                 <div class="tech-tag">Database Dashboards</div>
                 <div class="tech-tag">Log Analysis</div>
                 <div class="tech-tag">Cron</div>
-                <div class="tech-tag">Python</div>
+                <div class="tech-tag">PgBadger</div>
+                <div class="tech-tag">PgProfile</div>
               </div>
             </div>
           </div>
@@ -326,17 +327,17 @@
               </ul>
 
               <div class="code-block">
-# Log forwarding configuration
-logging_collector = on
-log_directory = 'pg_log'
-log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
-log_statement = 'all'
-log_min_duration_statement = 1000  # Log queries > 1s
+# Log forwarding configuration<br>
+logging_collector = on<br>
+log_directory = 'pg_log'<br>
+log_filename = 'HOSTNAME-%Y-%m-%d_%H%M%S.log'<br>
+log_statement = 'DDL'<br>
+log_min_duration_statement = 10000  # Log queries > 1s<br>
 
-# Central log collection script
-rsync -avz --remove-source-files \
-  user@db-server:/var/log/postgresql/ \
-  /monitoring-server/logs/db-server/
+# Central log collection script<br>
+rsync -avz --remove-source-files \<br>
+  user@db-server:/var/log/postgresql/ \<br>
+  /monitoring-server/logs/db-server/<br>
               </div>
 
               <h4>2. Automated Health Checks</h4>
@@ -355,30 +356,30 @@ rsync -avz --remove-source-files \
               </ul>
 
               <div class="code-block">
-# Automated health check script (runs every 5 minutes)
-#!/bin/bash
-
-for db in $(cat production_databases.txt); do
-  # Check connection
-  psql -h $db -U monitor -c "SELECT 1" > /dev/null 2>&1
-  if [ $? -ne 0 ]; then
-    send_alert "Connection failed: $db"
-  fi
-  
-  # Check replication lag
-  lag=$(psql -h $db -U monitor -tAc \
-    "SELECT EXTRACT(EPOCH FROM (now() - pg_last_xact_replay_timestamp()))")
-  if [ "$lag" -gt 5 ]; then
-    send_alert "Replication lag: $db ($lag seconds)"
-  fi
-  
-  # Check disk space
-  disk=$(ssh $db "df -h /var/lib/postgresql | tail -1 | awk '{print \$5}' | sed 's/%//'")
-  if [ "$disk" -gt 90 ]; then
-    send_critical_alert "Disk space critical: $db ($disk%)"
-  fi
-done
-              </div>
+<br># Automated health check script (runs every 5 minutes)
+<br>#!/bin/bash
+<br>
+<br>for db in $(cat production_databases.txt); do
+<br>  # Check connection
+<br>  psql -h $db -U monitor -c "SELECT 1" > /dev/null 2>&1
+<br>  if [ $? -ne 0 ]; then
+<br>    send_alert "Connection failed: $db"
+<br>  fi
+<br>  
+<br>  # Check replication lag
+<br>  lag=$(psql -h $db -U monitor -tAc \
+<br>    "SELECT EXTRACT(EPOCH FROM (now() - pg_last_xact_replay_timestamp()))")
+<br>  if [ "$lag" -gt 5 ]; then
+<br>    send_alert "Replication lag: $db ($lag seconds)"
+<br>  fi
+<br>  
+<br>  # Check disk space
+<br>  disk=$(ssh $db "df -h /var/lib/postgresql | tail -1 | awk '{print \$5}' | sed 's/%//'")
+<br>  if [ "$disk" -gt 90 ]; then
+<br>    send_critical_alert "Disk space critical: $db ($disk%)"
+<br>  fi
+<br>done
+<br>              </div>
 
               <h4>3. Performance Dashboards</h4>
               <p>Created intuitive web-based dashboards:</p>
