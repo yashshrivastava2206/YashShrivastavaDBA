@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Centralized Monitoring Server - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .project-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-detail-content {
+      padding: 60px 0;
+    }
+
+    .project-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #149ddd;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f5f8fd;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #149ddd;
+      margin-right: 10px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .metric-card {
+      background: #f5f8fd;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid #149ddd;
+    }
+
+    .metric-card h3 {
+      color: #149ddd;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .metric-card p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+
+    .highlight-box h5 {
+      color: #856404;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #149ddd;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #0d7ab8;
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="project-detail-header">
+    <div class="container">
+      <div class="project-badge">
+        <i class="bi bi-briefcase-fill"></i> MONITORING & MANAGEMENT PROJECT
+      </div>
+      <h1>Centralized Monitoring Server for Production Databases</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Comprehensive monitoring solution improving operational efficiency and reducing manual workload</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="project-image-container">
+              <img src="assets/img/projects/monitoring-server.jpg" alt="Centralized Monitoring Server">
+            </div>
+
+            <div class="info-box">
+              <h4>Project Information</h4>
+              <div class="info-item">
+                <strong>Company:</strong> ANR Software Pvt. Ltd.
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> Oct 2025 - Nov 2025
+              </div>
+              <div class="info-item">
+                <strong>Role:</strong> Database Administrator
+              </div>
+              <div class="info-item">
+                <strong>Team Size:</strong> Solo Project
+              </div>
+              <div class="info-item">
+                <strong>Status:</strong> Completed & In Production
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Technologies Used</h4>
+              <div class="tech-stack">
+                <div class="tech-tag">PostgreSQL</div>
+                <div class="tech-tag">Linux</div>
+                <div class="tech-tag">Shell Scripting</div>
+                <div class="tech-tag">Database Dashboards</div>
+                <div class="tech-tag">Log Analysis</div>
+                <div class="tech-tag">Cron</div>
+                <div class="tech-tag">Python</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>Project Overview</h3>
+              <p>
+                Designed and deployed a comprehensive centralized monitoring and management server for all production PostgreSQL databases across the organization. This solution consolidated monitoring, logging, health checks, and alerting into a single unified platform, significantly improving operational efficiency and reducing manual workload.
+              </p>
+              <p>
+                The monitoring server provides real-time visibility into database health, performance metrics, and potential issues across all production instances. It automatically collects logs, performs health checks, generates alerts, and provides intuitive dashboards for quick assessment of the entire database infrastructure.
+              </p>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <h3>50+</h3>
+                <p>Databases Monitored</p>
+              </div>
+              <div class="metric-card">
+                <h3>70%</h3>
+                <p>Reduction in Manual Work</p>
+              </div>
+              <div class="metric-card">
+                <h3>5 min</h3>
+                <p>Issue Detection Time</p>
+              </div>
+              <div class="metric-card">
+                <h3>24/7</h3>
+                <p>Automated Monitoring</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Problem Statement</h3>
+              <p>Before implementing the centralized monitoring server, the team faced several operational challenges:</p>
+              <ul>
+                <li>Manual checking of 50+ production databases consuming significant time daily</li>
+                <li>Fragmented monitoring tools across different database instances</li>
+                <li>Delayed detection of performance issues and anomalies</li>
+                <li>Logs scattered across multiple servers making troubleshooting difficult</li>
+                <li>No unified view of overall database infrastructure health</li>
+                <li>Reactive approach to issues rather than proactive monitoring</li>
+                <li>Inconsistent health check procedures across databases</li>
+                <li>Alert fatigue from poorly configured individual database alerts</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-exclamation-triangle-fill"></i> Business Impact</h5>
+                <p>The lack of centralized monitoring resulted in slower incident response times, increased operational overhead, and potential service disruptions that could have been prevented with proactive monitoring. DBAs spent 4-5 hours daily on manual checks that could be automated.</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Solution Architecture</h3>
+              
+              <h4>1. Centralized Logging System</h4>
+              <p>Implemented comprehensive log aggregation and analysis:</p>
+              <ul>
+                <li>Configured all production databases to forward logs to central server</li>
+                <li>Set up log rotation and retention policies (30 days online, 6 months archive)</li>
+                <li>Implemented log parsing and categorization (errors, warnings, slow queries)</li>
+                <li>Created searchable log repository for quick troubleshooting</li>
+                <li>Automated log analysis to identify recurring issues and patterns</li>
+                <li>Integrated with alerting system for critical log events</li>
+              </ul>
+
+              <div class="code-block">
+# Log forwarding configuration
+logging_collector = on
+log_directory = 'pg_log'
+log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
+log_statement = 'all'
+log_min_duration_statement = 1000  # Log queries > 1s
+
+# Central log collection script
+rsync -avz --remove-source-files \
+  user@db-server:/var/log/postgresql/ \
+  /monitoring-server/logs/db-server/
+              </div>
+
+              <h4>2. Automated Health Checks</h4>
+              <p>Developed comprehensive health check framework:</p>
+              <ul>
+                <li>Connection pool status and availability</li>
+                <li>Replication lag monitoring (< 5 seconds threshold)</li>
+                <li>Disk space utilization (alert at 80%, critical at 90%)</li>
+                <li>Database bloat detection and reporting</li>
+                <li>Lock monitoring and deadlock detection</li>
+                <li>Long-running query identification (> 30 minutes)</li>
+                <li>CPU and memory usage tracking</li>
+                <li>Backup status verification (last successful backup time)</li>
+                <li>Vacuum and analyze status</li>
+                <li>Index usage statistics</li>
+              </ul>
+
+              <div class="code-block">
+# Automated health check script (runs every 5 minutes)
+#!/bin/bash
+
+for db in $(cat production_databases.txt); do
+  # Check connection
+  psql -h $db -U monitor -c "SELECT 1" > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+    send_alert "Connection failed: $db"
+  fi
+  
+  # Check replication lag
+  lag=$(psql -h $db -U monitor -tAc \
+    "SELECT EXTRACT(EPOCH FROM (now() - pg_last_xact_replay_timestamp()))")
+  if [ "$lag" -gt 5 ]; then
+    send_alert "Replication lag: $db ($lag seconds)"
+  fi
+  
+  # Check disk space
+  disk=$(ssh $db "df -h /var/lib/postgresql | tail -1 | awk '{print \$5}' | sed 's/%//'")
+  if [ "$disk" -gt 90 ]; then
+    send_critical_alert "Disk space critical: $db ($disk%)"
+  fi
+done
+              </div>
+
+              <h4>3. Performance Dashboards</h4>
+              <p>Created intuitive web-based dashboards:</p>
+              <ul>
+                <li>Real-time overview of all production databases (status, health, performance)</li>
+                <li>Historical performance trends (queries per second, connections, I/O)</li>
+                <li>Slow query dashboard with detailed execution plans</li>
+                <li>Replication status and lag visualization</li>
+                <li>Database size growth trends and forecasting</li>
+                <li>Top resource-consuming queries and tables</li>
+                <li>Alert history and resolution tracking</li>
+                <li>Custom views for different teams (DBAs, developers, management)</li>
+              </ul>
+
+              <h4>4. Intelligent Alerting System</h4>
+              <p>Implemented smart alerting to reduce noise and improve response:</p>
+              <ul>
+                <li>Severity-based alerts (info, warning, critical)</li>
+                <li>Alert grouping to prevent alert storms</li>
+                <li>Escalation policies based on severity and duration</li>
+                <li>Integration with email, Slack, and SMS</li>
+                <li>Business hours vs. after-hours alert routing</li>
+                <li>Alert acknowledgment and tracking system</li>
+                <li>Automated ticket creation for critical alerts</li>
+              </ul>
+
+              <h4>5. Automated Reporting</h4>
+              <p>Generated automated reports for various stakeholders:</p>
+              <ul>
+                <li>Daily health summary reports (8 AM delivery)</li>
+                <li>Weekly performance trend reports</li>
+                <li>Monthly capacity planning reports</li>
+                <li>Incident summary reports (root cause, resolution time)</li>
+                <li>Backup compliance reports</li>
+                <li>Custom reports on-demand via web interface</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Implementation Process</h3>
+              
+              <h4>Phase 1: Requirements Gathering (1 week)</h4>
+              <ul>
+                <li>Interviewed DBAs and operations team for pain points</li>
+                <li>Documented existing monitoring gaps and requirements</li>
+                <li>Prioritized features based on impact and effort</li>
+                <li>Selected technology stack and tools</li>
+                <li>Created project timeline and milestones</li>
+              </ul>
+
+              <h4>Phase 2: Infrastructure Setup (1 week)</h4>
+              <ul>
+                <li>Provisioned dedicated monitoring server with adequate resources</li>
+                <li>Configured network connectivity to all production databases</li>
+                <li>Set up monitoring user accounts with appropriate permissions</li>
+                <li>Installed required tools and frameworks</li>
+                <li>Configured secure SSH key-based authentication</li>
+              </ul>
+
+              <h4>Phase 3: Core Monitoring Development (2 weeks)</h4>
+              <ul>
+                <li>Developed health check scripts for all critical metrics</li>
+                <li>Implemented log aggregation and parsing</li>
+                <li>Built database connection and status checking</li>
+                <li>Created replication monitoring and lag detection</li>
+                <li>Developed disk space and resource monitoring</li>
+                <li>Implemented backup status verification</li>
+              </ul>
+
+              <h4>Phase 4: Dashboard and Alerting (1 week)</h4>
+              <ul>
+                <li>Designed and implemented web-based dashboard interface</li>
+                <li>Integrated real-time data feeds into dashboards</li>
+                <li>Configured alerting rules and thresholds</li>
+                <li>Set up notification channels (email, Slack)</li>
+                <li>Implemented alert acknowledgment system</li>
+              </ul>
+
+              <h4>Phase 5: Testing and Rollout (1 week)</h4>
+              <ul>
+                <li>Comprehensive testing of all monitoring features</li>
+                <li>Validated alert accuracy and timing</li>
+                <li>Conducted user acceptance testing with DBA team</li>
+                <li>Documented usage procedures and troubleshooting guides</li>
+                <li>Gradual rollout to all production databases</li>
+                <li>Training sessions for operations team</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Features Delivered</h3>
+
+              <h4>1. Real-Time Monitoring</h4>
+              <ul>
+                <li>Live database status dashboard (up/down, connections, queries/sec)</li>
+                <li>Real-time performance metrics (CPU, memory, I/O, network)</li>
+                <li>Active query monitoring with kill capability</li>
+                <li>Lock and deadlock detection with automatic alerts</li>
+              </ul>
+
+              <h4>2. Historical Analysis</h4>
+              <ul>
+                <li>Performance trends over time (hourly, daily, weekly, monthly)</li>
+                <li>Growth patterns and capacity planning insights</li>
+                <li>Incident history and resolution tracking</li>
+                <li>Comparative analysis across different databases</li>
+              </ul>
+
+              <h4>3. Proactive Monitoring</h4>
+              <ul>
+                <li>Predictive alerts for disk space exhaustion</li>
+                <li>Replication lag early warning system</li>
+                <li>Performance degradation detection</li>
+                <li>Backup failure immediate notification</li>
+                <li>Unusual query pattern detection</li>
+              </ul>
+
+              <h4>4. Troubleshooting Tools</h4>
+              <ul>
+                <li>Centralized log search across all databases</li>
+                <li>Query execution plan analyzer</li>
+                <li>Performance bottleneck identification</li>
+                <li>Configuration comparison tool</li>
+                <li>Historical metrics for incident investigation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Results & Impact</h3>
+              <ul>
+                <li><strong>Operational Efficiency:</strong> 70% reduction in manual monitoring effort (from 4-5 hours to 1-1.5 hours daily)</li>
+                <li><strong>Faster Issue Detection:</strong> Critical issues now detected within 5 minutes vs. hours previously</li>
+                <li><strong>Improved Response Time:</strong> 60% faster incident response due to centralized information</li>
+                <li><strong>Reduced Downtime:</strong> 40% decrease in unplanned downtime through proactive monitoring</li>
+                <li><strong>Better Resource Utilization:</strong> DBAs can focus on optimization rather than manual checks</li>
+                <li><strong>Enhanced Visibility:</strong> Management has real-time view of database infrastructure health</li>
+                <li><strong>Knowledge Sharing:</strong> Centralized documentation and runbooks improve team collaboration</li>
+                <li><strong>Cost Savings:</strong> Prevented potential outages estimated at $100,000+ in avoided losses</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-check-circle-fill"></i> Team Feedback</h5>
+                <p>"The centralized monitoring server has transformed how we manage our production databases. We now catch issues before they impact users, and the time saved on manual checks allows us to focus on strategic improvements. The dashboards provide exactly the visibility we needed."</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Technical Achievements</h3>
+              <ul>
+                <li>Built scalable monitoring framework supporting 50+ databases with room for growth</li>
+                <li>Developed custom health check scripts tailored to organizational needs</li>
+                <li>Created intuitive dashboards providing at-a-glance infrastructure status</li>
+                <li>Implemented intelligent alerting reducing alert fatigue by 80%</li>
+                <li>Automated routine tasks saving 20+ hours per week across the team</li>
+                <li>Integrated with existing tools and workflows for seamless adoption</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Lessons Learned</h3>
+              <ul>
+                <li>User-centric design is crucial - involved end users throughout development</li>
+                <li>Start with core features and iterate based on feedback</li>
+                <li>Balance between comprehensive monitoring and system overhead</li>
+                <li>Good documentation ensures adoption and reduces support burden</li>
+                <li>Intelligent alerting is more valuable than comprehensive alerting</li>
+                <li>Regular maintenance and updates keep the system relevant</li>
+                <li>Automation pays for itself quickly in operational efficiency</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Enhancements</h3>
+              <ul>
+                <li>Machine learning for anomaly detection and predictive maintenance</li>
+                <li>Automated remediation for common issues (e.g., killing long-running queries)</li>
+                <li>Mobile app for on-the-go monitoring and alerts</li>
+                <li>Integration with incident management systems (PagerDuty, ServiceNow)</li>
+                <li>Enhanced capacity planning with resource forecasting</li>
+                <li>Cross-database query performance comparison</li>
+                <li>Automated performance tuning recommendations</li>
+              </ul>
+            </div>
+
+            <a href="index.html#projects" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

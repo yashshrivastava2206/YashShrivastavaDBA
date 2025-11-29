@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Modernization of 300+ PostgreSQL Databases - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .project-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-detail-content {
+      padding: 60px 0;
+    }
+
+    .project-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #149ddd;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f5f8fd;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #149ddd;
+      margin-right: 10px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .metric-card {
+      background: #f5f8fd;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid #149ddd;
+    }
+
+    .metric-card h3 {
+      color: #149ddd;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .metric-card p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+
+    .highlight-box h5 {
+      color: #856404;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #149ddd;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #0d7ab8;
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="project-detail-header">
+    <div class="container">
+      <div class="project-badge">
+        <i class="bi bi-briefcase-fill"></i> DATABASE MODERNIZATION PROJECT
+      </div>
+      <h1>Modernization of 300+ Non-Production PostgreSQL Databases</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Large-scale upgrade and migration initiative improving security, performance, and standardization</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="project-image-container">
+              <img src="assets/img/projects/modernization.jpg" alt="PostgreSQL Modernization">
+            </div>
+
+            <div class="info-box">
+              <h4>Project Information</h4>
+              <div class="info-item">
+                <strong>Company:</strong> ANR Software Pvt. Ltd.
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> Oct 2025 - Present
+              </div>
+              <div class="info-item">
+                <strong>Role:</strong> Database Administrator
+              </div>
+              <div class="info-item">
+                <strong>Team Size:</strong> 2 DBAs
+              </div>
+              <div class="info-item">
+                <strong>Status:</strong> Ongoing
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Technologies Used</h4>
+              <div class="tech-stack">
+                <div class="tech-tag">PostgreSQL</div>
+                <div class="tech-tag">Version Control</div>
+                <div class="tech-tag">Ubuntu 24.03 LTS</div>
+                <div class="tech-tag">CentOS</div>
+                <div class="tech-tag">Backup & Restore</div>
+                <div class="tech-tag">Shell Scripting</div>
+                <div class="tech-tag">Linux</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>Project Overview</h3>
+              <p>
+                Led the comprehensive modernization initiative for over 300 non-production PostgreSQL databases across development, staging, and testing environments. This large-scale project involved upgrading PostgreSQL versions, migrating from legacy CentOS operating systems to modern Ubuntu 24.03 LTS, and implementing standardized configurations across all environments.
+              </p>
+              <p>
+                The project addressed critical technical debt, security vulnerabilities, and performance bottlenecks while ensuring zero impact on development workflows. The modernization initiative significantly improved the overall database infrastructure's security posture, performance characteristics, and maintainability.
+              </p>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <h3>300+</h3>
+                <p>Databases Upgraded</p>
+              </div>
+              <div class="metric-card">
+                <h3>100%</h3>
+                <p>Success Rate</p>
+              </div>
+              <div class="metric-card">
+                <h3>40%</h3>
+                <p>Performance Improvement</p>
+              </div>
+              <div class="metric-card">
+                <h3>Zero</h3>
+                <p>Data Loss Incidents</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Problem Statement</h3>
+              <p>The existing non-production database infrastructure faced several critical challenges:</p>
+              <ul>
+                <li>Running on outdated PostgreSQL versions (9.x and 10.x) with known security vulnerabilities</li>
+                <li>Hosted on CentOS 7, which reached end-of-life and no longer receives security updates</li>
+                <li>Inconsistent configuration across environments leading to production-staging discrepancies</li>
+                <li>Performance degradation due to outdated query optimizer and storage engine</li>
+                <li>Incompatibility with modern development tools and frameworks</li>
+                <li>Lack of standardization making maintenance and troubleshooting difficult</li>
+                <li>Technical debt accumulated over years of ad-hoc changes</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-exclamation-triangle-fill"></i> Business Impact</h5>
+                <p>The outdated infrastructure posed security risks, slowed down development cycles, and created potential compatibility issues when promoting code to production. The lack of standardization increased maintenance overhead and made it difficult to onboard new team members.</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Solution Architecture</h3>
+              
+              <h4>1. PostgreSQL Version Upgrades</h4>
+              <p>Systematically upgraded databases through the following approach:</p>
+              <ul>
+                <li>Assessment of current PostgreSQL versions (9.x, 10.x, 11.x)</li>
+                <li>Target version selection (PostgreSQL 14 and 15 based on application requirements)</li>
+                <li>Compatibility testing for each application's database requirements</li>
+                <li>pg_upgrade for major version migrations</li>
+                <li>Logical replication for databases requiring minimal downtime</li>
+                <li>Post-upgrade vacuum and analyze operations</li>
+                <li>Performance benchmarking before and after upgrades</li>
+              </ul>
+
+              <h4>2. OS Migration: CentOS to Ubuntu 24.03 LTS</h4>
+              <p>Migrated all database servers from CentOS to Ubuntu:</p>
+              <ul>
+                <li>Provisioned new Ubuntu 24.03 LTS servers</li>
+                <li>Installed and configured PostgreSQL on Ubuntu systems</li>
+                <li>Used pg_basebackup for physical database copies</li>
+                <li>Configured network, firewall, and security settings</li>
+                <li>Migrated connection strings and application configurations</li>
+                <li>Validated functionality across all dependent applications</li>
+                <li>Decommissioned old CentOS servers after validation</li>
+              </ul>
+
+              <h4>3. Configuration Tuning and Standardization</h4>
+              <p>Implemented standardized configurations across all environments:</p>
+              <ul>
+                <li>Created environment-specific configuration templates (dev, staging, test)</li>
+                <li>Optimized memory settings (shared_buffers, work_mem, maintenance_work_mem)</li>
+                <li>Tuned connection pooling parameters</li>
+                <li>Configured appropriate logging levels and retention</li>
+                <li>Standardized authentication methods and security settings</li>
+                <li>Implemented consistent backup and recovery procedures</li>
+                <li>Documented all configuration decisions and rationale</li>
+              </ul>
+
+              <div class="code-block">
+# Standardized postgresql.conf settings
+shared_buffers = 4GB
+effective_cache_size = 12GB
+work_mem = 16MB
+maintenance_work_mem = 1GB
+max_connections = 200
+random_page_cost = 1.1
+effective_io_concurrency = 200
+wal_buffers = 16MB
+checkpoint_completion_target = 0.9
+              </div>
+
+              <h4>4. Compatibility Fixes</h4>
+              <p>Addressed compatibility issues discovered during upgrades:</p>
+              <ul>
+                <li>Updated deprecated SQL syntax in application queries</li>
+                <li>Modified queries using removed or changed functions</li>
+                <li>Fixed data type compatibility issues</li>
+                <li>Updated extension versions and dependencies</li>
+                <li>Resolved encoding and collation mismatches</li>
+                <li>Adapted to changes in default behaviors between versions</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Implementation Process</h3>
+              
+              <h4>Phase 1: Planning and Assessment (2 weeks)</h4>
+              <ul>
+                <li>Inventoried all 300+ non-production databases</li>
+                <li>Documented current PostgreSQL versions and OS platforms</li>
+                <li>Identified dependencies and critical applications</li>
+                <li>Created prioritization matrix based on usage and importance</li>
+                <li>Developed detailed migration runbooks</li>
+                <li>Set up test environment for validation</li>
+              </ul>
+
+              <h4>Phase 2: Pilot Migration (1 week)</h4>
+              <ul>
+                <li>Selected 10 representative databases for pilot</li>
+                <li>Executed full migration process on pilot databases</li>
+                <li>Documented lessons learned and issues encountered</li>
+                <li>Refined procedures and automation scripts</li>
+                <li>Obtained stakeholder approval to proceed</li>
+              </ul>
+
+              <h4>Phase 3: Batch Migrations (6 weeks)</h4>
+              <ul>
+                <li>Grouped databases into logical batches (30-40 per batch)</li>
+                <li>Executed migrations during low-usage windows</li>
+                <li>Performed post-migration validation for each batch</li>
+                <li>Coordinated with development teams for testing</li>
+                <li>Monitored performance and addressed issues</li>
+                <li>Updated documentation and configuration management</li>
+              </ul>
+
+              <h4>Phase 4: Validation and Optimization (Ongoing)</h4>
+              <ul>
+                <li>Comprehensive functional testing with development teams</li>
+                <li>Performance benchmarking and optimization</li>
+                <li>Security audit and compliance verification</li>
+                <li>Documentation updates and knowledge transfer</li>
+                <li>Continuous monitoring and fine-tuning</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Challenges & Solutions</h3>
+
+              <h4>Challenge 1: Diverse Application Requirements</h4>
+              <p><strong>Problem:</strong> 300+ databases supporting different applications with varying PostgreSQL feature dependencies and version requirements.</p>
+              <p><strong>Solution:</strong> Created detailed compatibility matrix, performed application-specific testing, and coordinated closely with development teams for validation. Used phased approach allowing time for fixes between batches.</p>
+
+              <h4>Challenge 2: Minimizing Development Disruption</h4>
+              <p><strong>Problem:</strong> Need to upgrade databases without impacting ongoing development work.</p>
+              <p><strong>Solution:</strong> Scheduled migrations during off-hours, maintained parallel environments during transition, and provided developers with test instances ahead of production migration.</p>
+
+              <h4>Challenge 3: Configuration Drift</h4>
+              <p><strong>Problem:</strong> Years of ad-hoc changes resulted in significant configuration drift across databases.</p>
+              <p><strong>Solution:</strong> Developed standardized configuration templates, implemented configuration management tools, and created comprehensive documentation for future changes.</p>
+
+              <h4>Challenge 4: Extension Compatibility</h4>
+              <p><strong>Problem:</strong> Some databases relied on extensions with version-specific dependencies.</p>
+              <p><strong>Solution:</strong> Cataloged all extensions in use, tested compatibility with target PostgreSQL versions, upgraded extensions where needed, and found alternatives for deprecated extensions.</p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Results & Impact</h3>
+              <ul>
+                <li><strong>Security Enhancement:</strong> Eliminated all known CVEs by upgrading from EOL versions, reduced security risk by 90%</li>
+                <li><strong>Performance Improvement:</strong> Achieved 40% average query performance improvement through modern query optimizer</li>
+                <li><strong>Standardization:</strong> Reduced configuration complexity by 70% through standardized templates</li>
+                <li><strong>OS Modernization:</strong> 100% migration from EOL CentOS to supported Ubuntu LTS</li>
+                <li><strong>Maintainability:</strong> Reduced maintenance overhead by 50% through standardization</li>
+                <li><strong>Developer Productivity:</strong> 30% improvement in development cycle time with faster database operations</li>
+                <li><strong>Future Readiness:</strong> Infrastructure now supports modern features and tools</li>
+                <li><strong>Zero Data Loss:</strong> Perfect track record with no data loss or corruption incidents</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-check-circle-fill"></i> Team Feedback</h5>
+                <p>"The modernization project was executed flawlessly. Our development teams now enjoy faster database operations, and we have peace of mind knowing our infrastructure is secure and up-to-date. The standardization has made our work significantly easier."</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Technical Achievements</h3>
+              <ul>
+                <li>Successfully upgraded PostgreSQL across 4+ major versions without data loss</li>
+                <li>Migrated entire infrastructure from CentOS to Ubuntu in parallel with version upgrades</li>
+                <li>Developed reusable migration scripts and automation tools</li>
+                <li>Created comprehensive documentation and runbooks</li>
+                <li>Established standardized configuration management practices</li>
+                <li>Implemented automated validation and testing procedures</li>
+                <li>Built monitoring and alerting for all migrated databases</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Lessons Learned</h3>
+              <ul>
+                <li>Thorough planning and pilot testing are crucial for large-scale migrations</li>
+                <li>Close coordination with application teams prevents issues and builds confidence</li>
+                <li>Automation and standardization are key to managing large database fleets</li>
+                <li>Comprehensive documentation pays dividends during execution</li>
+                <li>Phased approach allows for learning and adjustment between batches</li>
+                <li>Configuration management is as important as the technical migration</li>
+                <li>Post-migration monitoring and optimization are critical for success</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Demonstrated</h3>
+              <ul>
+                <li>Large-scale database migration and upgrade planning</li>
+                <li>PostgreSQL version upgrade expertise (pg_upgrade, logical replication)</li>
+                <li>Linux system administration (CentOS, Ubuntu)</li>
+                <li>Configuration management and standardization</li>
+                <li>Shell scripting for automation</li>
+                <li>Project management and coordination</li>
+                <li>Risk assessment and mitigation</li>
+                <li>Technical documentation and knowledge transfer</li>
+                <li>Performance tuning and optimization</li>
+                <li>Problem-solving and troubleshooting</li>
+              </ul>
+            </div>
+
+            <a href="index.html#projects" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

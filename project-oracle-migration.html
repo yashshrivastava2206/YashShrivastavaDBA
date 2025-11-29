@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Oracle-to-PostgreSQL Migration - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-detail-header {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .project-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-detail-content {
+      padding: 60px 0;
+    }
+
+    .project-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #f5576c;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff0f5;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #f5576c;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe0e8;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #f5576c;
+      margin-right: 10px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .metric-card {
+      background: #fff0f5;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid #f5576c;
+    }
+
+    .metric-card h3 {
+      color: #f5576c;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .metric-card p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+
+    .highlight-box h5 {
+      color: #856404;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="project-detail-header">
+    <div class="container">
+      <div class="project-badge">
+        <i class="bi bi-briefcase-fill"></i> DATABASE MIGRATION PROJECT
+      </div>
+      <h1>Oracle-to-PostgreSQL Migration</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Enterprise migration of 3 Oracle databases (~800 GB each) to PostgreSQL with optimized performance</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="project-image-container">
+              <img src="assets/img/projects/oracle-migration.jpg" alt="Oracle to PostgreSQL Migration">
+            </div>
+
+            <div class="info-box">
+              <h4>Project Information</h4>
+              <div class="info-item">
+                <strong>Company:</strong> ANR Software Pvt. Ltd.
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> Mar 2025 - Mar 2025
+              </div>
+              <div class="info-item">
+                <strong>Role:</strong> Database Administrator
+              </div>
+              <div class="info-item">
+                <strong>Team Size:</strong> 3 members
+              </div>
+              <div class="info-item">
+                <strong>Status:</strong> Successfully Completed
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Technologies Used</h4>
+              <div class="tech-stack">
+                <div class="tech-tag">PostgreSQL</div>
+                <div class="tech-tag">Oracle Database</div>
+                <div class="tech-tag">Migration Projects</div>
+                <div class="tech-tag">Operating Systems</div>
+                <div class="tech-tag">ora2pg</div>
+                <div class="tech-tag">SQL</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>Project Overview</h3>
+              <p>
+                Successfully migrated 3 enterprise Oracle databases (each approximately 800 GB) to PostgreSQL as part of a strategic initiative to reduce licensing costs and leverage open-source database technology. The project encompassed schema migration, data transfer, application code adaptation, and performance optimization to ensure data integrity and minimal business interruption.
+              </p>
+              <p>
+                This complex migration involved converting Oracle-specific features to PostgreSQL equivalents, rewriting PL/SQL stored procedures to PL/pgSQL, adapting application queries, and optimizing performance post-migration. The project achieved successful completion with improved performance metrics and significant cost savings.
+              </p>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <h3>2.4 TB</h3>
+                <p>Total Data Migrated</p>
+              </div>
+              <div class="metric-card">
+                <h3>3</h3>
+                <p>Databases Migrated</p>
+              </div>
+              <div class="metric-card">
+                <h3>65%</h3>
+                <p>Cost Reduction</p>
+              </div>
+              <div class="metric-card">
+                <h3>100%</h3>
+                <p>Data Integrity</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Problem Statement</h3>
+              <p>The organization faced several challenges with Oracle databases:</p>
+              <ul>
+                <li>Extremely high Oracle licensing and support costs (estimated $500K+ annually)</li>
+                <li>Vendor lock-in limiting flexibility and innovation</li>
+                <li>Complex licensing models difficult to manage and audit</li>
+                <li>Need for database consolidation and standardization</li>
+                <li>Strategic shift towards open-source technologies</li>
+                <li>Desire for greater control over database infrastructure</li>
+                <li>Opportunity to leverage PostgreSQL's advanced features</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-exclamation-triangle-fill"></i> Migration Complexity</h5>
+                <p>Oracle to PostgreSQL migrations are among the most complex database migrations due to significant differences in SQL dialects, proprietary features, and operational characteristics. This required meticulous planning, extensive testing, and careful validation to ensure success.</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Migration Strategy</h3>
+              
+              <h4>1. Assessment and Planning</h4>
+              <p>Comprehensive analysis of Oracle databases:</p>
+              <ul>
+                <li>Inventory of all database objects (tables, indexes, views, procedures, functions)</li>
+                <li>Identification of Oracle-specific features requiring special handling</li>
+                <li>Analysis of application dependencies and queries</li>
+                <li>Estimation of effort and timeline for each database</li>
+                <li>Risk assessment and mitigation strategies</li>
+                <li>Development of detailed migration roadmap</li>
+              </ul>
+
+              <h4>2. Schema Migration</h4>
+              <p>Converted Oracle schemas to PostgreSQL:</p>
+              <ul>
+                <li>Used ora2pg tool for initial schema extraction and conversion</li>
+                <li>Manual review and refinement of converted schemas</li>
+                <li>Conversion of Oracle-specific data types to PostgreSQL equivalents</li>
+                <li>Adaptation of constraints, indexes, and foreign keys</li>
+                <li>Rewriting of views with Oracle-specific syntax</li>
+                <li>Handling of sequences and identity columns</li>
+              </ul>
+
+              <div class="code-block">
+# ora2pg configuration
+TYPE            SCHEMA TABLE VIEW SEQUENCE TRIGGER FUNCTION PROCEDURE
+SCHEMA          PRODUCTION_SCHEMA
+OUTPUT          migration_output.sql
+PG_VERSION      14
+
+# Common data type conversions
+Oracle NUMBER → PostgreSQL NUMERIC
+Oracle VARCHAR2 → PostgreSQL VARCHAR
+Oracle DATE → PostgreSQL TIMESTAMP
+Oracle CLOB → PostgreSQL TEXT
+Oracle BLOB → PostgreSQL BYTEA
+Oracle RAW → PostgreSQL BYTEA
+              </div>
+
+              <h4>3. Stored Procedure Conversion</h4>
+              <p>Rewrite of PL/SQL procedures to PL/pgSQL:</p>
+              <ul>
+                <li>Converted 200+ Oracle PL/SQL procedures to PL/pgSQL</li>
+                <li>Adapted Oracle-specific syntax (e.g., cursor handling)</li>
+                <li>Replaced Oracle built-in packages (DBMS_OUTPUT, UTL_FILE) with PostgreSQL equivalents</li>
+                <li>Rewrote exception handling to PostgreSQL syntax</li>
+                <li>Optimized procedures for PostgreSQL performance characteristics</li>
+                <li>Comprehensive testing of all converted procedures</li>
+              </ul>
+
+              <h4>4. Data Migration</h4>
+              <p>Transferred 2.4 TB of data with zero loss:</p>
+              <ul>
+                <li>Exported data from Oracle using Oracle Data Pump</li>
+                <li>Converted Oracle dump files to PostgreSQL format</li>
+                <li>Used COPY command for bulk data loading into PostgreSQL</li>
+                <li>Validated data integrity using row counts and checksums</li>
+                <li>Verified data consistency across all tables</li>
+                <li>Handled special data types and encoding issues</li>
+              </ul>
+
+              <h4>5. Application Migration</h4>
+              <p>Adapted application code for PostgreSQL:</p>
+              <ul>
+                <li>Updated database connection strings and drivers</li>
+                <li>Refactored SQL queries with Oracle-specific syntax</li>
+                <li>Adapted transaction handling and error management</li>
+                <li>Modified code using Oracle-specific features (e.g., CONNECT BY)</li>
+                <li>Updated ORM configurations for PostgreSQL</li>
+                <li>Extensive testing of all application functionality</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Challenges & Solutions</h3>
+
+              <h4>Challenge 1: Oracle-Specific Features</h4>
+              <p><strong>Problem:</strong> Extensive use of Oracle-specific features like CONNECT BY, ROWNUM, and proprietary packages.</p>
+              <p><strong>Solution:</strong> Replaced CONNECT BY with recursive CTEs, ROWNUM with window functions, and implemented custom PostgreSQL functions to replicate Oracle package functionality.</p>
+
+              <h4>Challenge 2: Performance Differences</h4>
+              <p><strong>Problem:</strong> Some queries performed differently on PostgreSQL due to optimizer differences.</p>
+              <p><strong>Solution:</strong> Analyzed execution plans, added appropriate indexes, tuned PostgreSQL configuration, and optimized problematic queries. Achieved 20% better performance overall.</p>
+
+              <h4>Challenge 3: Data Type Mismatches</h4>
+              <p><strong>Problem:</strong> Oracle and PostgreSQL handle certain data types differently (e.g., DATE, NUMBER precision).</p>
+              <p><strong>Solution:</strong> Carefully mapped data types, tested edge cases, and made necessary adjustments in both schema and application code to maintain data integrity.</p>
+
+              <h4>Challenge 4: Large Data Volume</h4>
+              <p><strong>Problem:</strong> Transferring 800 GB per database within limited downtime window.</p>
+              <p><strong>Solution:</strong> Used parallel data export/import, optimized network transfer, and implemented incremental sync to minimize cutover window to 4 hours per database.</p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Results & Impact</h3>
+              <ul>
+                <li><strong>Cost Savings:</strong> 65% reduction in database licensing costs (~$325K annually)</li>
+                <li><strong>Successful Migration:</strong> All 3 databases migrated with 100% data integrity</li>
+                <li><strong>Performance Improvement:</strong> 20% better query performance post-migration</li>
+                <li><strong>Reduced Downtime:</strong> Average 4 hours downtime per database</li>
+                <li><strong>Enhanced Capabilities:</strong> Access to PostgreSQL advanced features (JSONB, full-text search)</li>
+                <li><strong>Operational Flexibility:</strong> Freedom from vendor lock-in</li>
+                <li><strong>Simplified Licensing:</strong> No more complex audits and compliance concerns</li>
+                <li><strong>Community Support:</strong> Access to vibrant PostgreSQL community</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-check-circle-fill"></i> Executive Feedback</h5>
+                <p>"The Oracle to PostgreSQL migration delivered exceptional results. Not only did we achieve significant cost savings, but we also gained better performance and greater flexibility. The team's expertise and meticulous execution made this complex project a remarkable success."</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Technical Achievements</h3>
+              <ul>
+                <li>Successfully migrated 2.4 TB of data with zero data loss</li>
+                <li>Converted 200+ PL/SQL procedures to PL/pgSQL</li>
+                <li>Adapted hundreds of SQL queries for PostgreSQL compatibility</li>
+                <li>Achieved better performance than original Oracle implementation</li>
+                <li>Established reusable migration framework for future projects</li>
+                <li>Trained team on PostgreSQL administration and best practices</li>
+                <li>Documented comprehensive migration procedures and lessons learned</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Lessons Learned</h3>
+              <ul>
+                <li>Thorough assessment and planning are critical for Oracle migrations</li>
+                <li>Automated tools (ora2pg) provide good starting point but require manual refinement</li>
+                <li>Application testing must be comprehensive - database changes impact behavior</li>
+                <li>Performance characteristics differ - PostgreSQL tuning is essential</li>
+                <li>Stored procedure conversion is time-consuming - allocate sufficient resources</li>
+                <li>Data validation at every step prevents issues down the line</li>
+                <li>Strong collaboration with development teams ensures smooth transition</li>
+                <li>Pilot migration provides valuable insights for production execution</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Demonstrated</h3>
+              <ul>
+                <li>Oracle database administration and architecture</li>
+                <li>PostgreSQL administration and optimization</li>
+                <li>Database migration planning and execution</li>
+                <li>SQL dialect conversion (Oracle to PostgreSQL)</li>
+                <li>PL/SQL and PL/pgSQL programming</li>
+                <li>Data modeling and schema design</li>
+                <li>Performance tuning and optimization</li>
+                <li>Application code analysis and adaptation</li>
+                <li>Project management and stakeholder coordination</li>
+                <li>Quality assurance and testing</li>
+              </ul>
+            </div>
+
+            <a href="index.html#projects" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

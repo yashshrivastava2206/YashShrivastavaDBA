@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Large-Scale Data Center to AWS Migration - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-detail-header {
+      background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .project-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .project-detail-content {
+      padding: 60px 0;
+    }
+
+    .project-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #FF5E62;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff5f5;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #FF5E62;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe0e0;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #FF5E62;
+      margin-right: 10px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .metric-card {
+      background: #fff5f5;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid #FF5E62;
+    }
+
+    .metric-card h3 {
+      color: #FF5E62;
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0 0 10px 0;
+    }
+
+    .metric-card p {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+
+    .highlight-box h5 {
+      color: #856404;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #FF9966 0%, #FF5E62 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="project-detail-header">
+    <div class="container">
+      <div class="project-badge">
+        <i class="bi bi-briefcase-fill"></i> CLOUD MIGRATION PROJECT
+      </div>
+      <h1>Large-Scale Data Center to AWS Migration</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Enterprise cloud migration of 500 GB to 4 TB databases with optimized performance</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="project-image-container">
+              <img src="assets/img/projects/datacenter-aws.jpg" alt="Data Center to AWS Migration">
+            </div>
+
+            <div class="info-box">
+              <h4>Project Information</h4>
+              <div class="info-item">
+                <strong>Company:</strong> ANR Software Pvt. Ltd.
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> Aug 2025 - Sep 2025
+              </div>
+              <div class="info-item">
+                <strong>Role:</strong> Database Administrator
+              </div>
+              <div class="info-item">
+                <strong>Team Size:</strong> 4 members
+              </div>
+              <div class="info-item">
+                <strong>Status:</strong> Successfully Completed
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Technologies Used</h4>
+              <div class="tech-stack">
+                <div class="tech-tag">PostgreSQL</div>
+                <div class="tech-tag">AWS EC2</div>
+                <div class="tech-tag">Amazon EBS</div>
+                <div class="tech-tag">Database Monitoring</div>
+                <div class="tech-tag">Migration Tools</div>
+                <div class="tech-tag">Teamwork</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>Project Overview</h3>
+              <p>
+                Led a large-scale migration project moving critical PostgreSQL databases ranging from 500 GB to 4 TB from on-premise Data Center infrastructure to Amazon Web Services (AWS) cloud platform. This strategic initiative was designed to leverage cloud scalability, improved disaster recovery capabilities, and enhanced operational flexibility while ensuring zero data loss and minimal service disruption.
+              </p>
+              <p>
+                The project involved comprehensive migration planning, load testing, storage and I/O performance optimization on AWS, and carefully orchestrated phased cutover to ensure business continuity. Successfully migrated multiple mission-critical databases supporting key business applications with improved performance metrics post-migration.
+              </p>
+            </div>
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <h3>4 TB</h3>
+                <p>Largest Database Migrated</p>
+              </div>
+              <div class="metric-card">
+                <h3>12</h3>
+                <p>Databases Migrated</p>
+              </div>
+              <div class="metric-card">
+                <h3>30%</h3>
+                <p>Performance Improvement</p>
+              </div>
+              <div class="metric-card">
+                <h3>&lt; 3 hrs</h3>
+                <p>Maximum Downtime</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Problem Statement</h3>
+              <p>The existing on-premise infrastructure presented several limitations:</p>
+              <ul>
+                <li>Limited scalability requiring lengthy hardware procurement cycles</li>
+                <li>High capital expenditure for infrastructure upgrades</li>
+                <li>Disaster recovery capabilities constrained by physical infrastructure</li>
+                <li>Manual scaling processes unable to handle sudden traffic spikes</li>
+                <li>Aging hardware approaching end-of-life requiring replacement</li>
+                <li>Limited geographic redundancy options</li>
+                <li>High operational overhead for infrastructure maintenance</li>
+                <li>Difficulty in implementing modern DevOps practices</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-exclamation-triangle-fill"></i> Business Drivers</h5>
+                <p>The migration to AWS was driven by needs for better scalability, reduced capital expenses, improved disaster recovery, and the ability to leverage cloud-native services for enhanced application capabilities. The migration needed to be completed within 6 weeks with zero data loss.</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Migration Strategy</h3>
+              
+              <h4>1. Comprehensive Migration Planning</h4>
+              <p>Developed detailed migration strategy for each database:</p>
+              <ul>
+                <li>Database inventory and dependency mapping</li>
+                <li>Application impact assessment for each database</li>
+                <li>Risk analysis and mitigation strategies</li>
+                <li>Detailed timeline with dependencies and milestones</li>
+                <li>Resource allocation and team coordination</li>
+                <li>Rollback procedures for each migration phase</li>
+                <li>Success criteria and validation procedures</li>
+              </ul>
+
+              <h4>2. AWS Infrastructure Design</h4>
+              <p>Architected optimal AWS infrastructure:</p>
+              <ul>
+                <li><strong>EC2 Instance Selection:</strong> Chose memory-optimized r5 instances for database workloads</li>
+                <li><strong>Storage Configuration:</strong> Implemented gp3 EBS volumes with provisioned IOPS</li>
+                <li><strong>Network Setup:</strong> Configured VPC, subnets, and security groups</li>
+                <li><strong>High Availability:</strong> Deployed across multiple availability zones</li>
+                <li><strong>Backup Strategy:</strong> Configured automated EBS snapshots and pgBackRest</li>
+                <li><strong>Monitoring:</strong> Set up CloudWatch metrics and custom monitoring</li>
+              </ul>
+
+              <div class="code-block">
+# EC2 Instance Configuration
+Instance Type: r5.4xlarge
+vCPUs: 16
+Memory: 128 GB
+Network: Up to 10 Gbps
+
+# EBS Volume Configuration
+Volume Type: gp3
+Size: 5 TB (for 4 TB database + growth)
+IOPS: 16,000
+Throughput: 1,000 MB/s
+
+# PostgreSQL Tuning for AWS
+shared_buffers = 32GB
+effective_cache_size = 96GB
+maintenance_work_mem = 2GB
+max_connections = 500
+              </div>
+
+              <h4>3. Load Testing and Performance Validation</h4>
+              <p>Rigorous testing before production migration:</p>
+              <ul>
+                <li>Migrated test databases to AWS for initial validation</li>
+                <li>Performed load testing using pgbench and custom scripts</li>
+                <li>Measured query performance under various load scenarios</li>
+                <li>Tested failover and recovery procedures</li>
+                <li>Validated backup and restore operations</li>
+                <li>Benchmark results compared against on-premise baseline</li>
+                <li>Identified and resolved performance bottlenecks</li>
+              </ul>
+
+              <h4>4. Storage and I/O Performance Optimization</h4>
+              <p>Optimized AWS storage for database workloads:</p>
+              <ul>
+                <li>Provisioned appropriate IOPS based on workload analysis</li>
+                <li>Configured EBS volume striping for large databases</li>
+                <li>Optimized PostgreSQL I/O parameters for AWS storage</li>
+                <li>Implemented read replicas for read-heavy workloads</li>
+                <li>Configured connection pooling to optimize resource usage</li>
+                <li>Tuned checkpoint and WAL settings for AWS storage characteristics</li>
+              </ul>
+
+              <h4>5. Phased Cutover Strategy</h4>
+              <p>Systematic approach to minimize risk:</p>
+              <ul>
+                <li><strong>Wave 1:</strong> Non-critical development and test databases</li>
+                <li><strong>Wave 2:</strong> Staging and pre-production environments</li>
+                <li><strong>Wave 3:</strong> Production databases (low-traffic applications)</li>
+                <li><strong>Wave 4:</strong> Critical production databases (high-traffic applications)</li>
+                <li>Each wave validated before proceeding to next</li>
+                <li>Lessons learned incorporated into subsequent waves</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Implementation Process</h3>
+              
+              <h4>Phase 1: Planning and Design (2 weeks)</h4>
+              <ul>
+                <li>Detailed assessment of all databases to be migrated</li>
+                <li>AWS infrastructure architecture design</li>
+                <li>Cost analysis and budget approval</li>
+                <li>Migration timeline development</li>
+                <li>Risk assessment and mitigation planning</li>
+                <li>Stakeholder communication and coordination</li>
+              </ul>
+
+              <h4>Phase 2: AWS Environment Setup (1 week)</h4>
+              <ul>
+                <li>Provisioned EC2 instances with optimal configurations</li>
+                <li>Configured EBS volumes with appropriate IOPS</li>
+                <li>Set up VPC, security groups, and network connectivity</li>
+                <li>Installed and configured PostgreSQL on EC2 instances</li>
+                <li>Established VPN connection between Data Center and AWS</li>
+                <li>Configured monitoring and alerting infrastructure</li>
+              </ul>
+
+              <h4>Phase 3: Initial Testing and Validation (1 week)</h4>
+              <ul>
+                <li>Migrated test databases for validation</li>
+                <li>Performed comprehensive load testing</li>
+                <li>Validated backup and restore procedures</li>
+                <li>Tested application connectivity and performance</li>
+                <li>Identified and resolved issues</li>
+                <li>Refined migration procedures based on testing</li>
+              </ul>
+
+              <h4>Phase 4: Production Migration (3 weeks)</h4>
+              <ul>
+                <li>Executed migrations in planned waves</li>
+                <li>Each database followed standardized migration workflow</li>
+                <li>Coordinated with application teams for cutover</li>
+                <li>Performed post-migration validation and testing</li>
+                <li>Monitored performance and addressed issues</li>
+                <li>Updated documentation and runbooks</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Migration Workflow</h3>
+
+              <h4>For Each Database:</h4>
+              <ul>
+                <li><strong>Day -7:</strong> Initial full backup using pg_basebackup</li>
+                <li><strong>Day -5:</strong> Transfer backup to AWS over VPN</li>
+                <li><strong>Day -3:</strong> Restore database on AWS EC2 instance</li>
+                <li><strong>Day -2:</strong> Set up streaming replication from Data Center to AWS</li>
+                <li><strong>Day -1:</strong> Monitor replication lag and validate data consistency</li>
+                <li><strong>Day 0 (Cutover):</strong>
+                  <ul>
+                    <li>Place application in maintenance mode</li>
+                    <li>Wait for replication lag to reach zero</li>
+                    <li>Promote AWS database to primary</li>
+                    <li>Update application connection strings</li>
+                    <li>Perform smoke tests</li>
+                    <li>Resume application operations</li>
+                  </ul>
+                </li>
+                <li><strong>Day +1 to +7:</strong> Monitor performance and optimize as needed</li>
+              </ul>
+
+              <div class="code-block">
+# Migration workflow script
+#!/bin/bash
+
+DB_NAME=$1
+DC_HOST="datacenter-db.local"
+AWS_HOST="ec2-xx-xxx-xxx-xxx.compute.amazonaws.com"
+
+# Step 1: Create base backup
+pg_basebackup -h $DC_HOST -D /backup/$DB_NAME -Fp -Xs -P
+
+# Step 2: Transfer to AWS
+rsync -avz --progress /backup/$DB_NAME/ $AWS_HOST:/var/lib/postgresql/14/main/
+
+# Step 3: Configure replication
+ssh $AWS_HOST "cat > /var/lib/postgresql/14/main/recovery.conf << EOF
+primary_conninfo = 'host=$DC_HOST port=5432 user=replicator'
+restore_command = 'cp /backup/wal/%f %p'
+standby_mode = on
+EOF"
+
+# Step 4: Start AWS instance in standby mode
+ssh $AWS_HOST "pg_ctl start -D /var/lib/postgresql/14/main"
+
+echo "Migration setup complete. Monitor replication lag before cutover."
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Performance Optimization on AWS</h3>
+
+              <h4>Storage Optimization</h4>
+              <ul>
+                <li>Migrated from HDD-based SAN to SSD-based EBS gp3 volumes</li>
+                <li>Provisioned IOPS based on workload requirements (up to 16,000 IOPS)</li>
+                <li>Implemented EBS volume striping for largest databases</li>
+                <li>Configured optimal EBS throughput (up to 1,000 MB/s)</li>
+              </ul>
+
+              <h4>Instance Optimization</h4>
+              <ul>
+                <li>Right-sized instances based on CPU, memory, and network requirements</li>
+                <li>Leveraged enhanced networking for improved performance</li>
+                <li>Configured instance placement groups for low-latency communication</li>
+                <li>Implemented auto-scaling groups for read replicas</li>
+              </ul>
+
+              <h4>PostgreSQL Tuning</h4>
+              <ul>
+                <li>Optimized memory settings for r5 instance types</li>
+                <li>Tuned checkpoint settings for AWS storage characteristics</li>
+                <li>Configured connection pooling with pgBouncer</li>
+                <li>Optimized vacuum and analyze schedules</li>
+                <li>Implemented query result caching strategies</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Challenges & Solutions</h3>
+
+              <h4>Challenge 1: Large Database Transfer Times</h4>
+              <p><strong>Problem:</strong> Transferring multi-terabyte databases over network taking 24+ hours.</p>
+              <p><strong>Solution:</strong> Used AWS Snowball for initial data transfer of largest databases, then set up replication for continuous sync. Reduced transfer time by 70%.</p>
+
+              <h4>Challenge 2: Network Bandwidth Limitations</h4>
+              <p><strong>Problem:</strong> Limited bandwidth between Data Center and AWS causing bottlenecks.</p>
+              <p><strong>Solution:</strong> Established AWS Direct Connect for dedicated high-bandwidth connection, implemented compression for data transfer, and scheduled large transfers during off-hours.</p>
+
+              <h4>Challenge 3: I/O Performance Differences</h4>
+              <p><strong>Problem:</strong> Some queries performed differently on AWS due to storage characteristics.</p>
+              <p><strong>Solution:</strong> Conducted thorough performance testing, adjusted PostgreSQL I/O parameters, provisioned additional IOPS where needed, and optimized query plans for AWS environment.</p>
+
+              <h4>Challenge 4: Application Latency Concerns</h4>
+              <p><strong>Problem:</strong> Some on-premise applications experienced increased latency connecting to AWS databases.</p>
+              <p><strong>Solution:</strong> Implemented connection pooling to reduce connection overhead, deployed read replicas closer to applications, and optimized network routing. For critical applications, planned gradual application migration to AWS.</p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Results & Impact</h3>
+              <ul>
+                <li><strong>Successful Migration:</strong> 100% of databases migrated on schedule with zero data loss</li>
+                <li><strong>Performance Improvement:</strong> Average 30% improvement in query performance due to SSD-based storage</li>
+                <li><strong>Reduced Downtime:</strong> Average downtime of 2 hours per database, well within SLA</li>
+                <li><strong>Enhanced Scalability:</strong> Can now scale resources in minutes vs. weeks</li>
+                <li><strong>Improved DR Capabilities:</strong> Multi-AZ deployment provides better disaster recovery</li>
+                <li><strong>Cost Optimization:</strong> 25% reduction in total cost of ownership over 3 years</li>
+                <li><strong>Operational Efficiency:</strong> Reduced infrastructure management overhead by 40%</li>
+                <li><strong>Cloud-Native Benefits:</strong> Enabled use of AWS managed services and automation</li>
+              </ul>
+
+              <div class="highlight-box">
+                <h5><i class="bi bi-check-circle-fill"></i> Leadership Feedback</h5>
+                <p>"The AWS migration project was executed with exceptional precision and professionalism. The team's thorough planning, rigorous testing, and flawless execution resulted in improved performance, enhanced capabilities, and positioned us well for future growth. This project has been a cornerstone in our cloud transformation journey."</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Lessons Learned</h3>
+              <ul>
+                <li>Comprehensive load testing in AWS environment is critical before production migration</li>
+                <li>Storage performance characteristics on AWS differ from traditional SAN - tune accordingly</li>
+                <li>Replication-based migration minimizes downtime for large databases</li>
+                <li>Phased approach allows learning and adaptation between waves</li>
+                <li>Close coordination with application teams prevents surprises</li>
+                <li>Post-migration monitoring and optimization are essential</li>
+                <li>Documentation of cloud-specific configurations aids future troubleshooting</li>
+                <li>Consider application migration alongside database migration for optimal performance</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Demonstrated</h3>
+              <ul>
+                <li>AWS cloud architecture and EC2 management</li>
+                <li>EBS storage configuration and optimization</li>
+                <li>PostgreSQL performance tuning for cloud environments</li>
+                <li>Large-scale database migration planning and execution</li>
+                <li>Load testing and performance benchmarking</li>
+                <li>Network architecture (VPC, security groups, Direct Connect)</li>
+                <li>Disaster recovery and high availability design</li>
+                <li>Project management and stakeholder communication</li>
+                <li>Risk management and contingency planning</li>
+                <li>Team leadership and coordination</li>
+              </ul>
+            </div>
+
+            <a href="index.html#projects" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
