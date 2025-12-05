@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PostgreSQL Essential Training - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #336791 0%, #2d5572 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #336791;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f0f5f9;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #336791;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #d9e5ee;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #336791;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #336791 0%, #2d5572 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #336791 0%, #2d5572 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(51, 103, 145, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #e8f4f8;
+      border-left: 4px solid #336791;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>PostgreSQL Essential Training</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/postgresql-cert.jpg" alt="PostgreSQL Essential Training Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/postgresql-essential-training-22611610" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2023
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 3+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> PostgreSQL Administration & SQL
+              </div>
+              <div class="info-item">
+                <strong>Tools:</strong> PostgreSQL, psql, pgAdmin
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The PostgreSQL Essential Training certification from LinkedIn Learning provides comprehensive hands-on training in PostgreSQL database administration, SQL querying, and database design. This course covers fundamental to advanced PostgreSQL concepts, making it essential for anyone working with this powerful open-source database system.
+              </p>
+              <p>
+                As PostgreSQL is my primary database platform in my professional role at ANR Software Pvt. Ltd., this certification has been instrumental in developing the expertise needed to manage, optimize, and troubleshoot PostgreSQL databases effectively. The practical, real-world approach of this course directly applies to daily DBA tasks.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">PostgreSQL Installation</div>
+                <div class="skill-tag">Database Design</div>
+                <div class="skill-tag">SQL Querying</div>
+                <div class="skill-tag">Data Types</div>
+                <div class="skill-tag">Indexing</div>
+                <div class="skill-tag">Transactions</div>
+                <div class="skill-tag">Views & Functions</div>
+                <div class="skill-tag">Performance Tuning</div>
+                <div class="skill-tag">Backup & Recovery</div>
+                <div class="skill-tag">User Management</div>
+                <div class="skill-tag">Query Optimization</div>
+                <div class="skill-tag">JSON Support</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Getting Started with PostgreSQL</h4>
+              <ul>
+                <li>PostgreSQL architecture and features</li>
+                <li>Installation on Linux, Windows, and macOS</li>
+                <li>Understanding PostgreSQL ecosystem</li>
+                <li>Command-line tools (psql) overview</li>
+                <li>GUI tools (pgAdmin 4) introduction</li>
+                <li>Connecting to databases</li>
+              </ul>
+
+              <h4>2. Database Design Fundamentals</h4>
+              <ul>
+                <li>Creating databases and schemas</li>
+                <li>Understanding database objects</li>
+                <li>Designing tables and relationships</li>
+                <li>Normalization principles</li>
+                <li>Primary and foreign keys</li>
+                <li>Constraints (CHECK, UNIQUE, NOT NULL)</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Creating a database
+<br>CREATE DATABASE myapp_db;
+<br>
+<br>-- Creating a table with constraints
+<br>CREATE TABLE employees (
+<br>    employee_id SERIAL PRIMARY KEY,
+<br>    first_name VARCHAR(50) NOT NULL,
+<br>    last_name VARCHAR(50) NOT NULL,
+<br>    email VARCHAR(100) UNIQUE,
+<br>    hire_date DATE DEFAULT CURRENT_DATE,
+<br>    salary NUMERIC(10,2) CHECK (salary > 0),
+<br>    department_id INTEGER REFERENCES departments(dept_id)
+<br>);
+              </div>
+
+              <h4>3. PostgreSQL Data Types</h4>
+              <ul>
+                <li>Numeric types (INTEGER, NUMERIC, SERIAL)</li>
+                <li>Character types (VARCHAR, TEXT, CHAR)</li>
+                <li>Date and time types (DATE, TIME, TIMESTAMP, INTERVAL)</li>
+                <li>Boolean type</li>
+                <li>JSON and JSONB types</li>
+                <li>Array types</li>
+                <li>UUID and special types</li>
+              </ul>
+
+              <h4>4. SQL Querying</h4>
+              <ul>
+                <li>SELECT statements and filtering (WHERE)</li>
+                <li>Sorting and limiting results (ORDER BY, LIMIT)</li>
+                <li>Aggregate functions (COUNT, SUM, AVG, MAX, MIN)</li>
+                <li>GROUP BY and HAVING clauses</li>
+                <li>JOIN operations (INNER, LEFT, RIGHT, FULL OUTER)</li>
+                <li>Subqueries and correlated subqueries</li>
+                <li>Common Table Expressions (CTEs)</li>
+                <li>Window functions</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Complex query with CTE and window function
+<br>WITH dept_salaries AS (
+<br>    SELECT 
+<br>        department_id,
+<br>        AVG(salary) as avg_salary,
+<br>        COUNT(*) as emp_count
+<br>    FROM employees
+<br>    GROUP BY department_id
+<br>)
+<br>SELECT 
+<br>    e.employee_id,
+<br>    e.first_name,
+<br>    e.last_name,
+<br>    e.salary,
+<br>    d.avg_salary,
+<br>    RANK() OVER (PARTITION BY e.department_id ORDER BY e.salary DESC) as salary_rank
+<br>FROM employees e
+<br>JOIN dept_salaries d ON e.department_id = d.department_id
+<br>WHERE e.salary > d.avg_salary;
+              </div>
+
+              <h4>5. Data Manipulation</h4>
+              <ul>
+                <li>INSERT statements (single and bulk)</li>
+                <li>UPDATE operations</li>
+                <li>DELETE operations</li>
+                <li>UPSERT (INSERT ... ON CONFLICT)</li>
+                <li>RETURNING clause</li>
+                <li>COPY command for data import/export</li>
+              </ul>
+
+              <h4>6. Indexes and Performance</h4>
+              <ul>
+                <li>Understanding B-tree indexes</li>
+                <li>Creating and managing indexes</li>
+                <li>Unique and partial indexes</li>
+                <li>Multi-column indexes</li>
+                <li>Index types (GiST, GIN, BRIN)</li>
+                <li>Analyzing query performance with EXPLAIN</li>
+                <li>Query optimization techniques</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Creating indexes
+<br>CREATE INDEX idx_employees_email ON employees(email);
+<br>CREATE INDEX idx_employees_dept ON employees(department_id);
+<br>
+<br>-- Partial index for active employees
+<br>CREATE INDEX idx_active_employees 
+<br>ON employees(last_name) 
+<br>WHERE status = 'active';
+<br>
+<br>-- Analyzing query performance
+<br>EXPLAIN ANALYZE
+<br>SELECT * FROM employees 
+<br>WHERE department_id = 5 
+<br>ORDER BY hire_date DESC;
+              </div>
+
+              <h4>7. Views and Materialized Views</h4>
+              <ul>
+                <li>Creating and using views</li>
+                <li>Updatable views</li>
+                <li>Materialized views for performance</li>
+                <li>Refreshing materialized views</li>
+                <li>View security and access control</li>
+              </ul>
+
+              <h4>8. Functions and Stored Procedures</h4>
+              <ul>
+                <li>Creating functions with PL/pgSQL</li>
+                <li>Function parameters and return types</li>
+                <li>Stored procedures</li>
+                <li>Triggers and trigger functions</li>
+                <li>Exception handling</li>
+                <li>Best practices for functions</li>
+              </ul>
+
+              <h4>9. Transactions and Concurrency</h4>
+              <ul>
+                <li>ACID properties</li>
+                <li>BEGIN, COMMIT, ROLLBACK</li>
+                <li>Transaction isolation levels</li>
+                <li>Savepoints</li>
+                <li>Locking mechanisms</li>
+                <li>Dealing with deadlocks</li>
+              </ul>
+
+              <h4>10. User Management and Security</h4>
+              <ul>
+                <li>Creating and managing users (roles)</li>
+                <li>GRANT and REVOKE permissions</li>
+                <li>Role inheritance</li>
+                <li>Row-level security</li>
+                <li>pg_hba.conf configuration</li>
+                <li>SSL connections</li>
+              </ul>
+
+              <h4>11. Backup and Recovery</h4>
+              <ul>
+                <li>pg_dump and pg_dumpall for logical backups</li>
+                <li>pg_restore for recovery</li>
+                <li>Continuous archiving and PITR</li>
+                <li>Physical backups with pg_basebackup</li>
+                <li>Backup strategies and best practices</li>
+              </ul>
+
+              <h4>12. Advanced Features</h4>
+              <ul>
+                <li>Working with JSON and JSONB</li>
+                <li>Full-text search</li>
+                <li>Foreign data wrappers</li>
+                <li>Partitioning tables</li>
+                <li>Replication basics</li>
+                <li>Extensions and contrib modules</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Direct Application in Professional Work</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-briefcase"></i> Current Role at ANR Software Pvt. Ltd.</h4>
+                <p>As a Database Administrator specializing in PostgreSQL, I apply skills from this certification daily:</p>
+              </div>
+
+              <h4>Daily DBA Tasks:</h4>
+              <ul>
+                <li><strong>Database Administration:</strong> Managing 50+ PostgreSQL instances (version 12-15)</li>
+                <li><strong>Performance Tuning:</strong> Optimizing slow queries using EXPLAIN ANALYZE and creating appropriate indexes</li>
+                <li><strong>Backup Management:</strong> Implementing and maintaining backup strategies with pg_dump and pgBackRest</li>
+                <li><strong>Replication Setup:</strong> Configuring streaming replication for high availability</li>
+                <li><strong>User Management:</strong> Managing database users, roles, and permissions</li>
+                <li><strong>Monitoring:</strong> Setting up monitoring for database health and performance</li>
+              </ul>
+
+              <h4>Major Projects:</h4>
+              <ul>
+                <li><strong>Modernization Project:</strong> Upgraded 300+ PostgreSQL databases from versions 9.x/10.x to 14/15</li>
+                <li><strong>AWS Migration:</strong> Migrated PostgreSQL databases to AWS EC2 with optimized configurations</li>
+                <li><strong>Oracle to PostgreSQL:</strong> Successfully migrated 3 enterprise Oracle databases to PostgreSQL</li>
+                <li><strong>Monitoring Server:</strong> Built centralized monitoring solution for production PostgreSQL databases</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Implementations</h3>
+              <ul>
+                <li>Designed and optimized database schemas for multiple applications</li>
+                <li>Created complex queries with CTEs and window functions for reporting</li>
+                <li>Implemented partitioning for large tables (10M+ rows)</li>
+                <li>Set up Point-in-Time Recovery (PITR) for critical databases</li>
+                <li>Configured connection pooling with pgBouncer</li>
+                <li>Implemented row-level security for multi-tenant applications</li>
+                <li>Optimized queries reducing execution time by 80%+</li>
+                <li>Created custom functions and triggers for business logic</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered PostgreSQL administration and SQL querying</li>
+                <li>Developed expertise in performance tuning and optimization</li>
+                <li>Gained proficiency in backup and recovery procedures</li>
+                <li>Learned advanced PostgreSQL features (JSON, FTS, partitioning)</li>
+                <li>Enhanced ability to design efficient database schemas</li>
+                <li>Built strong foundation for PostgreSQL specialization</li>
+                <li>Acquired skills for troubleshooting complex database issues</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Career</h3>
+              <p>
+                This certification has been pivotal in my career as a Database Administrator. The comprehensive coverage of PostgreSQL features and best practices has enabled me to:
+              </p>
+              <ul>
+                <li>Confidently manage enterprise PostgreSQL environments</li>
+                <li>Lead database migration projects successfully</li>
+                <li>Optimize database performance achieving 40%+ improvements</li>
+                <li>Mentor junior team members on PostgreSQL best practices</li>
+                <li>Contribute to architectural decisions for database infrastructure</li>
+                <li>Troubleshoot and resolve complex database issues efficiently</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Continuing Education</h3>
+              <p>Building on this PostgreSQL foundation, I continue to expand my expertise through:</p>
+              <ul>
+                <li>PostgreSQL 15 and 16 new features exploration</li>
+                <li>Advanced replication configurations (logical replication, pglogical)</li>
+                <li>PostgreSQL in cloud environments (RDS, Aurora, Cloud SQL)</li>
+                <li>High availability solutions (Patroni, Repmgr)</li>
+                <li>Performance optimization at scale</li>
+                <li>PostgreSQL community contributions and forums</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

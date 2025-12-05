@@ -323,16 +323,16 @@
               </ul>
 
               <div class="code-block">
-# postgresql.conf on Primary
-wal_level = replica
-max_wal_senders = 10
-wal_keep_size = 1GB
-synchronous_commit = on
-synchronous_standby_names = 'standby1'
-
-# recovery.conf on Standby
-primary_conninfo = 'host=primary port=5432 user=replicator'
-hot_standby = on
+<br># postgresql.conf on Primary
+<br>wal_level = replica
+<br>max_wal_senders = 10
+<br>wal_keep_size = 1GB
+<br>synchronous_commit = on
+<br>synchronous_standby_names = 'standby1'
+<br>
+<br># recovery.conf on Standby
+<br>primary_conninfo = 'host=primary port=5432 user=replicator'
+<br>hot_standby = on
               </div>
 
               <h4>2. Automatic Failover with Patroni</h4>
@@ -365,18 +365,18 @@ hot_standby = on
               </ul>
 
               <div class="code-block">
-# pgBackRest configuration
-[global]
-repo1-path=/backup/pgbackrest
-repo1-retention-full=4
-
-[db-primary]
-pg1-path=/var/lib/postgresql/15/main
-pg1-port=5432
-
-# Backup schedule (cron)
-0 2 * * 0 pgbackrest --stanza=main backup --type=full
-0 2 * * 1-6 pgbackrest --stanza=main backup --type=incr
+<br>  # pgBackRest configuration
+<br>  [global]
+<br>  repo1-path=/backup/pgbackrest
+<br>  repo1-retention-full=4
+<br>  
+<br>  [db-primary]
+<br>  pg1-path=/var/lib/postgresql/15/main
+<br>  pg1-port=5432
+<br>  
+<br>  # Backup schedule (cron)
+<br>  0 2 * * 0 pgbackrest --stanza=main backup --type=full
+<br>  0 2 * * 1-6 pgbackrest --stanza=main backup --type=incr
               </div>
             </div>
 
@@ -479,7 +479,7 @@ pg1-port=5432
               </ul>
             </div>
 
-            <a href="index.html#projects" class="back-button">
+            <a href="/index.html#projects" class="back-button">
               <i class="bi bi-arrow-left"></i> Back to All Projects
             </a>
           </div>

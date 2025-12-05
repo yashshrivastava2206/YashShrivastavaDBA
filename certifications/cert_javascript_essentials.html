@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>JavaScript Essentials 1 (JSE) - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #f5576c;
+      padding-bottom: 10px;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff0f5;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #f5576c;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe0e8;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #f5576c;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .code-example {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> CISCO NETWORKING ACADEMY CERTIFICATION
+      </div>
+      <h1>Partner: JavaScript Essentials 1 (JSE)</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by Cisco Networking Academy</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/javascript-cert.jpg" alt="JavaScript Essentials Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> Cisco Networking Academy
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> May 26, 2023
+              </div>
+              <div class="info-item">
+                <strong>Credential ID:</strong> 07914730-bca2-4d50-b1b7-99bc8b46f233
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 40+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Beginner to Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Certificate Authority</h4>
+              <div class="info-item">
+                <strong>Signed By:</strong> Lynn Bloomer
+              </div>
+              <div class="info-item">
+                <strong>Title:</strong> Director
+              </div>
+              <div class="info-item">
+                <strong>Organization:</strong> Cisco Networking Academy
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The JavaScript Essentials 1 (JSE) certification from Cisco Networking Academy provides comprehensive foundational knowledge of JavaScript programming. This course covers JavaScript syntax, functions, DOM manipulation, events, and modern ES6+ features, establishing a solid foundation for web development and programming.
+              </p>
+              <p>
+                JavaScript is the most widely-used programming language for web development and is essential for creating interactive web applications. This certification validates proficiency in core JavaScript concepts and practical programming skills necessary for modern web development.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">JavaScript Syntax</div>
+                <div class="skill-tag">Variables & Data Types</div>
+                <div class="skill-tag">Functions & Scope</div>
+                <div class="skill-tag">Arrays & Objects</div>
+                <div class="skill-tag">DOM Manipulation</div>
+                <div class="skill-tag">Event Handling</div>
+                <div class="skill-tag">ES6+ Features</div>
+                <div class="skill-tag">Asynchronous Programming</div>
+                <div class="skill-tag">Error Handling</div>
+                <div class="skill-tag">Best Practices</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. JavaScript Fundamentals</h4>
+              <ul>
+                <li>Introduction to JavaScript and its history</li>
+                <li>Setting up development environment</li>
+                <li>JavaScript in the browser and Node.js</li>
+                <li>Basic syntax and program structure</li>
+                <li>Comments and code formatting</li>
+                <li>Console methods for debugging</li>
+              </ul>
+
+              <h4>2. Variables and Data Types</h4>
+              <ul>
+                <li>Declaring variables (var, let, const)</li>
+                <li>Primitive data types (string, number, boolean, undefined, null)</li>
+                <li>Type conversion and coercion</li>
+                <li>Template literals and string interpolation</li>
+                <li>Working with numbers and Math object</li>
+                <li>Understanding undefined vs null</li>
+              </ul>
+
+              <div class="code-example">
+// Variables and data types
+let name = "Yash Shrivastava";
+const age = 24;
+let isAdmin = true;
+
+// Template literals
+console.log(`Hello, my name is ${name} and I'm ${age} years old.`);
+
+// Type conversion
+let strNum = "42";
+let num = parseInt(strNum);
+              </div>
+
+              <h4>3. Operators and Expressions</h4>
+              <ul>
+                <li>Arithmetic operators (+, -, *, /, %, **)</li>
+                <li>Comparison operators (==, ===, !=, !==, <, >, <=, >=)</li>
+                <li>Logical operators (&&, ||, !)</li>
+                <li>Assignment operators (=, +=, -=, *=, /=)</li>
+                <li>Ternary operator (? :)</li>
+                <li>Operator precedence and associativity</li>
+              </ul>
+
+              <h4>4. Control Flow</h4>
+              <ul>
+                <li>Conditional statements (if, else if, else)</li>
+                <li>Switch statements</li>
+                <li>For loops (for, for...in, for...of)</li>
+                <li>While and do...while loops</li>
+                <li>Break and continue statements</li>
+                <li>Nested control structures</li>
+              </ul>
+
+              <h4>5. Functions</h4>
+              <ul>
+                <li>Function declarations and expressions</li>
+                <li>Parameters and arguments</li>
+                <li>Return statements</li>
+                <li>Arrow functions (ES6+)</li>
+                <li>Function scope and closures</li>
+                <li>Callback functions</li>
+                <li>Higher-order functions</li>
+              </ul>
+
+              <div class="code-example">
+// Function declaration
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Arrow function
+const multiply = (a, b) => a * b;
+
+// Higher-order function
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+              </div>
+
+              <h4>6. Arrays</h4>
+              <ul>
+                <li>Creating and accessing arrays</li>
+                <li>Array methods (push, pop, shift, unshift)</li>
+                <li>Iterating arrays (forEach, map, filter, reduce)</li>
+                <li>Finding elements (find, findIndex, indexOf)</li>
+                <li>Sorting and reversing arrays</li>
+                <li>Spread operator and array destructuring</li>
+              </ul>
+
+              <h4>7. Objects</h4>
+              <ul>
+                <li>Creating objects (literal notation, constructor)</li>
+                <li>Accessing and modifying properties</li>
+                <li>Object methods and 'this' keyword</li>
+                <li>Object destructuring</li>
+                <li>JSON (parse and stringify)</li>
+                <li>Object.keys(), Object.values(), Object.entries()</li>
+              </ul>
+
+              <h4>8. DOM Manipulation</h4>
+              <ul>
+                <li>Understanding the Document Object Model</li>
+                <li>Selecting elements (getElementById, querySelector)</li>
+                <li>Modifying content (innerHTML, textContent)</li>
+                <li>Changing styles and classes</li>
+                <li>Creating and removing elements</li>
+                <li>Traversing the DOM tree</li>
+              </ul>
+
+              <h4>9. Event Handling</h4>
+              <ul>
+                <li>Understanding browser events</li>
+                <li>Adding event listeners</li>
+                <li>Event types (click, input, submit, keypress)</li>
+                <li>Event object and properties</li>
+                <li>Event bubbling and capturing</li>
+                <li>Preventing default behavior</li>
+              </ul>
+
+              <div class="code-example">
+// DOM manipulation and events
+const button = document.querySelector('#myButton');
+const output = document.querySelector('#output');
+
+button.addEventListener('click', (event) => {
+    output.textContent = 'Button clicked!';
+    event.preventDefault();
+});
+              </div>
+
+              <h4>10. ES6+ Modern Features</h4>
+              <ul>
+                <li>Let and const declarations</li>
+                <li>Arrow functions</li>
+                <li>Template literals</li>
+                <li>Destructuring assignment</li>
+                <li>Spread and rest operators</li>
+                <li>Promises and async/await basics</li>
+                <li>Modules (import/export)</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Application</h3>
+              <p>
+                This JavaScript certification has been valuable in my development projects:
+              </p>
+              <ul>
+                <li>Building interactive web interfaces for database management tools</li>
+                <li>Creating dynamic data visualizations and dashboards</li>
+                <li>Developing form validation and user input handling</li>
+                <li>Implementing AJAX requests for real-time data updates</li>
+                <li>Writing automation scripts for web-based testing</li>
+                <li>Enhancing user experience with responsive interactions</li>
+                <li>Building client-side validation for database applications</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Projects Utilizing JavaScript Skills</h3>
+              <ul>
+                <li><strong>Book Reader XR:</strong> Used JavaScript for AR application logic and UI interactions</li>
+                <li><strong>Database Monitoring Dashboard:</strong> Implemented real-time data updates and visualizations</li>
+                <li><strong>Web-based Database Tools:</strong> Created interactive query builders and data explorers</li>
+                <li><strong>Fitness Club System Web Interface:</strong> Developed responsive forms and client-side validation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered JavaScript fundamentals and syntax</li>
+                <li>Developed proficiency in DOM manipulation and event handling</li>
+                <li>Learned modern ES6+ features and best practices</li>
+                <li>Gained ability to create interactive web applications</li>
+                <li>Enhanced problem-solving skills through programming exercises</li>
+                <li>Built foundation for advanced JavaScript frameworks (React, Vue, Angular)</li>
+                <li>Improved understanding of asynchronous programming</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Next Steps</h3>
+              <p>Building on this JavaScript foundation, I plan to:</p>
+              <ul>
+                <li>Explore JavaScript frameworks (React.js, Vue.js)</li>
+                <li>Learn Node.js for backend development</li>
+                <li>Study advanced asynchronous patterns</li>
+                <li>Master modern build tools and bundlers</li>
+                <li>Pursue JavaScript Essentials 2 (JSE2) certification</li>
+                <li>Develop full-stack applications with JavaScript</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Oracle Database 19c Advanced SQL - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #C74634 0%, #A63828 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #C74634;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff5f4;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #C74634;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe8e6;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #C74634;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #C74634 0%, #A63828 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #C74634 0%, #A63828 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(199, 70, 52, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff5f4;
+      border-left: 4px solid #C74634;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Oracle Database 19c: Advanced SQL</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/oracle-sql-cert.jpg" alt="Oracle Database Advanced SQL Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/oracle-database-19c-advanced-sql" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2023
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 4+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Advanced
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Advanced Oracle SQL Techniques
+              </div>
+              <div class="info-item">
+                <strong>Database Version:</strong> Oracle 19c
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Oracle Database 19c Advanced SQL certification from LinkedIn Learning provides in-depth training on advanced SQL techniques specific to Oracle Database. This course covers complex queries, analytical functions, hierarchical queries, and Oracle-specific features that are essential for database professionals working with Oracle systems.
+              </p>
+              <p>
+                This certification has been particularly valuable for my Oracle-to-PostgreSQL migration projects, where understanding Oracle's advanced SQL features was crucial for successful conversion and ensuring no functionality loss during migration.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Advanced Queries</div>
+                <div class="skill-tag">Analytical Functions</div>
+                <div class="skill-tag">Hierarchical Queries</div>
+                <div class="skill-tag">PIVOT Operations</div>
+                <div class="skill-tag">Regular Expressions</div>
+                <div class="skill-tag">Set Operators</div>
+                <div class="skill-tag">Subquery Factoring</div>
+                <div class="skill-tag">Model Clause</div>
+                <div class="skill-tag">Oracle XML</div>
+                <div class="skill-tag">Performance Tuning</div>
+                <div class="skill-tag">Execution Plans</div>
+                <div class="skill-tag">Query Optimization</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Advanced Subqueries</h4>
+              <ul>
+                <li>Correlated subqueries</li>
+                <li>EXISTS and NOT EXISTS</li>
+                <li>Scalar subqueries in SELECT</li>
+                <li>Subqueries in FROM clause (inline views)</li>
+                <li>Subquery factoring with WITH clause (CTEs)</li>
+                <li>Recursive subqueries</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Subquery factoring (Common Table Expression)
+<br>WITH dept_totals AS (
+<br>    SELECT department_id, 
+<br>           SUM(salary) as total_salary,
+<br>           COUNT(*) as emp_count
+<br>    FROM employees
+<br>    GROUP BY department_id
+<br>)
+<br>SELECT d.department_name,
+<br>       dt.total_salary,
+<br>       dt.emp_count,
+<br>       dt.total_salary / dt.emp_count as avg_salary
+<br>FROM departments d
+<br>JOIN dept_totals dt ON d.department_id = dt.department_id
+<br>WHERE dt.total_salary > 100000;
+              </div>
+
+              <h4>2. Analytical Functions</h4>
+              <ul>
+                <li>ROW_NUMBER(), RANK(), DENSE_RANK()</li>
+                <li>LAG() and LEAD() functions</li>
+                <li>FIRST_VALUE() and LAST_VALUE()</li>
+                <li>NTILE() for data distribution</li>
+                <li>PARTITION BY clause</li>
+                <li>Window frame specifications</li>
+                <li>Moving averages and cumulative sums</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Analytical functions example
+<br>SELECT 
+<br>    employee_id,
+<br>    department_id,
+<br>    salary,
+<br>    ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY salary DESC) as rank_in_dept,
+<br>    LAG(salary) OVER (ORDER BY hire_date) as prev_emp_salary,
+<br>    SUM(salary) OVER (PARTITION BY department_id) as dept_total,
+<br>    AVG(salary) OVER (ORDER BY hire_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) as moving_avg
+<br>FROM employees;
+              </div>
+
+              <h4>3. Hierarchical Queries</h4>
+              <ul>
+                <li>CONNECT BY clause</li>
+                <li>START WITH for root selection</li>
+                <li>PRIOR operator</li>
+                <li>LEVEL pseudo-column</li>
+                <li>SYS_CONNECT_BY_PATH function</li>
+                <li>CONNECT_BY_ROOT operator</li>
+                <li>Handling cycles in hierarchies</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Hierarchical query for organizational structure
+<br>SELECT 
+<br>    LEVEL,
+<br>    LPAD(' ', 2*(LEVEL-1)) || employee_name as org_chart,
+<br>    manager_id,
+<br>    SYS_CONNECT_BY_PATH(employee_name, '/') as path
+<br>FROM employees
+<br>START WITH manager_id IS NULL
+<br>CONNECT BY PRIOR employee_id = manager_id
+<br>ORDER SIBLINGS BY employee_name;
+              </div>
+
+              <h4>4. PIVOT and UNPIVOT</h4>
+              <ul>
+                <li>PIVOT operations for cross-tabulation</li>
+                <li>Dynamic PIVOT with XML</li>
+                <li>UNPIVOT for normalizing data</li>
+                <li>Multi-column PIVOT</li>
+                <li>Practical use cases</li>
+              </ul>
+
+              <h4>5. Advanced Joins</h4>
+              <ul>
+                <li>CROSS APPLY and OUTER APPLY</li>
+                <li>LATERAL inline views</li>
+                <li>Partitioned outer joins</li>
+                <li>Natural joins and USING clause</li>
+                <li>Self-joins for complex relationships</li>
+              </ul>
+
+              <h4>6. Set Operators</h4>
+              <ul>
+                <li>UNION and UNION ALL</li>
+                <li>INTERSECT operator</li>
+                <li>MINUS (EXCEPT) operator</li>
+                <li>Combining multiple set operations</li>
+                <li>Performance considerations</li>
+              </ul>
+
+              <h4>7. Regular Expressions</h4>
+              <ul>
+                <li>REGEXP_LIKE for pattern matching</li>
+                <li>REGEXP_SUBSTR for extraction</li>
+                <li>REGEXP_REPLACE for substitution</li>
+                <li>REGEXP_INSTR for position finding</li>
+                <li>REGEXP_COUNT for occurrence counting</li>
+                <li>Complex pattern matching</li>
+              </ul>
+
+              <h4>8. Advanced Date/Time Functions</h4>
+              <ul>
+                <li>Date arithmetic and intervals</li>
+                <li>EXTRACT function</li>
+                <li>TIMESTAMP and INTERVAL data types</li>
+                <li>Time zone conversions</li>
+                <li>Date formatting with TO_CHAR</li>
+              </ul>
+
+              <h4>9. Advanced Aggregation</h4>
+              <ul>
+                <li>GROUPING SETS</li>
+                <li>ROLLUP operator</li>
+                <li>CUBE operator</li>
+                <li>GROUPING() and GROUPING_ID() functions</li>
+                <li>LISTAGG for string aggregation</li>
+              </ul>
+
+              <h4>10. Query Optimization</h4>
+              <ul>
+                <li>Execution plan analysis with EXPLAIN PLAN</li>
+                <li>Understanding cost-based optimizer</li>
+                <li>Index usage and optimization</li>
+                <li>Hints and their impact</li>
+                <li>Statistics gathering</li>
+                <li>Query rewrite techniques</li>
+              </ul>
+
+              <h4>11. Oracle-Specific Features</h4>
+              <ul>
+                <li>MERGE statement (UPSERT)</li>
+                <li>Multi-table INSERT</li>
+                <li>Flashback queries</li>
+                <li>Oracle XML DB functions</li>
+                <li>JSON support in Oracle</li>
+                <li>Oracle Text search</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Application in Migration Projects</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-arrow-left-right"></i> Oracle to PostgreSQL Migration</h4>
+                <p>Successfully migrated 3 enterprise Oracle databases (~800 GB each) to PostgreSQL</p>
+              </div>
+
+              <h4>Migration Challenges Solved:</h4>
+              <ul>
+                <li><strong>CONNECT BY Conversion:</strong> Converted Oracle hierarchical queries to PostgreSQL recursive CTEs</li>
+                <li><strong>Analytical Functions:</strong> Mapped Oracle analytical functions to PostgreSQL window functions</li>
+                <li><strong>PIVOT Operations:</strong> Rewrote PIVOT queries using CASE statements and aggregations</li>
+                <li><strong>Date Functions:</strong> Converted Oracle date arithmetic to PostgreSQL INTERVAL syntax</li>
+                <li><strong>Regular Expressions:</strong> Adapted Oracle regex functions to PostgreSQL equivalents</li>
+                <li><strong>PL/SQL to PL/pgSQL:</strong> Converted 200+ stored procedures</li>
+              </ul>
+
+              <h4>Example Conversion:</h4>
+              <div class="code-block">
+<br>-- Oracle CONNECT BY
+<br>SELECT LEVEL, employee_name
+<br>FROM employees
+<br>START WITH manager_id IS NULL
+<br>CONNECT BY PRIOR employee_id = manager_id;
+<br>
+<br>-- Converted to PostgreSQL Recursive CTE
+<br>WITH RECURSIVE emp_hierarchy AS (
+<br>    SELECT employee_id, employee_name, manager_id, 1 as level
+<br>    FROM employees
+<br>    WHERE manager_id IS NULL
+<br>    UNION ALL
+<br>    SELECT e.employee_id, e.employee_name, e.manager_id, eh.level + 1
+<br>    FROM employees e
+<br>    JOIN emp_hierarchy eh ON e.manager_id = eh.employee_id
+<br>)
+<br>SELECT level, employee_name FROM emp_hierarchy;
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Query Optimization Skills Applied</h3>
+              <ul>
+                <li>Analyzed Oracle execution plans to identify bottlenecks</li>
+                <li>Optimized complex analytical queries reducing execution time by 60%</li>
+                <li>Identified missing indexes through execution plan analysis</li>
+                <li>Rewrote subqueries as joins for better performance</li>
+                <li>Utilized materialized views for frequently accessed aggregations</li>
+                <li>Applied partitioning strategies for large tables</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered advanced Oracle SQL techniques and features</li>
+                <li>Developed expertise in analytical and hierarchical queries</li>
+                <li>Gained ability to optimize complex queries</li>
+                <li>Learned Oracle-specific performance tuning</li>
+                <li>Enhanced skills for database migrations</li>
+                <li>Built foundation for Oracle certification paths</li>
+                <li>Improved understanding of query execution and optimization</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Projects</h3>
+              <ul>
+                <li><strong>Cost Reduction:</strong> Migration from Oracle to PostgreSQL saved 65% in licensing costs</li>
+                <li><strong>Zero Data Loss:</strong> Successful migration with 100% data integrity</li>
+                <li><strong>Performance Improvement:</strong> Achieved 20% better performance post-migration</li>
+                <li><strong>Feature Parity:</strong> Replicated all Oracle functionality in PostgreSQL</li>
+                <li><strong>Knowledge Transfer:</strong> Trained team on Oracle-to-PostgreSQL equivalents</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Cross-Platform SQL Expertise</h3>
+              <p>This certification, combined with PostgreSQL and MySQL expertise, has made me proficient in:</p>
+              <ul>
+                <li>Multi-database platform management</li>
+                <li>Cross-platform SQL query writing</li>
+                <li>Database migration strategies</li>
+                <li>Platform-specific optimization techniques</li>
+                <li>SQL dialect differences and conversions</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
