@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mastering Linux: The Complete Guide - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #ec5252 0%, #a83232 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ec5252;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fef0f0;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #ec5252;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #fdd;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #ec5252;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #ec5252 0%, #a83232 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #ec5252 0%, #a83232 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(236, 82, 82, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fef0f0;
+      border-left: 4px solid #ec5252;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> UDEMY CERTIFICATION
+      </div>
+      <h1>Mastering Linux: The Complete Guide to Becoming a Linux Pro</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by Udemy - OCSALY Academy</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/linux-mastery-cert.jpg" alt="Mastering Linux Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> Udemy
+              </div>
+              <div class="info-item">
+                <strong>Instructor:</strong> OCSALY Academy
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.udemy.com/course/linux-training" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> October 8, 2025
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 5 Hours
+              </div>
+              <div class="info-item">
+                <strong>Certificate:</strong> UC-429c43bb-c70c-428f-9aec-bb2a1466ef22
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Linux Administration & Commands
+              </div>
+              <div class="info-item">
+                <strong>Platform:</strong> Ubuntu, CentOS, RHEL
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                Mastering Linux: The Complete Guide to Becoming a Linux Pro from Udemy provides comprehensive training in Linux system administration, command-line mastery, and server management. This course covers everything from basic Linux concepts to advanced system administration techniques, making it essential for anyone working with Linux servers.
+              </p>
+              <p>
+                As a Database Administrator managing PostgreSQL databases on Linux servers, Linux expertise is fundamental to my daily work. This certification has equipped me with advanced skills in system administration, server configuration, process management, and troubleshooting - all critical for maintaining high-performance database environments.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Linux Fundamentals</div>
+                <div class="skill-tag">Command Line Mastery</div>
+                <div class="skill-tag">File System Management</div>
+                <div class="skill-tag">User Administration</div>
+                <div class="skill-tag">Process Management</div>
+                <div class="skill-tag">Shell Scripting</div>
+                <div class="skill-tag">Package Management</div>
+                <div class="skill-tag">Network Configuration</div>
+                <div class="skill-tag">System Monitoring</div>
+                <div class="skill-tag">Security Hardening</div>
+                <div class="skill-tag">Service Management</div>
+                <div class="skill-tag">Troubleshooting</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Linux Foundations</h4>
+              <ul>
+                <li>Linux history and distributions (Ubuntu, CentOS, RHEL)</li>
+                <li>Understanding the Linux architecture</li>
+                <li>Kernel, shell, and user space</li>
+                <li>Open-source philosophy and licensing</li>
+                <li>Linux vs Unix vs Windows</li>
+                <li>Desktop environments (GNOME, KDE)</li>
+                <li>Virtual console and terminal emulators</li>
+              </ul>
+
+              <h4>2. Essential Linux Commands</h4>
+              <ul>
+                <li>Navigation commands (cd, ls, pwd)</li>
+                <li>File operations (cp, mv, rm, touch, mkdir)</li>
+                <li>Viewing files (cat, less, more, head, tail)</li>
+                <li>Text processing (grep, sed, awk, cut, sort)</li>
+                <li>Finding files (find, locate, which, whereis)</li>
+                <li>Wildcards and regular expressions</li>
+                <li>Command chaining and piping</li>
+                <li>Redirection (>, >>, <, 2>)</li>
+              </ul>
+
+              <div class="code-block">
+<br># Essential file operations
+<br>ls -lah /var/lib/postgresql/
+<br>cd /opt/databases/
+<br>mkdir -p backups/daily
+<br>
+<br># Text processing for logs
+<br>grep "ERROR" /var/log/postgresql/postgresql.log | tail -20
+<br>cat postgresql.conf | grep -v "^#" | grep -v "^$"
+<br>
+<br># Finding database files
+<br>find /var/lib/postgresql -name "*.conf" -type f
+<br>du -sh /var/lib/postgresql/*
+              </div>
+
+              <h4>3. File System and Permissions</h4>
+              <ul>
+                <li>Linux file system hierarchy (FHS)</li>
+                <li>Important directories (/etc, /var, /home, /opt)</li>
+                <li>File types and attributes</li>
+                <li>Permissions (read, write, execute)</li>
+                <li>chmod, chown, chgrp commands</li>
+                <li>Special permissions (SUID, SGID, sticky bit)</li>
+                <li>Access Control Lists (ACLs)</li>
+                <li>Symbolic and hard links</li>
+              </ul>
+
+              <div class="code-block">
+<br># Setting database directory permissions
+<br>chown -R postgres:postgres /var/lib/postgresql/
+<br>chmod 700 /var/lib/postgresql/15/main/
+<br>
+<br># Securing configuration files
+<br>chmod 600 /etc/postgresql/15/main/postgresql.conf
+<br>chown postgres:postgres /etc/postgresql/15/main/*.conf
+<br>
+<br># Check permissions
+<br>ls -la /var/lib/postgresql/
+              </div>
+
+              <h4>4. User and Group Management</h4>
+              <ul>
+                <li>Creating users (useradd, adduser)</li>
+                <li>Modifying users (usermod)</li>
+                <li>Deleting users (userdel)</li>
+                <li>Group management (groupadd, groupmod)</li>
+                <li>Password policies and management</li>
+                <li>sudo and root access</li>
+                <li>/etc/passwd and /etc/shadow files</li>
+                <li>User authentication and PAM</li>
+              </ul>
+
+              <h4>5. Process Management</h4>
+              <ul>
+                <li>Viewing processes (ps, top, htop)</li>
+                <li>Process priorities and nice values</li>
+                <li>Background and foreground jobs</li>
+                <li>Signals (SIGTERM, SIGKILL, SIGHUP)</li>
+                <li>Killing processes (kill, killall, pkill)</li>
+                <li>Process monitoring tools</li>
+                <li>systemd and service management</li>
+                <li>cron jobs and scheduling</li>
+              </ul>
+
+              <div class="code-block">
+<br># Database process monitoring
+<br>ps aux | grep postgres
+<br>top -u postgres
+<br>
+<br># Service management
+<br>systemctl status postgresql
+<br>systemctl restart postgresql
+<br>systemctl enable postgresql
+<br>
+<br># Scheduled backups with cron
+<br>crontab -e
+<br># Daily backup at 2 AM
+<br>0 2 * * * /opt/scripts/backup_db.sh
+              </div>
+
+              <h4>6. Package Management</h4>
+              <ul>
+                <li>APT package manager (Debian/Ubuntu)</li>
+                <li>YUM/DNF package manager (RHEL/CentOS)</li>
+                <li>Installing, updating, removing packages</li>
+                <li>Repository management</li>
+                <li>Package dependencies</li>
+                <li>Compiling from source</li>
+                <li>dpkg and rpm low-level tools</li>
+              </ul>
+
+              <div class="code-block">
+<br># Installing PostgreSQL on Ubuntu
+<br>apt update
+<br>apt install postgresql postgresql-contrib
+<br>
+<br># Installing on CentOS/RHEL
+<br>yum install postgresql-server postgresql-contrib
+<br>
+<br># Adding PostgreSQL repository
+<br>echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list
+              </div>
+
+              <h4>7. Network Configuration</h4>
+              <ul>
+                <li>Network interfaces and ifconfig</li>
+                <li>IP addressing and subnetting</li>
+                <li>DNS configuration (/etc/resolv.conf)</li>
+                <li>Routing tables</li>
+                <li>Firewall configuration (iptables, firewalld)</li>
+                <li>SSH server and client</li>
+                <li>Network troubleshooting (ping, netstat, ss)</li>
+                <li>Port scanning and monitoring</li>
+              </ul>
+
+              <div class="code-block">
+<br># Network troubleshooting
+<br>ss -tulpn | grep 5432  # Check PostgreSQL port
+<br>netstat -an | grep LISTEN
+<br>
+<br># Firewall configuration
+<br>ufw allow 5432/tcp
+<br>ufw enable
+<br>
+<br># SSH to database server
+<br>ssh -i ~/.ssh/id_rsa dbadmin@db-server.com
+              </div>
+
+              <h4>8. System Monitoring and Performance</h4>
+              <ul>
+                <li>System resource monitoring (CPU, RAM, disk)</li>
+                <li>disk usage commands (df, du)</li>
+                <li>Memory analysis (free, vmstat)</li>
+                <li>I/O statistics (iostat, iotop)</li>
+                <li>Log file analysis</li>
+                <li>Performance tuning basics</li>
+                <li>System load understanding</li>
+              </ul>
+
+              <div class="code-block">
+<br># System monitoring for database servers
+<br>free -h
+<br>df -h /var/lib/postgresql
+<br>iostat -x 2 5
+<br>vmstat 1
+<br>
+<br># Monitoring database processes
+<br>top -u postgres
+<br>htop -u postgres
+<br>
+<br># Disk I/O monitoring
+<br>iotop -u postgres
+              </div>
+
+              <h4>9. Shell Scripting Basics</h4>
+              <ul>
+                <li>Bash scripting fundamentals</li>
+                <li>Variables and environment variables</li>
+                <li>Control structures (if, case, loops)</li>
+                <li>Functions and script organization</li>
+                <li>Command-line arguments</li>
+                <li>Error handling and exit codes</li>
+                <li>Automation scripts</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br># Database backup script
+<br>
+<br>DATE=$(date +%Y%m%d)
+<br>BACKUP_DIR="/opt/backups"
+<br>DB_NAME="production_db"
+<br>
+<br>echo "Starting backup of $DB_NAME..."
+<br>
+<br>pg_dump -U postgres $DB_NAME > $BACKUP_DIR/${DB_NAME}_${DATE}.sql
+<br>
+<br>if [ $? -eq 0 ]; then
+<br>    echo "Backup completed successfully"
+<br>    gzip $BACKUP_DIR/${DB_NAME}_${DATE}.sql
+<br>else
+<br>    echo "Backup failed!"
+<br>    exit 1
+<br>fi
+              </div>
+
+              <h4>10. Security and System Hardening</h4>
+              <ul>
+                <li>Security best practices</li>
+                <li>SSH key-based authentication</li>
+                <li>Firewall configuration</li>
+                <li>SELinux and AppArmor</li>
+                <li>Audit logging</li>
+                <li>System updates and patching</li>
+                <li>Security scanning tools</li>
+                <li>Intrusion detection basics</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-server"></i> Linux for Database Servers</h4>
+                <p>Linux mastery is essential for PostgreSQL database administration:</p>
+              </div>
+
+              <h4>Daily Database Server Management:</h4>
+              <ul>
+                <li><strong>Server Configuration:</strong> Managing PostgreSQL installations on Linux servers</li>
+                <li><strong>Performance Monitoring:</strong> Using Linux tools to monitor database server resources</li>
+                <li><strong>Log Analysis:</strong> Analyzing PostgreSQL logs with Linux text processing tools</li>
+                <li><strong>Backup Automation:</strong> Creating shell scripts for automated database backups</li>
+                <li><strong>Security:</strong> Hardening Linux servers hosting database systems</li>
+              </ul>
+
+              <h4>Database Operations:</h4>
+              <ul>
+                <li>Starting, stopping, restarting PostgreSQL services</li>
+                <li>Monitoring database processes and resource usage</li>
+                <li>Managing database file permissions and ownership</li>
+                <li>Configuring network access to databases</li>
+                <li>Troubleshooting connection and performance issues</li>
+              </ul>
+
+              <h4>Automation and Scripting:</h4>
+              <ul>
+                <li>Automated backup and recovery scripts</li>
+                <li>Database health check scripts</li>
+                <li>Automated monitoring and alerting</li>
+                <li>Maintenance task scheduling with cron</li>
+                <li>Database migration automation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Real-World Applications</h3>
+              
+              <h4>Production Environment Management:</h4>
+              <ul>
+                <li>Managing 50+ PostgreSQL databases on Linux servers</li>
+                <li>Automated backup solutions using Linux shell scripts</li>
+                <li>Server resource monitoring and optimization</li>
+                <li>Security configuration and firewall management</li>
+                <li>SSH key management for secure access</li>
+              </ul>
+
+              <h4>System Administration Tasks:</h4>
+              <ul>
+                <li>PostgreSQL installation and configuration on various Linux distributions</li>
+                <li>User and permission management for database access</li>
+                <li>Network configuration for database connectivity</li>
+                <li>Log rotation and management for database logs</li>
+                <li>System performance tuning for database workloads</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered Linux command-line interface and tools</li>
+                <li>Gained expertise in Linux system administration</li>
+                <li>Developed skills in shell scripting and automation</li>
+                <li>Learned system monitoring and performance tuning</li>
+                <li>Understood Linux security and hardening practices</li>
+                <li>Acquired troubleshooting methodology and techniques</li>
+                <li>Built foundation for advanced Linux administration</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on DBA Work</h3>
+              <p>
+                Linux mastery has been transformative for my database administration career:
+              </p>
+              <ul>
+                <li>Improved efficiency in managing database servers</li>
+                <li>Enhanced troubleshooting capabilities for system-level issues</li>
+                <li>Automated routine tasks reducing manual work by 70%</li>
+                <li>Better security posture for database servers</li>
+                <li>Faster incident response and resolution</li>
+                <li>Ability to optimize server performance for database workloads</li>
+                <li>Confidence in managing large-scale Linux database infrastructure</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Continuing Education</h3>
+              <p>Building on this Linux foundation, areas for continued development include:</p>
+              <ul>
+                <li>Advanced Linux system administration and kernel tuning</li>
+                <li>Container technologies (Docker, Kubernetes) for databases</li>
+                <li>Infrastructure as Code (Ansible, Terraform)</li>
+                <li>Advanced shell scripting and automation</li>
+                <li>Linux performance tuning for database workloads</li>
+                <li>High availability clustering and load balancing</li>
+                <li>Cloud Linux platforms (AWS EC2, Azure VMs)</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

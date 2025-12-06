@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Beginning Bash Scripting - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #4EAA25 0%, #3a7d1c 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #4EAA25;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f0f8ed;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #4EAA25;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #dfe;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #4EAA25;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #4EAA25 0%, #3a7d1c 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #4EAA25 0%, #3a7d1c 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(78, 170, 37, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #f0f8ed;
+      border-left: 4px solid #4EAA25;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> UDEMY CERTIFICATION
+      </div>
+      <h1>Beginning Bash Scripting</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by Udemy - Peter A</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/bash-begin-cert.jpg" alt="Beginning Bash Scripting Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> Udemy
+              </div>
+              <div class="info-item">
+                <strong>Instructor:</strong> Peter A
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.udemy.com/course/bash-scripting-on-linux" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> February 4, 2025
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 37 Minutes
+              </div>
+              <div class="info-item">
+                <strong>Certificate:</strong> UC-14683b3e-bc69-4a4a-b901-e3b0f8ec6a0b
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Bash Scripting Basics
+              </div>
+              <div class="info-item">
+                <strong>Platform:</strong> Linux/Unix
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Beginning Bash Scripting certification from Udemy provides foundational training in Bash shell scripting for Linux and Unix systems. This concise course covers essential Bash scripting concepts, syntax, and practical techniques for automating system administration tasks.
+              </p>
+              <p>
+                As a Database Administrator working extensively with Linux servers, Bash scripting is an essential skill for automating database backups, monitoring, maintenance tasks, and system administration. This foundational course provided structured learning of Bash scripting fundamentals that I apply daily in database automation and management.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Bash Fundamentals</div>
+                <div class="skill-tag">Script Creation</div>
+                <div class="skill-tag">Variables</div>
+                <div class="skill-tag">Control Structures</div>
+                <div class="skill-tag">Loops</div>
+                <div class="skill-tag">Functions</div>
+                <div class="skill-tag">Command Substitution</div>
+                <div class="skill-tag">File Operations</div>
+                <div class="skill-tag">Error Handling</div>
+                <div class="skill-tag">Script Debugging</div>
+                <div class="skill-tag">Best Practices</div>
+                <div class="skill-tag">Automation</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Bash Scripting Basics</h4>
+              <ul>
+                <li>What is Bash and shell scripting</li>
+                <li>Creating and running first script</li>
+                <li>Shebang line (#!/bin/bash)</li>
+                <li>Making scripts executable (chmod)</li>
+                <li>Comments in scripts</li>
+                <li>Basic script structure</li>
+                <li>Echo and output</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br># My first Bash script
+<br>
+<br>echo "Hello, Database Administrator!"
+<br>echo "Today is: $(date)"
+<br>echo "Current user: $USER"
+<br>
+<br># Make executable: chmod +x script.sh
+<br># Run: ./script.sh
+              </div>
+
+              <h4>2. Variables and Data Types</h4>
+              <ul>
+                <li>Declaring and using variables</li>
+                <li>Variable naming conventions</li>
+                <li>Reading user input</li>
+                <li>Command-line arguments ($1, $2, $@)</li>
+                <li>Special variables ($?, $$, $!)</li>
+                <li>Environment variables</li>
+                <li>Variable scope</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>
+<br># Variables
+<br>DB_NAME="production_db"
+<br>BACKUP_DIR="/opt/backups"
+<br>DATE=$(date +%Y%m%d)
+<br>
+<br># User input
+<br>read -p "Enter database name: " DB_NAME
+<br>
+<br># Command-line arguments
+<br>echo "Script name: $0"
+<br>echo "First argument: $1"
+<br>echo "All arguments: $@"
+<br>echo "Number of arguments: $#"
+<br>
+<br># Special variables
+<br>echo "Exit status: $?"
+<br>echo "Process ID: $$"
+              </div>
+
+              <h4>3. Control Structures</h4>
+              <ul>
+                <li>if-then-else statements</li>
+                <li>elif for multiple conditions</li>
+                <li>Nested if statements</li>
+                <li>case statements</li>
+                <li>Test operators ([ ] and [[ ]])</li>
+                <li>Comparison operators</li>
+                <li>Logical operators (&&, ||)</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>
+<br># If statement
+<br>if [ -f "/var/lib/postgresql/data/postgresql.conf" ]; then
+<br>    echo "PostgreSQL config found"
+<br>else
+<br>    echo "Config not found"
+<br>    exit 1
+<br>fi
+<br>
+<br># If-elif-else
+<br>if [ $# -eq 0 ]; then
+<br>    echo "No arguments provided"
+<br>elif [ $# -eq 1 ]; then
+<br>    echo "One argument: $1"
+<br>else
+<br>    echo "Multiple arguments: $@"
+<br>fi
+<br>
+<br># Case statement
+<br>case "$1" in
+<br>    start)
+<br>        echo "Starting database..."
+<br>        ;;
+<br>    stop)
+<br>        echo "Stopping database..."
+<br>        ;;
+<br>    restart)
+<br>        echo "Restarting database..."
+<br>        ;;
+<br>    *)
+<br>        echo "Usage: $0 {start|stop|restart}"
+<br>        exit 1
+<br>        ;;
+<br>esac
+              </div>
+
+              <h4>4. Loops</h4>
+              <ul>
+                <li>for loops</li>
+                <li>while loops</li>
+                <li>until loops</li>
+                <li>Loop control (break, continue)</li>
+                <li>Looping through files</li>
+                <li>Reading file line by line</li>
+                <li>Infinite loops</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>
+<br># For loop - iterate through databases
+<br>for db in production staging development; do
+<br>    echo "Backing up $db..."
+<br>    pg_dump $db > /backups/${db}_backup.sql
+<br>done
+<br>
+<br># While loop - monitor process
+<br>counter=1
+<br>while [ $counter -le 5 ]; do
+<br>    echo "Check #$counter"
+<br>    ps aux | grep postgres
+<br>    sleep 5
+<br>    ((counter++))
+<br>done
+<br>
+<br># Read file line by line
+<br>while IFS= read -r line; do
+<br>    echo "Processing: $line"
+<br>done < database_list.txt
+              </div>
+
+              <h4>5. Functions</h4>
+              <ul>
+                <li>Defining functions</li>
+                <li>Calling functions</li>
+                <li>Function parameters</li>
+                <li>Return values</li>
+                <li>Local variables</li>
+                <li>Function organization</li>
+                <li>Reusable code</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>
+<br># Function definition
+<br>backup_database() {
+<br>    local db_name=$1
+<br>    local backup_dir=$2
+<br>    local date=$(date +%Y%m%d_%H%M%S)
+<br>    
+<br>    echo "Starting backup of $db_name..."
+<br>    pg_dump $db_name > ${backup_dir}/${db_name}_${date}.sql
+<br>    
+<br>    if [ $? -eq 0 ]; then
+<br>        echo "Backup successful"
+<br>        return 0
+<br>    else
+<br>        echo "Backup failed"
+<br>        return 1
+<br>    fi
+<br>}
+<br>
+<br># Function call
+<br>backup_database "production_db" "/opt/backups"
+<br>
+<br>if [ $? -eq 0 ]; then
+<br>    echo "All done!"
+<br>fi
+              </div>
+
+              <h4>6. File Operations</h4>
+              <ul>
+                <li>File testing operators</li>
+                <li>Reading files</li>
+                <li>Writing to files</li>
+                <li>Appending to files</li>
+                <li>File permissions checking</li>
+                <li>Directory operations</li>
+                <li>File manipulation</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>
+<br>LOG_FILE="/var/log/database_backup.log"
+<br>
+<br># File testing
+<br>if [ -f "$LOG_FILE" ]; then
+<br>    echo "Log file exists"
+<br>fi
+<br>
+<br>if [ -w "$LOG_FILE" ]; then
+<br>    echo "Log file is writable"
+<br>fi
+<br>
+<br># Writing to file
+<br>echo "Backup started at $(date)" > $LOG_FILE
+<br>
+<br># Appending to file
+<br>echo "Processing database..." >> $LOG_FILE
+<br>
+<br># Check if directory exists
+<br>if [ ! -d "/opt/backups" ]; then
+<br>    mkdir -p /opt/backups
+<br>fi
+              </div>
+
+              <h4>7. Command Substitution and Pipelines</h4>
+              <ul>
+                <li>Command substitution $()</li>
+                <li>Backticks (legacy)</li>
+                <li>Piping commands</li>
+                <li>Redirecting output</li>
+                <li>Error redirection</li>
+                <li>Here documents</li>
+                <li>Process substitution</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>
+<br># Command substitution
+<br>CURRENT_DATE=$(date +%Y-%m-%d)
+<br>DB_SIZE=$(du -sh /var/lib/postgresql | cut -f1)
+<br>DB_COUNT=$(ls -1 /var/lib/postgresql/15/main | wc -l)
+<br>
+<br># Piping
+<br>ps aux | grep postgres | grep -v grep | wc -l
+<br>
+<br># Redirection
+<br>pg_dump mydb > backup.sql 2> errors.log
+<br>
+<br># Here document
+<br>psql -U postgres <<EOF
+<br>SELECT version();
+<br>SELECT current_database();
+<br>EOF
+              </div>
+
+              <h4>8. Error Handling</h4>
+              <ul>
+                <li>Exit codes and status</li>
+                <li>Error checking</li>
+                <li>set -e for exit on error</li>
+                <li>set -u for undefined variables</li>
+                <li>Trap signals</li>
+                <li>Error logging</li>
+                <li>Graceful error handling</li>
+              </ul>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br>set -e  # Exit on error
+<br>set -u  # Exit on undefined variable
+<br>
+<br># Error handling function
+<br>handle_error() {
+<br>    echo "Error occurred in script at line $1"
+<br>    echo "Cleaning up..."
+<br>    # Cleanup code here
+<br>    exit 1
+<br>}
+<br>
+<br># Trap errors
+<br>trap 'handle_error $LINENO' ERR
+<br>
+<br># Check command success
+<br>if ! pg_dump mydb > backup.sql; then
+<br>    echo "Backup failed!"
+<br>    exit 1
+<br>fi
+<br>
+<br># Using || for error handling
+<br>pg_dump mydb > backup.sql || {
+<br>    echo "Backup failed"
+<br>    exit 1
+<br>}
+              </div>
+
+              <h4>9. Script Debugging</h4>
+              <ul>
+                <li>set -x for debugging</li>
+                <li>Verbose output</li>
+                <li>Debug functions</li>
+                <li>Testing scripts</li>
+                <li>ShellCheck tool</li>
+                <li>Common debugging techniques</li>
+                <li>Best practices for maintainable scripts</li>
+              </ul>
+
+              <h4>10. Best Practices</h4>
+              <ul>
+                <li>Script organization and structure</li>
+                <li>Commenting and documentation</li>
+                <li>Variable naming conventions</li>
+                <li>Quoting variables properly</li>
+                <li>Using functions for reusability</li>
+                <li>Error handling patterns</li>
+                <li>Security considerations</li>
+                <li>Making scripts portable</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-terminal"></i> Bash for Database Automation</h4>
+                <p>Bash scripting is fundamental for DBA automation and efficiency:</p>
+              </div>
+
+              <h4>Daily Automation Tasks:</h4>
+              <ul>
+                <li><strong>Database Backups:</strong> Automated backup scripts running via cron</li>
+                <li><strong>Health Monitoring:</strong> Scripts to check database status and alerts</li>
+                <li><strong>Log Management:</strong> Automated log rotation and analysis</li>
+                <li><strong>Maintenance Tasks:</strong> Vacuum, analyze, and optimization scripts</li>
+                <li><strong>Deployment:</strong> Database deployment and migration automation</li>
+              </ul>
+
+              <h4>Real-World DBA Scripts:</h4>
+              <ul>
+                <li>Automated PostgreSQL backup script with compression and rotation</li>
+                <li>Database health check script reporting metrics</li>
+                <li>Log analyzer for error detection and alerting</li>
+                <li>Automated database restart with validation</li>
+                <li>Bulk database operation scripts</li>
+                <li>Database migration automation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Implementations</h3>
+              
+              <h4>Database Backup Script Example:</h4>
+              <ul>
+                <li>Automated daily backups of all PostgreSQL databases</li>
+                <li>Compression and retention policy implementation</li>
+                <li>Email notifications on success/failure</li>
+                <li>Error logging and handling</li>
+                <li>Backup verification and testing</li>
+              </ul>
+
+              <h4>Monitoring Scripts:</h4>
+              <ul>
+                <li>Database connection monitoring</li>
+                <li>Disk space alerting for database storage</li>
+                <li>Long-running query detection</li>
+                <li>Replication lag monitoring</li>
+                <li>Performance metrics collection</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Gained foundational Bash scripting skills</li>
+                <li>Learned script structure and best practices</li>
+                <li>Mastered control structures and loops</li>
+                <li>Developed automation capabilities</li>
+                <li>Acquired error handling techniques</li>
+                <li>Built debugging and troubleshooting skills</li>
+                <li>Created foundation for advanced scripting</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on DBA Productivity</h3>
+              <p>
+                Bash scripting has dramatically improved my database administration efficiency:
+              </p>
+              <ul>
+                <li>Automated 90% of routine database maintenance tasks</li>
+                <li>Reduced backup time and manual intervention</li>
+                <li>Improved monitoring coverage and response time</li>
+                <li>Eliminated manual errors in repetitive tasks</li>
+                <li>Enabled 24/7 automated database management</li>
+                <li>Freed up time for strategic database improvements</li>
+                <li>Created reusable automation library</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to expand Bash scripting capabilities for:</p>
+              <ul>
+                <li>More sophisticated database automation workflows</li>
+                <li>Integration with monitoring and alerting systems</li>
+                <li>Advanced error handling and recovery</li>
+                <li>Database orchestration and coordination</li>
+                <li>CI/CD pipeline integration for databases</li>
+                <li>Complex multi-database operations</li>
+                <li>Infrastructure as Code for database environments</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

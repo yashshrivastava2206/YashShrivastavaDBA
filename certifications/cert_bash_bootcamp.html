@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Bash Shell Scripting Bootcamp: 10 Project-Based Learnings - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #2c5aa0 0%, #1d3f6f 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #2c5aa0;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #e8f0f8;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #2c5aa0;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #d1e0ef;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #2c5aa0;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #2c5aa0 0%, #1d3f6f 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .project-box {
+      background: #f8f9fa;
+      border: 2px solid #2c5aa0;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+
+    .project-box h5 {
+      color: #2c5aa0;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #2c5aa0 0%, #1d3f6f 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(44, 90, 160, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #e8f0f8;
+      border-left: 4px solid #2c5aa0;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> UDEMY CERTIFICATION
+      </div>
+      <h1>Bash Shell Scripting Bootcamp: 10 Project-Based Learnings</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by Udemy - Vivek Pandit</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/bash-bootcamp-cert.jpg" alt="Bash Bootcamp Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> Udemy
+              </div>
+              <div class="info-item">
+                <strong>Instructor:</strong> Vivek Pandit
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.udemy.com/course/bash-shell-scripting-bootcamp-10-project-based-learning" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> April 17, 2025
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 4.5 Hours
+              </div>
+              <div class="info-item">
+                <strong>Certificate:</strong> UC-162f3df7-b8ee-4074-ba2e-5a3b0B3a6f16
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Project-Based Bash Scripting
+              </div>
+              <div class="info-item">
+                <strong>Approach:</strong> 10 Real-World Projects
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Bash Shell Scripting Bootcamp: 10 Project-Based Learnings from Udemy provides hands-on, practical training in Bash scripting through building 10 real-world projects. This bootcamp-style course emphasizes learning by doing, covering advanced scripting techniques, automation patterns, and professional script development practices.
+              </p>
+              <p>
+                As a Database Administrator, this project-based approach to Bash scripting has been invaluable for developing practical automation solutions. Each project mirrors real-world DBA scenarios, from automated backups to system monitoring, providing directly applicable skills for database infrastructure management and automation.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Advanced Bash</div>
+                <div class="skill-tag">Project Development</div>
+                <div class="skill-tag">System Automation</div>
+                <div class="skill-tag">File Processing</div>
+                <div class="skill-tag">Log Analysis</div>
+                <div class="skill-tag">Backup Solutions</div>
+                <div class="skill-tag">Monitoring Scripts</div>
+                <div class="skill-tag">API Integration</div>
+                <div class="skill-tag">Error Recovery</div>
+                <div class="skill-tag">Performance Tuning</div>
+                <div class="skill-tag">Production Scripts</div>
+                <div class="skill-tag">Script Testing</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>10 Real-World Projects Completed</h3>
+              
+              <div class="project-box">
+                <h5>Project 1: Automated Backup System</h5>
+                <p>Built comprehensive backup solution with:</p>
+                <ul>
+                  <li>Automated file and directory backups</li>
+                  <li>Compression and encryption</li>
+                  <li>Retention policy implementation</li>
+                  <li>Email notifications on success/failure</li>
+                  <li>Logging and error handling</li>
+                  <li>Backup verification and testing</li>
+                </ul>
+              </div>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br># Database Backup Automation Script
+<br>
+<br>BACKUP_DIR="/opt/backups"
+<br>DB_LIST=("production_db" "staging_db" "analytics_db")
+<br>DATE=$(date +%Y%m%d_%H%M%S)
+<br>RETENTION_DAYS=7
+<br>
+<br>for db in "${DB_LIST[@]}"; do
+<br>    echo "Backing up $db..."
+<br>    pg_dump $db | gzip > ${BACKUP_DIR}/${db}_${DATE}.sql.gz
+<br>    
+<br>    if [ ${PIPESTATUS[0]} -eq 0 ]; then
+<br>        echo "✓ $db backup successful"
+<br>    else
+<br>        echo "✗ $db backup failed" | mail -s "Backup Failed" admin@example.com
+<br>    fi
+<br>done
+<br>
+<br># Clean old backups
+<br>find $BACKUP_DIR -name "*.sql.gz" -mtime +$RETENTION_DAYS -delete
+              </div>
+
+              <div class="project-box">
+                <h5>Project 2: System Health Monitor</h5>
+                <p>Created comprehensive monitoring script for:</p>
+                <ul>
+                  <li>CPU and memory usage tracking</li>
+                  <li>Disk space monitoring with alerts</li>
+                  <li>Database connection status</li>
+                  <li>Process monitoring</li>
+                  <li>Alert thresholds and notifications</li>
+                  <li>Dashboard HTML report generation</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 3: Log Analyzer and Parser</h5>
+                <p>Developed log analysis tool featuring:</p>
+                <ul>
+                  <li>Pattern matching and extraction</li>
+                  <li>Error detection and categorization</li>
+                  <li>Statistical analysis of logs</li>
+                  <li>Report generation with metrics</li>
+                  <li>Automated alerting on critical errors</li>
+                  <li>Historical trend analysis</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 4: User Management System</h5>
+                <p>Built user administration automation:</p>
+                <ul>
+                  <li>Bulk user creation from CSV</li>
+                  <li>Password generation and management</li>
+                  <li>Group membership assignment</li>
+                  <li>User account auditing</li>
+                  <li>Automated user provisioning</li>
+                  <li>Compliance reporting</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 5: File Synchronization Tool</h5>
+                <p>Created file sync and transfer solution:</p>
+                <ul>
+                  <li>Directory synchronization</li>
+                  <li>Incremental file transfers</li>
+                  <li>Conflict detection and resolution</li>
+                  <li>Bandwidth throttling</li>
+                  <li>Remote server synchronization</li>
+                  <li>Sync verification and validation</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 6: Database Administration Toolkit</h5>
+                <p>Comprehensive DBA automation suite:</p>
+                <ul>
+                  <li>Database health checks</li>
+                  <li>Performance metrics collection</li>
+                  <li>Query performance analysis</li>
+                  <li>Index optimization recommendations</li>
+                  <li>Connection pool monitoring</li>
+                  <li>Automated maintenance tasks</li>
+                </ul>
+              </div>
+
+              <div class="code-block">
+<br>#!/bin/bash
+<br># Database Health Check Script
+<br>
+<br>check_database_connections() {
+<br>    local max_conn=$(psql -U postgres -t -c "SHOW max_connections;" | xargs)
+<br>    local current=$(psql -U postgres -t -c "SELECT count(*) FROM pg_stat_activity;" | xargs)
+<br>    local percent=$((current * 100 / max_conn))
+<br>    
+<br>    echo "Connections: $current / $max_conn ($percent%)"
+<br>    
+<br>    if [ $percent -gt 80 ]; then
+<br>        echo "WARNING: High connection usage!" | mail -s "DB Alert" dba@example.com
+<br>    fi
+<br>}
+<br>
+<br>check_long_running_queries() {
+<br>    psql -U postgres -c "
+<br>        SELECT pid, now() - query_start as duration, query 
+<br>        FROM pg_stat_activity 
+<br>        WHERE state = 'active' 
+<br>        AND now() - query_start > interval '5 minutes';"
+<br>}
+<br>
+<br>check_database_size() {
+<br>    psql -U postgres -c "
+<br>        SELECT datname, pg_size_pretty(pg_database_size(datname))
+<br>        FROM pg_database ORDER BY pg_database_size(datname) DESC;"
+<br>}
+              </div>
+
+              <div class="project-box">
+                <h5>Project 7: Network Service Monitor</h5>
+                <p>Network monitoring and alerting system:</p>
+                <ul>
+                  <li>Port availability checking</li>
+                  <li>Service health monitoring</li>
+                  <li>Response time measurement</li>
+                  <li>Automatic service restart</li>
+                  <li>Alert escalation</li>
+                  <li>Uptime tracking and reporting</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 8: Automated Deployment Pipeline</h5>
+                <p>CI/CD automation for deployments:</p>
+                <ul>
+                  <li>Pre-deployment validation</li>
+                  <li>Code deployment automation</li>
+                  <li>Database migration execution</li>
+                  <li>Rollback capabilities</li>
+                  <li>Post-deployment testing</li>
+                  <li>Deployment logging and audit</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 9: Report Generator</h5>
+                <p>Automated reporting system with:</p>
+                <ul>
+                  <li>Data collection from multiple sources</li>
+                  <li>Report formatting (HTML, PDF, CSV)</li>
+                  <li>Scheduled report generation</li>
+                  <li>Email distribution</li>
+                  <li>Chart and graph generation</li>
+                  <li>Executive dashboards</li>
+                </ul>
+              </div>
+
+              <div class="project-box">
+                <h5>Project 10: Infrastructure Automation Suite</h5>
+                <p>Complete infrastructure automation:</p>
+                <ul>
+                  <li>Server provisioning automation</li>
+                  <li>Configuration management</li>
+                  <li>Service orchestration</li>
+                  <li>Disaster recovery automation</li>
+                  <li>Compliance checking</li>
+                  <li>Infrastructure as Code patterns</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Advanced Techniques Learned</h3>
+              
+              <h4>1. Advanced Error Handling</h4>
+              <ul>
+                <li>Comprehensive error detection</li>
+                <li>Graceful error recovery</li>
+                <li>Logging and alerting patterns</li>
+                <li>Transaction rollback handling</li>
+                <li>Error propagation strategies</li>
+              </ul>
+
+              <h4>2. Performance Optimization</h4>
+              <ul>
+                <li>Parallel processing techniques</li>
+                <li>Background job management</li>
+                <li>Resource usage optimization</li>
+                <li>Caching strategies</li>
+                <li>Efficient file processing</li>
+              </ul>
+
+              <h4>3. Security Best Practices</h4>
+              <ul>
+                <li>Secure credential management</li>
+                <li>Input validation and sanitization</li>
+                <li>Privilege escalation handling</li>
+                <li>Audit logging</li>
+                <li>Security hardening patterns</li>
+              </ul>
+
+              <h4>4. Production-Ready Scripts</h4>
+              <ul>
+                <li>Professional code organization</li>
+                <li>Configuration management</li>
+                <li>Documentation standards</li>
+                <li>Testing and validation</li>
+                <li>Maintainability practices</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-gear-fill"></i> Project-Based Skills for DBA Work</h4>
+                <p>Each project directly applies to database administration scenarios:</p>
+              </div>
+
+              <h4>Database Automation Projects:</h4>
+              <ul>
+                <li><strong>Backup Automation:</strong> Applied to PostgreSQL backup solutions with retention</li>
+                <li><strong>Health Monitoring:</strong> Adapted for database performance monitoring</li>
+                <li><strong>Log Analysis:</strong> Used for PostgreSQL log analysis and error detection</li>
+                <li><strong>DBA Toolkit:</strong> Created comprehensive database management suite</li>
+                <li><strong>Deployment Pipeline:</strong> Automated database migration deployments</li>
+              </ul>
+
+              <h4>Real Production Implementations:</h4>
+              <ul>
+                <li>Automated backup system for 50+ databases</li>
+                <li>Real-time database health monitoring dashboard</li>
+                <li>Log analyzer detecting anomalies automatically</li>
+                <li>Automated database provisioning for new clients</li>
+                <li>Performance monitoring with threshold alerts</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Learning Outcomes</h3>
+              <ul>
+                <li>Mastered project-based Bash script development</li>
+                <li>Gained hands-on experience with real-world scenarios</li>
+                <li>Learned production-quality scripting practices</li>
+                <li>Developed complex automation solutions</li>
+                <li>Built reusable script libraries and frameworks</li>
+                <li>Enhanced troubleshooting and debugging skills</li>
+                <li>Acquired professional script development workflow</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Database Administration</h3>
+              <p>
+                This project-based bootcamp has transformed my DBA automation capabilities:
+              </p>
+              <ul>
+                <li>Built comprehensive automation suite for database operations</li>
+                <li>Reduced manual intervention in database tasks by 85%</li>
+                <li>Improved database reliability through automated monitoring</li>
+                <li>Accelerated incident response with automated alerts</li>
+                <li>Enhanced disaster recovery capabilities</li>
+                <li>Created reusable automation framework for team</li>
+                <li>Established best practices for script development</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Portfolio of Automation Scripts</h3>
+              <p>Developed comprehensive script library including:</p>
+              <ul>
+                <li>Database backup and recovery automation</li>
+                <li>Performance monitoring and alerting</li>
+                <li>Log analysis and anomaly detection</li>
+                <li>Automated maintenance task scheduling</li>
+                <li>Database provisioning and configuration</li>
+                <li>Migration and deployment automation</li>
+                <li>Health check and diagnostic tools</li>
+                <li>Reporting and documentation generation</li>
+                <li>Disaster recovery orchestration</li>
+                <li>Compliance and audit automation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Continuing to Build</h3>
+              <p>Leveraging project-based skills for:</p>
+              <ul>
+                <li>Expanding automation framework with new capabilities</li>
+                <li>Integrating with cloud platforms (AWS, Azure)</li>
+                <li>Building self-healing database systems</li>
+                <li>Implementing AI-powered monitoring</li>
+                <li>Creating advanced orchestration workflows</li>
+                <li>Developing team collaboration tools</li>
+                <li>Contributing to open-source database tools</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

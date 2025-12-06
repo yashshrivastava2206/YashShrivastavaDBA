@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Level Up: C Programming - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #283593 0%, #1a237e 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #283593;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #e8eaf6;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #283593;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #c5cae9;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #283593;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #283593 0%, #1a237e 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #283593 0%, #1a237e 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(40, 53, 147, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #e8eaf6;
+      border-left: 4px solid #283593;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Level Up: C Programming</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/c-cert.jpg" alt="Level Up C Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/level-up-c" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 2+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Intermediate to Advanced
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Advanced C Programming
+              </div>
+              <div class="info-item">
+                <strong>Concepts:</strong> Pointers, Memory, Data Structures
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Level Up: C Programming certification from LinkedIn Learning provides advanced training in C programming through practical challenges and exercises. This course focuses on mastering complex C concepts including pointers, memory management, data structures, and advanced programming techniques.
+              </p>
+              <p>
+                As a Database Administrator working with PostgreSQL and other database systems written in C, understanding low-level programming concepts is valuable for comprehending database internals, optimizing performance, writing custom extensions, and debugging complex issues. This knowledge provides insights into how databases work at the system level.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Advanced Pointers</div>
+                <div class="skill-tag">Memory Management</div>
+                <div class="skill-tag">Dynamic Allocation</div>
+                <div class="skill-tag">Data Structures</div>
+                <div class="skill-tag">File I/O</div>
+                <div class="skill-tag">String Manipulation</div>
+                <div class="skill-tag">Bit Operations</div>
+                <div class="skill-tag">Function Pointers</div>
+                <div class="skill-tag">Linked Lists</div>
+                <div class="skill-tag">Debugging</div>
+                <div class="skill-tag">Performance Optimization</div>
+                <div class="skill-tag">System Programming</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Advanced Pointer Techniques</h4>
+              <ul>
+                <li>Pointer arithmetic and manipulation</li>
+                <li>Double pointers and multi-level indirection</li>
+                <li>Pointer to functions</li>
+                <li>Void pointers and generic programming</li>
+                <li>Constant pointers and pointer constants</li>
+                <li>Array-pointer equivalence</li>
+                <li>Common pointer pitfalls and solutions</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Function pointer example
+<br>typedef int (*operation)(int, int);
+<br>
+<br>int add(int a, int b) { return a + b; }
+<br>int subtract(int a, int b) { return a - b; }
+<br>
+<br>int calculate(int x, int y, operation op) {
+<br>    return op(x, y);
+<br>}
+<br>
+<br>int main() {
+<br>    int result = calculate(10, 5, add);
+<br>    printf("Result: %d\n", result);
+<br>    return 0;
+<br>}
+              </div>
+
+              <h4>2. Dynamic Memory Management</h4>
+              <ul>
+                <li>malloc, calloc, realloc usage</li>
+                <li>Memory leak prevention</li>
+                <li>Proper memory cleanup with free()</li>
+                <li>Memory allocation strategies</li>
+                <li>Debugging memory issues with valgrind</li>
+                <li>Custom memory allocators</li>
+                <li>Memory pool techniques</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Dynamic array with realloc
+<br>int *create_dynamic_array(size_t size) {
+<br>    int *arr = (int*)malloc(size * sizeof(int));
+<br>    if (!arr) {
+<br>        fprintf(stderr, "Memory allocation failed\n");
+<br>        return NULL;
+<br>    }
+<br>    return arr;
+<br>}
+<br>
+<br>int *resize_array(int *arr, size_t new_size) {
+<br>    int *new_arr = (int*)realloc(arr, new_size * sizeof(int));
+<br>    if (!new_arr) {
+<br>        free(arr);
+<br>        return NULL;
+<br>    }
+<br>    return new_arr;
+<br>}
+              </div>
+
+              <h4>3. Data Structures Implementation</h4>
+              <ul>
+                <li>Linked lists (singly and doubly)</li>
+                <li>Stacks and queues</li>
+                <li>Binary trees and traversal</li>
+                <li>Hash tables implementation</li>
+                <li>Dynamic arrays</li>
+                <li>Graph representations</li>
+                <li>Custom data structure design</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Linked list node structure
+<br>typedef struct Node {
+<br>    int data;
+<br>    struct Node *next;
+<br>} Node;
+<br>
+<br>// Insert at beginning
+<br>Node* insert_front(Node *head, int value) {
+<br>    Node *new_node = (Node*)malloc(sizeof(Node));
+<br>    new_node->data = value;
+<br>    new_node->next = head;
+<br>    return new_node;
+<br>}
+<br>
+<br>// Free entire list
+<br>void free_list(Node *head) {
+<br>    Node *temp;
+<br>    while (head) {
+<br>        temp = head;
+<br>        head = head->next;
+<br>        free(temp);
+<br>    }
+<br>}
+              </div>
+
+              <h4>4. String Manipulation</h4>
+              <ul>
+                <li>Advanced string operations</li>
+                <li>String parsing and tokenization</li>
+                <li>Dynamic string handling</li>
+                <li>String comparison and searching</li>
+                <li>Regular expression basics</li>
+                <li>Buffer overflow prevention</li>
+                <li>Safe string functions (strncpy, snprintf)</li>
+              </ul>
+
+              <h4>5. File I/O Operations</h4>
+              <ul>
+                <li>Text and binary file handling</li>
+                <li>Random access with fseek</li>
+                <li>Buffered vs unbuffered I/O</li>
+                <li>Error handling in file operations</li>
+                <li>Working with large files</li>
+                <li>File locking mechanisms</li>
+                <li>Directory operations</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Binary file operations
+<br>typedef struct {
+<br>    int id;
+<br>    char name[50];
+<br>    double value;
+<br>} Record;
+<br>
+<br>void write_record(FILE *fp, Record *rec) {
+<br>    fwrite(rec, sizeof(Record), 1, fp);
+<br>}
+<br>
+<br>int read_record(FILE *fp, Record *rec) {
+<br>    return fread(rec, sizeof(Record), 1, fp);
+<br>}
+              </div>
+
+              <h4>6. Bit Manipulation</h4>
+              <ul>
+                <li>Bitwise operators (AND, OR, XOR, NOT)</li>
+                <li>Bit shifting operations</li>
+                <li>Setting, clearing, and toggling bits</li>
+                <li>Bit masks and flags</li>
+                <li>Packing multiple values in bits</li>
+                <li>Endianness considerations</li>
+                <li>Performance optimization with bits</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Bit manipulation macros
+<br>#define SET_BIT(num, pos)    ((num) |= (1 << (pos)))
+<br>#define CLEAR_BIT(num, pos)  ((num) &= ~(1 << (pos)))
+<br>#define TOGGLE_BIT(num, pos) ((num) ^= (1 << (pos)))
+<br>#define CHECK_BIT(num, pos)  ((num) & (1 << (pos)))
+<br>
+<br>// Example: Using bits as flags
+<br>enum Permissions {
+<br>    READ    = 1 << 0,  // 0001
+<br>    WRITE   = 1 << 1,  // 0010
+<br>    EXECUTE = 1 << 2,  // 0100
+<br>    DELETE  = 1 << 3   // 1000
+<br>};
+              </div>
+
+              <h4>7. Advanced Functions</h4>
+              <ul>
+                <li>Function pointers and callbacks</li>
+                <li>Variadic functions (va_list)</li>
+                <li>Recursion techniques</li>
+                <li>Inline functions</li>
+                <li>Static functions and variables</li>
+                <li>Function optimization</li>
+                <li>Tail recursion</li>
+              </ul>
+
+              <h4>8. Structures and Unions</h4>
+              <ul>
+                <li>Complex structure design</li>
+                <li>Nested structures</li>
+                <li>Structure padding and alignment</li>
+                <li>Unions for memory efficiency</li>
+                <li>Bit fields in structures</li>
+                <li>Self-referential structures</li>
+                <li>Structure pointers and arrays</li>
+              </ul>
+
+              <h4>9. Preprocessor Directives</h4>
+              <ul>
+                <li>Macro definitions and usage</li>
+                <li>Conditional compilation (#ifdef, #ifndef)</li>
+                <li>Header guards</li>
+                <li>Function-like macros</li>
+                <li>Stringification and token pasting</li>
+                <li>Predefined macros</li>
+                <li>Include file management</li>
+              </ul>
+
+              <h4>10. Debugging and Optimization</h4>
+              <ul>
+                <li>Using GDB debugger effectively</li>
+                <li>Valgrind for memory leak detection</li>
+                <li>Profiling tools (gprof)</li>
+                <li>Common C pitfalls and bugs</li>
+                <li>Code optimization techniques</li>
+                <li>Compiler optimization flags</li>
+                <li>Writing maintainable C code</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Relevance to Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-gear"></i> Understanding Database Internals</h4>
+                <p>C programming knowledge provides insights into database systems:</p>
+              </div>
+
+              <h4>PostgreSQL Internals:</h4>
+              <ul>
+                <li><strong>Source Code Understanding:</strong> PostgreSQL is written in C - understanding C helps read and comprehend source code</li>
+                <li><strong>Memory Management:</strong> Database memory allocation strategies mirror C techniques</li>
+                <li><strong>Data Structures:</strong> B-trees, hash tables in databases use similar C implementations</li>
+                <li><strong>Performance:</strong> Understanding low-level operations helps optimize database performance</li>
+                <li><strong>Extensions:</strong> PostgreSQL extensions are written in C</li>
+              </ul>
+
+              <h4>Custom Extensions and Tools:</h4>
+              <ul>
+                <li>Writing PostgreSQL C extensions for custom functionality</li>
+                <li>Creating utility tools for database management</li>
+                <li>Building high-performance data processing programs</li>
+                <li>Developing custom backup and recovery tools</li>
+                <li>Interfacing with database APIs at system level</li>
+              </ul>
+
+              <h4>Performance Understanding:</h4>
+              <ul>
+                <li>Memory allocation impacts on database performance</li>
+                <li>Pointer operations in database index structures</li>
+                <li>File I/O efficiency in database storage</li>
+                <li>Bit manipulation in database compression</li>
+                <li>System-level optimization opportunities</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Applications</h3>
+              
+              <h4>Database Tools Development:</h4>
+              <ul>
+                <li>Built custom log parsing utilities in C</li>
+                <li>Created performance monitoring tools</li>
+                <li>Developed data validation programs</li>
+                <li>Implemented backup verification utilities</li>
+                <li>Wrote efficient data transformation scripts</li>
+              </ul>
+
+              <h4>Problem-Solving Exercises:</h4>
+              <ul>
+                <li>Implemented various data structures from scratch</li>
+                <li>Solved memory management challenges</li>
+                <li>Optimized algorithms for performance</li>
+                <li>Debugged complex pointer issues</li>
+                <li>Created reusable code libraries</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Concepts Mastered</h3>
+              <ul>
+                <li><strong>Memory Safety:</strong> Proper allocation and deallocation preventing leaks</li>
+                <li><strong>Pointer Mastery:</strong> Confident use of complex pointer operations</li>
+                <li><strong>Data Structure Design:</strong> Creating efficient, scalable structures</li>
+                <li><strong>Performance Optimization:</strong> Writing fast, efficient C code</li>
+                <li><strong>Debugging Skills:</strong> Identifying and fixing low-level bugs</li>
+                <li><strong>System Understanding:</strong> How programs interact with operating systems</li>
+                <li><strong>Best Practices:</strong> Writing maintainable, robust C code</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Advanced proficiency in C programming</li>
+                <li>Strong understanding of memory management</li>
+                <li>Ability to implement complex data structures</li>
+                <li>Skills in debugging and optimization</li>
+                <li>Knowledge of system-level programming</li>
+                <li>Expertise in pointer manipulation</li>
+                <li>Foundation for systems programming</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Connection to Database Work</h3>
+              <p>
+                C programming skills enhance database administration capabilities:
+              </p>
+              <ul>
+                <li>Better understanding of database internal operations</li>
+                <li>Ability to read and understand PostgreSQL source code</li>
+                <li>Skills to write custom database extensions</li>
+                <li>Enhanced troubleshooting of low-level database issues</li>
+                <li>Improved performance optimization insights</li>
+                <li>Capability to build custom database tools</li>
+                <li>Deeper comprehension of database architecture</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to apply C programming knowledge to:</p>
+              <ul>
+                <li>Developing PostgreSQL extensions for custom functionality</li>
+                <li>Contributing to open-source database projects</li>
+                <li>Building high-performance database utilities</li>
+                <li>Creating custom monitoring and diagnostic tools</li>
+                <li>Optimizing database-related system operations</li>
+                <li>Understanding and troubleshooting database internals</li>
+                <li>Implementing efficient data processing solutions</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

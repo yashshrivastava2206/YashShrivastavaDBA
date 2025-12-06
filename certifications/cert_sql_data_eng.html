@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SQL for Data Engineers: Designing and Building Data Pipelines - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #ff6b35 0%, #d14a1f 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #ff6b35;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff5f2;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #ff6b35;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe5dc;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #ff6b35;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #ff6b35 0%, #d14a1f 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #ff6b35 0%, #d14a1f 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff5f2;
+      border-left: 4px solid #ff6b35;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> UDEMY CERTIFICATION
+      </div>
+      <h1>SQL for Data Engineers: Designing and Building Data Pipelines</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by Udemy</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/sql-data-eng-cert.jpg" alt="SQL for Data Engineers Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> Udemy
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.udemy.com/course/sql-for-data-engineers-designing-and-building-data-pipelines" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 5+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Intermediate to Advanced
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Data Pipeline Design & ETL
+              </div>
+              <div class="info-item">
+                <strong>Technologies:</strong> SQL, ETL, Data Warehousing
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The SQL for Data Engineers: Designing and Building Data Pipelines certification from Udemy provides specialized training in designing, building, and optimizing data pipelines using SQL. This course covers ETL processes, data warehousing, data modeling, pipeline architecture, and best practices for building scalable data infrastructure.
+              </p>
+              <p>
+                As a Database Administrator frequently involved in data migration, ETL processes, and database integration projects, this data engineering perspective has been invaluable. Understanding data pipeline design, ETL patterns, and data warehousing concepts enhances my ability to architect database solutions, optimize data flows, and support analytics and reporting infrastructure.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Data Pipeline Design</div>
+                <div class="skill-tag">ETL Development</div>
+                <div class="skill-tag">Data Warehousing</div>
+                <div class="skill-tag">Data Modeling</div>
+                <div class="skill-tag">SQL Optimization</div>
+                <div class="skill-tag">Data Quality</div>
+                <div class="skill-tag">Incremental Loads</div>
+                <div class="skill-tag">Change Data Capture</div>
+                <div class="skill-tag">Dimensional Modeling</div>
+                <div class="skill-tag">Pipeline Orchestration</div>
+                <div class="skill-tag">Performance Tuning</div>
+                <div class="skill-tag">Data Governance</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Introduction to Data Engineering</h4>
+              <ul>
+                <li>Role of data engineers</li>
+                <li>Data pipeline fundamentals</li>
+                <li>ETL vs ELT approaches</li>
+                <li>Data warehouse architecture</li>
+                <li>OLTP vs OLAP systems</li>
+                <li>Batch vs real-time processing</li>
+                <li>Modern data stack overview</li>
+              </ul>
+
+              <h4>2. Data Modeling for Analytics</h4>
+              <ul>
+                <li>Dimensional modeling concepts</li>
+                <li>Star schema design</li>
+                <li>Snowflake schema</li>
+                <li>Fact and dimension tables</li>
+                <li>Slowly Changing Dimensions (SCD)</li>
+                <li>Data vault modeling</li>
+                <li>Normalization vs denormalization</li>
+                <li>Time-based partitioning</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Star Schema Example: Sales Data Warehouse
+<br>
+<br>-- Fact Table
+<br>CREATE TABLE fact_sales (
+<br>    sale_id BIGSERIAL PRIMARY KEY,
+<br>    date_key INTEGER REFERENCES dim_date(date_key),
+<br>    product_key INTEGER REFERENCES dim_product(product_key),
+<br>    customer_key INTEGER REFERENCES dim_customer(customer_key),
+<br>    store_key INTEGER REFERENCES dim_store(store_key),
+<br>    quantity INTEGER,
+<br>    unit_price DECIMAL(10,2),
+<br>    total_amount DECIMAL(10,2),
+<br>    discount_amount DECIMAL(10,2),
+<br>    net_amount DECIMAL(10,2)
+<br>);
+<br>
+<br>-- Dimension Table Example
+<br>CREATE TABLE dim_product (
+<br>    product_key SERIAL PRIMARY KEY,
+<br>    product_id VARCHAR(50) UNIQUE,
+<br>    product_name VARCHAR(200),
+<br>    category VARCHAR(100),
+<br>    subcategory VARCHAR(100),
+<br>    brand VARCHAR(100),
+<br>    unit_cost DECIMAL(10,2),
+<br>    effective_date DATE,
+<br>    expiry_date DATE,
+<br>    is_current BOOLEAN
+<br>);
+              </div>
+
+              <h4>3. ETL Process Design</h4>
+              <ul>
+                <li>Extract strategies and patterns</li>
+                <li>Data transformation techniques</li>
+                <li>Loading methods (full, incremental)</li>
+                <li>Error handling in ETL</li>
+                <li>Data quality validation</li>
+                <li>ETL workflow orchestration</li>
+                <li>Logging and monitoring</li>
+                <li>Performance optimization</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Incremental Load Pattern
+<br>WITH source_data AS (
+<br>    SELECT * FROM source_table
+<br>    WHERE modified_date > (
+<br>        SELECT COALESCE(MAX(last_modified), '1900-01-01')
+<br>        FROM etl_control
+<br>        WHERE table_name = 'target_table'
+<br>    )
+<br>),
+<br>transformed_data AS (
+<br>    SELECT 
+<br>        id,
+<br>        UPPER(name) as name,
+<br>        COALESCE(amount, 0) as amount,
+<br>        CURRENT_TIMESTAMP as load_timestamp
+<br>    FROM source_data
+<br>)
+<br>INSERT INTO target_table
+<br>SELECT * FROM transformed_data
+<br>ON CONFLICT (id) DO UPDATE SET
+<br>    name = EXCLUDED.name,
+<br>    amount = EXCLUDED.amount,
+<br>    load_timestamp = EXCLUDED.load_timestamp;
+              </div>
+
+              <h4>4. Change Data Capture (CDC)</h4>
+              <ul>
+                <li>CDC concepts and patterns</li>
+                <li>Trigger-based CDC</li>
+                <li>Log-based CDC</li>
+                <li>Timestamp-based tracking</li>
+                <li>Delta detection strategies</li>
+                <li>Handling deletes and updates</li>
+                <li>CDC performance considerations</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Timestamp-based CDC Pattern
+<br>CREATE TABLE customer_staging (
+<br>    customer_id INTEGER,
+<br>    customer_name VARCHAR(200),
+<br>    email VARCHAR(200),
+<br>    modified_date TIMESTAMP,
+<br>    operation_type VARCHAR(10) -- INSERT, UPDATE, DELETE
+<br>);
+<br>
+<br>-- Merge logic for CDC
+<br>MERGE INTO customer_target t
+<br>USING customer_staging s
+<br>ON t.customer_id = s.customer_id
+<br>WHEN MATCHED AND s.operation_type = 'UPDATE' THEN
+<br>    UPDATE SET 
+<br>        customer_name = s.customer_name,
+<br>        email = s.email,
+<br>        modified_date = s.modified_date
+<br>WHEN MATCHED AND s.operation_type = 'DELETE' THEN
+<br>    DELETE
+<br>WHEN NOT MATCHED AND s.operation_type = 'INSERT' THEN
+<br>    INSERT VALUES (s.customer_id, s.customer_name, s.email, s.modified_date);
+              </div>
+
+              <h4>5. Data Quality and Validation</h4>
+              <ul>
+                <li>Data quality dimensions</li>
+                <li>Validation rules implementation</li>
+                <li>Data profiling techniques</li>
+                <li>Anomaly detection</li>
+                <li>Data cleansing strategies</li>
+                <li>Quality metrics and KPIs</li>
+                <li>Data quality frameworks</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Data Quality Checks
+<br>WITH quality_checks AS (
+<br>    SELECT 
+<br>        'Null Check' as check_name,
+<br>        COUNT(*) as failed_records
+<br>    FROM staging_table
+<br>    WHERE customer_name IS NULL OR email IS NULL
+<br>    
+<br>    UNION ALL
+<br>    
+<br>    SELECT 
+<br>        'Duplicate Check',
+<br>        COUNT(*) - COUNT(DISTINCT customer_id)
+<br>    FROM staging_table
+<br>    
+<br>    UNION ALL
+<br>    
+<br>    SELECT 
+<br>        'Format Check',
+<br>        COUNT(*)
+<br>    FROM staging_table
+<br>    WHERE email !~ '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}$'
+<br>)
+<br>SELECT * FROM quality_checks WHERE failed_records > 0;
+              </div>
+
+              <h4>6. Slowly Changing Dimensions (SCD)</h4>
+              <ul>
+                <li>SCD Type 1: Overwrite</li>
+                <li>SCD Type 2: Historical tracking</li>
+                <li>SCD Type 3: Limited history</li>
+                <li>SCD Type 4: History tables</li>
+                <li>Hybrid approaches</li>
+                <li>Implementation patterns</li>
+                <li>Performance considerations</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- SCD Type 2 Implementation
+<br>WITH new_records AS (
+<br>    SELECT s.*
+<br>    FROM source_customer s
+<br>    LEFT JOIN dim_customer d 
+<br>        ON s.customer_id = d.customer_id 
+<br>        AND d.is_current = true
+<br>    WHERE d.customer_id IS NULL
+<br>        OR s.customer_name != d.customer_name
+<br>        OR s.address != d.address
+<br>)
+<br>-- Expire old records
+<br>UPDATE dim_customer
+<br>SET is_current = false,
+<br>    end_date = CURRENT_DATE
+<br>WHERE customer_id IN (SELECT customer_id FROM new_records)
+<br>    AND is_current = true;
+<br>
+<br>-- Insert new versions
+<br>INSERT INTO dim_customer (
+<br>    customer_id, customer_name, address, 
+<br>    start_date, end_date, is_current
+<br>)
+<br>SELECT 
+<br>    customer_id, customer_name, address,
+<br>    CURRENT_DATE, '9999-12-31', true
+<br>FROM new_records;
+              </div>
+
+              <h4>7. Data Pipeline Orchestration</h4>
+              <ul>
+                <li>Workflow dependencies</li>
+                <li>Scheduling strategies</li>
+                <li>Error handling and retries</li>
+                <li>Pipeline monitoring</li>
+                <li>Idempotency patterns</li>
+                <li>Parallel processing</li>
+                <li>Resource management</li>
+              </ul>
+
+              <h4>8. Performance Optimization</h4>
+              <ul>
+                <li>Indexing strategies for ETL</li>
+                <li>Partitioning for large datasets</li>
+                <li>Bulk loading techniques</li>
+                <li>Query optimization for pipelines</li>
+                <li>Parallel processing patterns</li>
+                <li>Memory management</li>
+                <li>I/O optimization</li>
+              </ul>
+
+              <div class="code-block">
+<br>-- Partitioned Table for Performance
+<br>CREATE TABLE fact_orders (
+<br>    order_id BIGINT,
+<br>    order_date DATE,
+<br>    customer_id INTEGER,
+<br>    total_amount DECIMAL(10,2)
+<br>) PARTITION BY RANGE (order_date);
+<br>
+<br>-- Create partitions
+<br>CREATE TABLE fact_orders_2024_01 
+<br>    PARTITION OF fact_orders
+<br>    FOR VALUES FROM ('2024-01-01') TO ('2024-02-01');
+<br>
+<br>CREATE TABLE fact_orders_2024_02
+<br>    PARTITION OF fact_orders
+<br>    FOR VALUES FROM ('2024-02-01') TO ('2024-03-01');
+<br>
+<br>-- Bulk insert optimization
+<br>COPY fact_orders FROM '/data/orders.csv' 
+<br>WITH (FORMAT csv, HEADER true, FREEZE true);
+              </div>
+
+              <h4>9. Data Warehouse Best Practices</h4>
+              <ul>
+                <li>Schema design patterns</li>
+                <li>Aggregation strategies</li>
+                <li>Materialized views</li>
+                <li>Summary tables</li>
+                <li>Data retention policies</li>
+                <li>Archive strategies</li>
+                <li>Query performance optimization</li>
+              </ul>
+
+              <h4>10. Modern Data Pipeline Tools</h4>
+              <ul>
+                <li>Apache Airflow overview</li>
+                <li>dbt (data build tool)</li>
+                <li>Cloud data platforms (Snowflake, BigQuery)</li>
+                <li>Stream processing (Kafka)</li>
+                <li>Data orchestration tools</li>
+                <li>CI/CD for data pipelines</li>
+                <li>DataOps practices</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-diagram-3"></i> Data Engineering for DBAs</h4>
+                <p>Data pipeline knowledge enhances database administration capabilities:</p>
+              </div>
+
+              <h4>Database Integration Projects:</h4>
+              <ul>
+                <li><strong>Data Migration:</strong> Designing ETL pipelines for database migrations</li>
+                <li><strong>Replication:</strong> Implementing data synchronization across databases</li>
+                <li><strong>Data Warehousing:</strong> Supporting analytics and reporting infrastructure</li>
+                <li><strong>System Integration:</strong> Building data flows between applications</li>
+                <li><strong>Archive Solutions:</strong> Implementing data retention and archival pipelines</li>
+              </ul>
+
+              <h4>DBA-Specific Implementations:</h4>
+              <ul>
+                <li>PostgreSQL to data warehouse ETL pipelines</li>
+                <li>Database replication with transformation</li>
+                <li>Real-time data sync for reporting databases</li>
+                <li>Historical data archival with accessibility</li>
+                <li>Multi-database aggregation for analytics</li>
+              </ul>
+
+              <h4>Performance and Optimization:</h4>
+              <ul>
+                <li>Optimizing database schemas for ETL workloads</li>
+                <li>Partitioning strategies for large fact tables</li>
+                <li>Index design for data warehouse queries</li>
+                <li>Bulk loading optimization techniques</li>
+                <li>Query tuning for analytical workloads</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Real-World Implementations</h3>
+              
+              <h4>Data Migration Projects:</h4>
+              <ul>
+                <li>Designed ETL pipeline for Oracle to PostgreSQL migration</li>
+                <li>Implemented incremental data sync for 100+ tables</li>
+                <li>Built data validation and quality checks</li>
+                <li>Created rollback and recovery procedures</li>
+                <li>Optimized for minimal downtime migration</li>
+              </ul>
+
+              <h4>Analytics Infrastructure:</h4>
+              <ul>
+                <li>Built data warehouse on PostgreSQL for reporting</li>
+                <li>Implemented dimensional model with star schema</li>
+                <li>Created ETL pipelines from OLTP to OLAP</li>
+                <li>Designed aggregation tables for performance</li>
+                <li>Implemented SCD Type 2 for historical tracking</li>
+              </ul>
+
+              <h4>Integration Solutions:</h4>
+              <ul>
+                <li>Real-time data sync between production and analytics</li>
+                <li>CDC implementation for change tracking</li>
+                <li>Multi-source data aggregation pipelines</li>
+                <li>Data quality monitoring and alerting</li>
+                <li>Automated data archival with compliance</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li><strong>Pipeline Design:</strong> Structured approach to building data flows</li>
+                <li><strong>Data Modeling:</strong> Dimensional modeling for analytics</li>
+                <li><strong>ETL Patterns:</strong> Proven patterns for data transformation</li>
+                <li><strong>Performance:</strong> Optimization techniques for large-scale data</li>
+                <li><strong>Quality:</strong> Data validation and quality assurance</li>
+                <li><strong>Best Practices:</strong> Industry-standard approaches to data engineering</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered data pipeline design and architecture</li>
+                <li>Gained expertise in ETL development</li>
+                <li>Learned dimensional modeling for data warehouses</li>
+                <li>Acquired skills in data quality management</li>
+                <li>Understood modern data engineering practices</li>
+                <li>Developed optimization techniques for pipelines</li>
+                <li>Built foundation for data infrastructure design</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Professional Growth</h3>
+              <p>
+                Data engineering knowledge has expanded my database administration capabilities:
+              </p>
+              <ul>
+                <li>Enhanced ability to design database architectures</li>
+                <li>Improved data migration project success rate</li>
+                <li>Better understanding of analytics requirements</li>
+                <li>Stronger collaboration with data teams</li>
+                <li>Expanded skill set beyond traditional DBA role</li>
+                <li>Positioned for data platform architecture roles</li>
+                <li>Ability to support end-to-end data solutions</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to leverage data engineering skills for:</p>
+              <ul>
+                <li>Building cloud-based data platforms</li>
+                <li>Implementing real-time streaming pipelines</li>
+                <li>Designing data mesh architectures</li>
+                <li>Creating self-service analytics platforms</li>
+                <li>Implementing DataOps practices</li>
+                <li>Building ML data pipelines</li>
+                <li>Architecting modern data stacks</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

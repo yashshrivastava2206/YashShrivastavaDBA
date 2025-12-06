@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Java: Data Structures - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #f89820 0%, #c77716 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #f89820;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff8f0;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #f89820;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe8d1;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #f89820;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #f89820 0%, #c77716 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #f89820 0%, #c77716 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(248, 152, 32, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff8f0;
+      border-left: 4px solid #f89820;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Java: Data Structures</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/java-ds-cert.jpg" alt="Java Data Structures Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/java-data-structures-14403471" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 2+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Java Collections Framework
+              </div>
+              <div class="info-item">
+                <strong>Technologies:</strong> Java, Algorithms, Collections
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Java: Data Structures certification from LinkedIn Learning provides comprehensive training in Java's Collections Framework and fundamental data structures. This course covers essential data structures, algorithms, and their practical implementation in Java, focusing on choosing the right data structure for specific use cases.
+              </p>
+              <p>
+                As a Database Administrator developing automation tools, scripts, and custom utilities, understanding data structures is crucial for writing efficient Java programs. This knowledge enables me to build optimized database management tools, process large datasets efficiently, and implement complex data manipulation logic in monitoring and migration applications.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Collections Framework</div>
+                <div class="skill-tag">ArrayList & LinkedList</div>
+                <div class="skill-tag">HashMap & TreeMap</div>
+                <div class="skill-tag">HashSet & TreeSet</div>
+                <div class="skill-tag">Queue & Deque</div>
+                <div class="skill-tag">Stack Operations</div>
+                <div class="skill-tag">Iterators</div>
+                <div class="skill-tag">Comparators</div>
+                <div class="skill-tag">Algorithm Analysis</div>
+                <div class="skill-tag">Time Complexity</div>
+                <div class="skill-tag">Generics</div>
+                <div class="skill-tag">Stream API</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Introduction to Data Structures</h4>
+              <ul>
+                <li>Importance of data structures in programming</li>
+                <li>Big O notation and complexity analysis</li>
+                <li>Time vs space complexity trade-offs</li>
+                <li>Choosing appropriate data structures</li>
+                <li>Java Collections Framework overview</li>
+                <li>Generic types and type safety</li>
+                <li>Common operations: CRUD, search, sort</li>
+              </ul>
+
+              <h4>2. Lists in Java</h4>
+              <ul>
+                <li>List interface and implementations</li>
+                <li>ArrayList: dynamic arrays</li>
+                <li>LinkedList: doubly-linked lists</li>
+                <li>Performance comparison</li>
+                <li>When to use ArrayList vs LinkedList</li>
+                <li>List operations: add, remove, get, set</li>
+                <li>Iterating through lists</li>
+                <li>Vector and CopyOnWriteArrayList</li>
+              </ul>
+
+              <div class="code-block">
+<br>import java.util.*;
+<br>
+<br>// ArrayList example - Database query results
+<br>List&lt;String&gt; databases = new ArrayList&lt;&gt;();
+<br>databases.add("production_db");
+<br>databases.add("staging_db");
+<br>databases.add("development_db");
+<br>
+<br>// Iterate and process
+<br>for (String db : databases) {
+<br>    System.out.println("Processing: " + db);
+<br>}
+<br>
+<br>// LinkedList for queue operations
+<br>LinkedList&lt;String&gt; backupQueue = new LinkedList&lt;&gt;();
+<br>backupQueue.addLast("db1_backup");
+<br>backupQueue.addLast("db2_backup");
+<br>String next = backupQueue.removeFirst();
+              </div>
+
+              <h4>3. Sets and HashSet</h4>
+              <ul>
+                <li>Set interface characteristics</li>
+                <li>HashSet implementation details</li>
+                <li>Hash functions and collision handling</li>
+                <li>LinkedHashSet for insertion order</li>
+                <li>TreeSet for sorted sets</li>
+                <li>Set operations: union, intersection, difference</li>
+                <li>Removing duplicates efficiently</li>
+                <li>Performance considerations</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Using HashSet for unique values
+<br>Set&lt;String&gt; uniqueUsers = new HashSet&lt;&gt;();
+<br>uniqueUsers.add("admin");
+<br>uniqueUsers.add("user1");
+<br>uniqueUsers.add("admin"); // Duplicate, won't be added
+<br>
+<br>System.out.println("Unique users: " + uniqueUsers.size());
+<br>
+<br>// TreeSet for sorted unique values
+<br>TreeSet&lt;Integer&gt; sortedIds = new TreeSet&lt;&gt;();
+<br>sortedIds.add(105);
+<br>sortedIds.add(102);
+<br>sortedIds.add(108);
+<br>// Automatically sorted: [102, 105, 108]
+              </div>
+
+              <h4>4. Maps and HashMap</h4>
+              <ul>
+                <li>Map interface and key-value pairs</li>
+                <li>HashMap implementation</li>
+                <li>Hash-based lookup efficiency (O(1))</li>
+                <li>LinkedHashMap for insertion order</li>
+                <li>TreeMap for sorted keys</li>
+                <li>Handling collisions</li>
+                <li>Map operations: put, get, remove, containsKey</li>
+                <li>Iterating through maps</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Database connection strings
+<br>Map&lt;String, String&gt; dbConnections = new HashMap&lt;&gt;();
+<br>dbConnections.put("prod", "jdbc:postgresql://prod-server:5432/db");
+<br>dbConnections.put("dev", "jdbc:postgresql://dev-server:5432/db");
+<br>
+<br>// Retrieve connection string
+<br>String prodConn = dbConnections.get("prod");
+<br>
+<br>// Iterate through entries
+<br>for (Map.Entry&lt;String, String&gt; entry : dbConnections.entrySet()) {
+<br>    System.out.println(entry.getKey() + ": " + entry.getValue());
+<br>}
+<br>
+<br>// Check if key exists
+<br>if (dbConnections.containsKey("staging")) {
+<br>    System.out.println("Staging connection found");
+<br>}
+              </div>
+
+              <h4>5. Queue and Deque</h4>
+              <ul>
+                <li>Queue interface and FIFO operations</li>
+                <li>PriorityQueue for ordered processing</li>
+                <li>Deque (Double-ended queue)</li>
+                <li>ArrayDeque implementation</li>
+                <li>Queue operations: offer, poll, peek</li>
+                <li>Use cases for queues</li>
+                <li>Blocking queues for threading</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Task queue for database operations
+<br>Queue&lt;String&gt; taskQueue = new LinkedList&lt;&gt;();
+<br>taskQueue.offer("backup_database");
+<br>taskQueue.offer("optimize_tables");
+<br>taskQueue.offer("update_statistics");
+<br>
+<br>// Process tasks
+<br>while (!taskQueue.isEmpty()) {
+<br>    String task = taskQueue.poll();
+<br>    System.out.println("Executing: " + task);
+<br>}
+<br>
+<br>// PriorityQueue for priority-based processing
+<br>PriorityQueue&lt;Integer&gt; priorities = new PriorityQueue&lt;&gt;();
+<br>priorities.offer(3);
+<br>priorities.offer(1);
+<br>priorities.offer(2);
+<br>// Will process in order: 1, 2, 3
+              </div>
+
+              <h4>6. Stack Operations</h4>
+              <ul>
+                <li>Stack data structure (LIFO)</li>
+                <li>Stack class operations</li>
+                <li>Push and pop operations</li>
+                <li>Peek without removing</li>
+                <li>Using Deque as Stack</li>
+                <li>Stack applications</li>
+                <li>Recursion and call stack</li>
+              </ul>
+
+              <h4>7. Iterators and Iteration</h4>
+              <ul>
+                <li>Iterator interface</li>
+                <li>Enhanced for-loop (for-each)</li>
+                <li>ListIterator for bidirectional iteration</li>
+                <li>ConcurrentModificationException</li>
+                <li>Iterator methods: hasNext, next, remove</li>
+                <li>Iterating collections safely</li>
+                <li>Stream API for functional iteration</li>
+              </ul>
+
+              <div class="code-block">
+<br>List&lt;String&gt; databases = Arrays.asList("db1", "db2", "db3");
+<br>
+<br>// Traditional iterator
+<br>Iterator&lt;String&gt; iterator = databases.iterator();
+<br>while (iterator.hasNext()) {
+<br>    String db = iterator.next();
+<br>    System.out.println(db);
+<br>}
+<br>
+<br>// Enhanced for-loop
+<br>for (String db : databases) {
+<br>    System.out.println(db);
+<br>}
+<br>
+<br>// Stream API
+<br>databases.stream()
+<br>    .filter(db -> db.startsWith("prod"))
+<br>    .forEach(System.out::println);
+              </div>
+
+              <h4>8. Sorting and Comparators</h4>
+              <ul>
+                <li>Comparable interface</li>
+                <li>Comparator interface</li>
+                <li>Collections.sort() method</li>
+                <li>Natural ordering vs custom ordering</li>
+                <li>Lambda expressions for comparators</li>
+                <li>Sorting complex objects</li>
+                <li>Reverse ordering</li>
+                <li>Multiple sorting criteria</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Database info class
+<br>class DatabaseInfo {
+<br>    String name;
+<br>    int size;
+<br>    
+<br>    DatabaseInfo(String name, int size) {
+<br>        this.name = name;
+<br>        this.size = size;
+<br>    }
+<br>}
+<br>
+<br>List&lt;DatabaseInfo&gt; databases = new ArrayList&lt;&gt;();
+<br>databases.add(new DatabaseInfo("prod", 500));
+<br>databases.add(new DatabaseInfo("dev", 100));
+<br>databases.add(new DatabaseInfo("staging", 250));
+<br>
+<br>// Sort by size
+<br>databases.sort(Comparator.comparingInt(db -> db.size));
+<br>
+<br>// Sort by name
+<br>databases.sort(Comparator.comparing(db -> db.name));
+<br>
+<br>// Reverse order
+<br>databases.sort(Comparator.comparingInt(db -> db.size).reversed());
+              </div>
+
+              <h4>9. Generics and Type Safety</h4>
+              <ul>
+                <li>Generic classes and methods</li>
+                <li>Type parameters (T, E, K, V)</li>
+                <li>Bounded type parameters</li>
+                <li>Wildcard types (?, extends, super)</li>
+                <li>Generic collections benefits</li>
+                <li>Type erasure</li>
+                <li>Generic constraints</li>
+              </ul>
+
+              <h4>10. Performance and Best Practices</h4>
+              <ul>
+                <li>Choosing the right data structure</li>
+                <li>Performance characteristics of each structure</li>
+                <li>Memory considerations</li>
+                <li>Thread-safe collections</li>
+                <li>Immutable collections</li>
+                <li>Common pitfalls and solutions</li>
+                <li>Best practices for collections</li>
+                <li>Optimization techniques</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-code-slash"></i> Data Structures for Database Tools</h4>
+                <p>Java data structures enable efficient database management applications:</p>
+              </div>
+
+              <h4>Database Monitoring Tools:</h4>
+              <ul>
+                <li><strong>HashMap:</strong> Storing database metrics with quick lookup by database name</li>
+                <li><strong>ArrayList:</strong> Managing lists of databases, tables, and query results</li>
+                <li><strong>TreeMap:</strong> Maintaining sorted time-series metrics data</li>
+                <li><strong>PriorityQueue:</strong> Processing database tasks based on priority</li>
+                <li><strong>HashSet:</strong> Tracking unique database objects and preventing duplicates</li>
+              </ul>
+
+              <h4>Migration and Automation Scripts:</h4>
+              <ul>
+                <li>Queue structures for sequential database operations</li>
+                <li>Maps for configuration management</li>
+                <li>Lists for processing multiple databases</li>
+                <li>Sets for comparing database schemas</li>
+                <li>Custom comparators for sorting database objects</li>
+              </ul>
+
+              <h4>Data Processing Applications:</h4>
+              <ul>
+                <li>Efficient handling of large result sets</li>
+                <li>Caching database metadata using maps</li>
+                <li>Batch processing with collections</li>
+                <li>Filtering and transforming data with streams</li>
+                <li>Managing concurrent database operations</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Real-World Implementations</h3>
+              
+              <h4>Database Monitoring Dashboard:</h4>
+              <ul>
+                <li>HashMap to store real-time metrics for each database</li>
+                <li>TreeMap for time-ordered performance data</li>
+                <li>ArrayList for managing list of monitored databases</li>
+                <li>PriorityQueue for alert prioritization</li>
+                <li>Custom comparators for sorting databases by various metrics</li>
+              </ul>
+
+              <h4>Migration Utilities:</h4>
+              <ul>
+                <li>LinkedList for managing migration task queue</li>
+                <li>HashMap for mapping source to destination schemas</li>
+                <li>HashSet for tracking processed tables</li>
+                <li>ArrayList for storing migration logs</li>
+                <li>Stream API for data transformation during migration</li>
+              </ul>
+
+              <h4>Performance Analysis Tools:</h4>
+              <ul>
+                <li>TreeMap for sorted query execution times</li>
+                <li>HashMap for quick lookup of query statistics</li>
+                <li>PriorityQueue for identifying slowest queries</li>
+                <li>ArrayList for storing historical performance data</li>
+                <li>Custom comparators for ranking database performance</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Concepts Mastered</h3>
+              <ul>
+                <li><strong>Choosing Data Structures:</strong> Selecting optimal structure based on use case</li>
+                <li><strong>Performance Analysis:</strong> Understanding time and space complexity</li>
+                <li><strong>Collections Framework:</strong> Mastery of Java's built-in collections</li>
+                <li><strong>Generics:</strong> Type-safe collection usage</li>
+                <li><strong>Iteration Patterns:</strong> Efficient ways to traverse collections</li>
+                <li><strong>Sorting Techniques:</strong> Custom ordering of complex objects</li>
+                <li><strong>Best Practices:</strong> Writing efficient, maintainable code</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Comprehensive understanding of Java Collections Framework</li>
+                <li>Ability to implement efficient data structures</li>
+                <li>Skills in algorithm analysis and optimization</li>
+                <li>Expertise in choosing appropriate data structures</li>
+                <li>Proficiency with generics and type safety</li>
+                <li>Knowledge of performance characteristics</li>
+                <li>Capability to build scalable Java applications</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Database Work</h3>
+              <p>
+                Java data structures knowledge has enhanced my database tools development:
+              </p>
+              <ul>
+                <li>Built more efficient database monitoring applications</li>
+                <li>Improved performance of data processing scripts</li>
+                <li>Created scalable automation tools</li>
+                <li>Optimized memory usage in database utilities</li>
+                <li>Developed faster data transformation pipelines</li>
+                <li>Enhanced troubleshooting capabilities with better data organization</li>
+                <li>Implemented complex database management workflows</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to apply data structures knowledge to:</p>
+              <ul>
+                <li>Building advanced database management tools</li>
+                <li>Implementing complex caching strategies</li>
+                <li>Creating high-performance data processing pipelines</li>
+                <li>Developing intelligent database monitoring systems</li>
+                <li>Optimizing large-scale data migrations</li>
+                <li>Building distributed database management applications</li>
+                <li>Implementing custom database utilities and frameworks</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

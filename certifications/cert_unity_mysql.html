@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Unity: MySQL Database Management - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #222c37 0%, #000000 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #222c37;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f5f5f5;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #222c37;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #222c37;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #222c37 0%, #000000 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #222c37 0%, #000000 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(34, 44, 55, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #f5f5f5;
+      border-left: 4px solid #222c37;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> UDEMY CERTIFICATION
+      </div>
+      <h1>Unity: MySQL Database Management</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by Udemy</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/unity-mysql-cert.jpg" alt="Unity MySQL Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> Udemy
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.udemy.com/course/unity-mysql-database-management" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 3+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Unity & MySQL Integration
+              </div>
+              <div class="info-item">
+                <strong>Technologies:</strong> Unity, MySQL, C#
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Unity: MySQL Database Management certification from Udemy provides specialized training in integrating MySQL databases with Unity game development environment. This course covers database connectivity, data persistence, user authentication, and real-time data synchronization between Unity applications and MySQL databases.
+              </p>
+              <p>
+                While my primary focus is PostgreSQL database administration, understanding MySQL integration patterns and database connectivity in application development provides valuable insights into how applications interact with databases. This knowledge enhances my ability to support development teams, optimize database schemas for applications, and troubleshoot connectivity issues.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">MySQL Fundamentals</div>
+                <div class="skill-tag">Unity Integration</div>
+                <div class="skill-tag">Database Connectivity</div>
+                <div class="skill-tag">C# MySQL Connector</div>
+                <div class="skill-tag">User Authentication</div>
+                <div class="skill-tag">Data Persistence</div>
+                <div class="skill-tag">CRUD Operations</div>
+                <div class="skill-tag">Connection Pooling</div>
+                <div class="skill-tag">API Development</div>
+                <div class="skill-tag">Security Best Practices</div>
+                <div class="skill-tag">Error Handling</div>
+                <div class="skill-tag">Real-time Sync</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. MySQL Database Setup</h4>
+              <ul>
+                <li>Installing and configuring MySQL server</li>
+                <li>Creating databases and tables</li>
+                <li>Understanding MySQL data types</li>
+                <li>Primary keys and foreign keys</li>
+                <li>Database design for game applications</li>
+                <li>MySQL Workbench usage</li>
+                <li>Security configuration</li>
+              </ul>
+
+              <h4>2. Unity and MySQL Connection</h4>
+              <ul>
+                <li>MySQL Connector/NET setup in Unity</li>
+                <li>Establishing database connections</li>
+                <li>Connection string configuration</li>
+                <li>Connection pooling for performance</li>
+                <li>Error handling and timeouts</li>
+                <li>Secure connection practices</li>
+                <li>Testing database connectivity</li>
+              </ul>
+
+              <div class="code-block">
+<br>using MySql.Data.MySqlClient;
+<br>
+<br>public class DatabaseManager : MonoBehaviour
+<br>{
+<br>    private string connectionString = "Server=localhost;Database=gamedb;Uid=root;Pwd=password;";
+<br>    
+<br>    public MySqlConnection GetConnection()
+<br>    {
+<br>        MySqlConnection connection = new MySqlConnection(connectionString);
+<br>        try
+<br>        {
+<br>            connection.Open();
+<br>            Debug.Log("Database connected successfully!");
+<br>            return connection;
+<br>        }
+<br>        catch (MySqlException ex)
+<br>        {
+<br>            Debug.LogError("Connection failed: " + ex.Message);
+<br>            return null;
+<br>        }
+<br>    }
+<br>}
+              </div>
+
+              <h4>3. CRUD Operations in Unity</h4>
+              <ul>
+                <li>Implementing Create operations (INSERT)</li>
+                <li>Reading data (SELECT queries)</li>
+                <li>Updating records (UPDATE)</li>
+                <li>Deleting data (DELETE)</li>
+                <li>Parameterized queries for security</li>
+                <li>Handling query results</li>
+                <li>Transaction management</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Insert player data
+<br>public void SavePlayer(string username, int score)
+<br>{
+<br>    MySqlConnection conn = GetConnection();
+<br>    string query = "INSERT INTO players (username, score, created_at) VALUES (@username, @score, NOW())";
+<br>    
+<br>    MySqlCommand cmd = new MySqlCommand(query, conn);
+<br>    cmd.Parameters.AddWithValue("@username", username);
+<br>    cmd.Parameters.AddWithValue("@score", score);
+<br>    
+<br>    try
+<br>    {
+<br>        cmd.ExecuteNonQuery();
+<br>        Debug.Log("Player saved successfully!");
+<br>    }
+<br>    catch (MySqlException ex)
+<br>    {
+<br>        Debug.LogError("Save failed: " + ex.Message);
+<br>    }
+<br>    finally
+<br>    {
+<br>        conn.Close();
+<br>    }
+<br>}
+              </div>
+
+              <h4>4. User Authentication System</h4>
+              <ul>
+                <li>User registration implementation</li>
+                <li>Login system with password hashing</li>
+                <li>Session management</li>
+                <li>Password encryption best practices</li>
+                <li>Preventing SQL injection</li>
+                <li>Token-based authentication</li>
+                <li>User validation and verification</li>
+              </ul>
+
+              <h4>5. Data Persistence</h4>
+              <ul>
+                <li>Saving game state to database</li>
+                <li>Loading saved games</li>
+                <li>Player progress tracking</li>
+                <li>Inventory system database design</li>
+                <li>Leaderboard implementation</li>
+                <li>Achievement tracking</li>
+                <li>Cloud save functionality</li>
+              </ul>
+
+              <h4>6. Real-time Data Synchronization</h4>
+              <ul>
+                <li>Polling vs push notifications</li>
+                <li>Multiplayer data synchronization</li>
+                <li>Real-time leaderboards</li>
+                <li>Handling concurrent updates</li>
+                <li>Conflict resolution strategies</li>
+                <li>Database triggers and events</li>
+                <li>Performance optimization</li>
+              </ul>
+
+              <h4>7. API Development for Unity</h4>
+              <ul>
+                <li>RESTful API design</li>
+                <li>PHP/Node.js backend for Unity</li>
+                <li>JSON data exchange</li>
+                <li>HTTP requests from Unity</li>
+                <li>API authentication and security</li>
+                <li>Error handling in APIs</li>
+                <li>Rate limiting and throttling</li>
+              </ul>
+
+              <h4>8. Advanced Database Features</h4>
+              <ul>
+                <li>Stored procedures in MySQL</li>
+                <li>Views for complex queries</li>
+                <li>Indexes for performance</li>
+                <li>Full-text search implementation</li>
+                <li>Database backups and recovery</li>
+                <li>Optimization techniques</li>
+                <li>Query performance analysis</li>
+              </ul>
+
+              <h4>9. Security Best Practices</h4>
+              <ul>
+                <li>SQL injection prevention</li>
+                <li>Prepared statements usage</li>
+                <li>Input validation and sanitization</li>
+                <li>Secure password storage (hashing, salting)</li>
+                <li>SSL/TLS encrypted connections</li>
+                <li>Database user permissions</li>
+                <li>Security auditing</li>
+              </ul>
+
+              <h4>10. Error Handling and Debugging</h4>
+              <ul>
+                <li>Try-catch blocks for database operations</li>
+                <li>Logging database errors</li>
+                <li>Connection failure handling</li>
+                <li>Query debugging techniques</li>
+                <li>Unity debugging tools</li>
+                <li>MySQL error codes</li>
+                <li>Performance profiling</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Relevance to Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-link-45deg"></i> Understanding Application-Database Interaction</h4>
+                <p>This course provides valuable insights from the application developer perspective:</p>
+              </div>
+
+              <h4>Developer Perspective Benefits:</h4>
+              <ul>
+                <li><strong>Application Requirements:</strong> Understanding how applications connect to and use databases</li>
+                <li><strong>Performance Optimization:</strong> Knowing common performance bottlenecks from application side</li>
+                <li><strong>Schema Design:</strong> Learning what database structures work best for applications</li>
+                <li><strong>Connection Management:</strong> Understanding connection pooling and resource usage</li>
+                <li><strong>Security Concerns:</strong> Application-level security considerations</li>
+              </ul>
+
+              <h4>Cross-Database Knowledge:</h4>
+              <ul>
+                <li>MySQL concepts applicable to PostgreSQL administration</li>
+                <li>Understanding differences between MySQL and PostgreSQL</li>
+                <li>Database connector patterns across platforms</li>
+                <li>Common SQL patterns and anti-patterns</li>
+                <li>Performance optimization principles</li>
+              </ul>
+
+              <h4>Supporting Development Teams:</h4>
+              <ul>
+                <li>Better communication with application developers</li>
+                <li>Understanding developer database needs</li>
+                <li>Troubleshooting application connectivity issues</li>
+                <li>Optimizing database schemas for application use cases</li>
+                <li>Providing guidance on database best practices</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Applications</h3>
+              
+              <h4>Database Support for Applications:</h4>
+              <ul>
+                <li>Designing database schemas optimized for application access patterns</li>
+                <li>Troubleshooting connection pool exhaustion issues</li>
+                <li>Optimizing queries generated by applications</li>
+                <li>Setting up appropriate indexes based on application queries</li>
+                <li>Configuring connection limits and timeouts</li>
+              </ul>
+
+              <h4>Performance Optimization:</h4>
+              <ul>
+                <li>Identifying N+1 query problems in applications</li>
+                <li>Optimizing database access patterns</li>
+                <li>Implementing caching strategies</li>
+                <li>Query optimization for real-time applications</li>
+                <li>Connection pooling configuration</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li><strong>Application Perspective:</strong> Understanding database usage from developer viewpoint</li>
+                <li><strong>Connection Management:</strong> Importance of proper connection pooling</li>
+                <li><strong>Security:</strong> Application-level database security practices</li>
+                <li><strong>Performance:</strong> Impact of query patterns on database performance</li>
+                <li><strong>Error Handling:</strong> Robust error management in database operations</li>
+                <li><strong>Real-time Data:</strong> Challenges in synchronizing real-time data</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Gained understanding of MySQL database integration</li>
+                <li>Learned application-database connectivity patterns</li>
+                <li>Understood developer perspective on database usage</li>
+                <li>Acquired knowledge of connection management</li>
+                <li>Learned security best practices from application side</li>
+                <li>Enhanced ability to support development teams</li>
+                <li>Improved troubleshooting of application-database issues</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on DBA Work</h3>
+              <p>
+                This certification has enhanced my database administration capabilities:
+              </p>
+              <ul>
+                <li>Better communication with development teams</li>
+                <li>Improved understanding of application database requirements</li>
+                <li>Enhanced ability to optimize for application workloads</li>
+                <li>Faster troubleshooting of connectivity issues</li>
+                <li>Better schema design decisions for applications</li>
+                <li>Improved security recommendations for developers</li>
+                <li>Cross-platform database knowledge (MySQL and PostgreSQL)</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to leverage this knowledge for:</p>
+              <ul>
+                <li>Supporting application development teams effectively</li>
+                <li>Designing application-optimized database schemas</li>
+                <li>Implementing monitoring for application database patterns</li>
+                <li>Creating developer-friendly database tools</li>
+                <li>Building APIs for database access</li>
+                <li>Optimizing for various application frameworks</li>
+                <li>Cross-database migration projects</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
