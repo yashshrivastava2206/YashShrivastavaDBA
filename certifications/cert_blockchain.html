@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blockchain Basics - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #f7931a 0%, #d4770f 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #f7931a;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff8f0;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #f7931a;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe4c4;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #f7931a;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #f7931a 0%, #d4770f 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #f7931a 0%, #d4770f 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(247, 147, 26, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff8f0;
+      border-left: 4px solid #f7931a;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Blockchain Basics</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/blockchain-cert.jpg" alt="Blockchain Basics Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/blockchain-basics-14414119" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 2+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Beginner to Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Blockchain Technology & Cryptography
+              </div>
+              <div class="info-item">
+                <strong>Technologies:</strong> Bitcoin, Ethereum, Smart Contracts
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Blockchain Basics certification from LinkedIn Learning provides a comprehensive introduction to blockchain technology, covering fundamental concepts, cryptographic principles, and real-world applications. This course demystifies blockchain technology and explores how distributed ledger systems are revolutionizing various industries.
+              </p>
+              <p>
+                As a Database Administrator, understanding blockchain technology is crucial for staying current with emerging data storage and verification technologies. This knowledge helps in evaluating blockchain solutions for data integrity, immutability requirements, and understanding decentralized database architectures.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Blockchain Fundamentals</div>
+                <div class="skill-tag">Cryptographic Hashing</div>
+                <div class="skill-tag">Distributed Ledgers</div>
+                <div class="skill-tag">Consensus Mechanisms</div>
+                <div class="skill-tag">Smart Contracts</div>
+                <div class="skill-tag">Bitcoin & Cryptocurrency</div>
+                <div class="skill-tag">Ethereum Platform</div>
+                <div class="skill-tag">Public vs Private Chains</div>
+                <div class="skill-tag">Mining & Validation</div>
+                <div class="skill-tag">Blockchain Security</div>
+                <div class="skill-tag">Use Cases</div>
+                <div class="skill-tag">DApp Development</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Introduction to Blockchain</h4>
+              <ul>
+                <li>What is blockchain and how it works</li>
+                <li>History of blockchain technology</li>
+                <li>Blockchain vs traditional databases</li>
+                <li>Key characteristics: Decentralization, immutability, transparency</li>
+                <li>Blockchain components and architecture</li>
+                <li>Understanding distributed ledger technology (DLT)</li>
+              </ul>
+
+              <h4>2. Cryptographic Foundations</h4>
+              <ul>
+                <li>Cryptographic hash functions (SHA-256)</li>
+                <li>Public key cryptography</li>
+                <li>Digital signatures and verification</li>
+                <li>Private and public keys</li>
+                <li>Merkle trees and their role in blockchain</li>
+                <li>Cryptographic security principles</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Simplified blockchain block structure
+<br>Block {
+<br>    index: 1,
+<br>    timestamp: "2024-01-15 10:30:00",
+<br>    data: "Transaction data here",
+<br>    previousHash: "00000a7b8c9d...",
+<br>    hash: "00000f2e3d4c...",
+<br>    nonce: 45893
+<br>}
+<br>
+<br>// Hash calculation includes:
+<br>// hash = SHA256(index + timestamp + data + previousHash + nonce)
+              </div>
+
+              <h4>3. How Blockchain Works</h4>
+              <ul>
+                <li>Block structure and components</li>
+                <li>Chain of blocks and linking mechanism</li>
+                <li>Transaction flow in blockchain</li>
+                <li>Block creation and validation process</li>
+                <li>Immutability and tampering prevention</li>
+                <li>Network propagation</li>
+              </ul>
+
+              <h4>4. Consensus Mechanisms</h4>
+              <ul>
+                <li>Proof of Work (PoW) algorithm</li>
+                <li>Proof of Stake (PoS)</li>
+                <li>Practical Byzantine Fault Tolerance (PBFT)</li>
+                <li>Delegated Proof of Stake (DPoS)</li>
+                <li>Mining process and rewards</li>
+                <li>Network consensus and agreement</li>
+                <li>51% attack and security concerns</li>
+              </ul>
+
+              <h4>5. Bitcoin and Cryptocurrency</h4>
+              <ul>
+                <li>Bitcoin overview and history</li>
+                <li>How Bitcoin transactions work</li>
+                <li>Bitcoin wallets and addresses</li>
+                <li>UTXO (Unspent Transaction Output) model</li>
+                <li>Bitcoin mining economics</li>
+                <li>Cryptocurrency fundamentals</li>
+                <li>Altcoins and token systems</li>
+              </ul>
+
+              <h4>6. Ethereum and Smart Contracts</h4>
+              <ul>
+                <li>Introduction to Ethereum platform</li>
+                <li>Ethereum Virtual Machine (EVM)</li>
+                <li>Smart contracts concepts and benefits</li>
+                <li>Solidity programming basics</li>
+                <li>Gas fees and transaction costs</li>
+                <li>Decentralized applications (DApps)</li>
+                <li>ERC-20 and ERC-721 token standards</li>
+              </ul>
+
+              <div class="code-block">
+<br>// Simple smart contract example (Solidity)
+<br>pragma solidity ^0.8.0;
+<br>
+<br>contract SimpleStorage {
+<br>    uint256 private storedData;
+<br>    
+<br>    function set(uint256 x) public {
+<br>        storedData = x;
+<br>    }
+<br>    
+<br>    function get() public view returns (uint256) {
+<br>        return storedData;
+<br>    }
+<br>}
+              </div>
+
+              <h4>7. Types of Blockchain Networks</h4>
+              <ul>
+                <li>Public blockchains (Bitcoin, Ethereum)</li>
+                <li>Private blockchains (Hyperledger, Corda)</li>
+                <li>Consortium/Hybrid blockchains</li>
+                <li>Permissioned vs permissionless networks</li>
+                <li>Use cases for different blockchain types</li>
+                <li>Enterprise blockchain solutions</li>
+              </ul>
+
+              <h4>8. Blockchain Security</h4>
+              <ul>
+                <li>Security features of blockchain</li>
+                <li>Common attack vectors</li>
+                <li>Double-spending prevention</li>
+                <li>Private key management</li>
+                <li>Smart contract vulnerabilities</li>
+                <li>Security best practices</li>
+                <li>Auditing and testing</li>
+              </ul>
+
+              <h4>9. Real-World Applications</h4>
+              <ul>
+                <li>Financial services and banking</li>
+                <li>Supply chain management</li>
+                <li>Healthcare records management</li>
+                <li>Digital identity verification</li>
+                <li>Voting systems</li>
+                <li>Real estate and property records</li>
+                <li>Intellectual property and licensing</li>
+                <li>IoT and blockchain integration</li>
+              </ul>
+
+              <h4>10. Blockchain Challenges and Future</h4>
+              <ul>
+                <li>Scalability issues and solutions (Layer 2, sharding)</li>
+                <li>Energy consumption concerns</li>
+                <li>Regulatory and legal considerations</li>
+                <li>Interoperability between blockchains</li>
+                <li>Adoption barriers</li>
+                <li>Future trends and developments</li>
+                <li>Web3 and decentralized internet</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Relevance to Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-database"></i> Blockchain as a Database Technology</h4>
+                <p>Understanding blockchain provides valuable insights into alternative data storage paradigms:</p>
+              </div>
+
+              <h4>Database Perspective:</h4>
+              <ul>
+                <li><strong>Distributed Architecture:</strong> Blockchain's distributed nature offers insights into distributed database design</li>
+                <li><strong>Data Integrity:</strong> Cryptographic hashing ensures data integrity similar to database checksums</li>
+                <li><strong>Immutability:</strong> Append-only structure relevant for audit trails and compliance requirements</li>
+                <li><strong>Consensus:</strong> Understanding distributed consensus applies to distributed database systems</li>
+                <li><strong>Transaction Management:</strong> Blockchain transactions share concepts with ACID properties</li>
+              </ul>
+
+              <h4>Practical Applications in DBA Work:</h4>
+              <ul>
+                <li>Evaluating blockchain solutions for data verification needs</li>
+                <li>Understanding when traditional databases vs blockchain are appropriate</li>
+                <li>Implementing audit trails with blockchain-inspired techniques</li>
+                <li>Data integrity verification using cryptographic methods</li>
+                <li>Exploring hybrid solutions combining databases and blockchain</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li><strong>Decentralization:</strong> Blockchain eliminates the need for central authorities in data management</li>
+                <li><strong>Trust Through Technology:</strong> Cryptography and consensus create trust without intermediaries</li>
+                <li><strong>Immutable Records:</strong> Once recorded, data cannot be altered retroactively</li>
+                <li><strong>Transparency:</strong> All participants can verify transactions independently</li>
+                <li><strong>Smart Contracts:</strong> Self-executing contracts enable automated business logic</li>
+                <li><strong>New Data Paradigm:</strong> Blockchain represents a fundamentally different approach to data storage</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Industry Insights Gained</h3>
+              <p>
+                This certification provided valuable understanding of how blockchain is transforming various industries:
+              </p>
+              <ul>
+                <li>Financial sector adoption for faster, cheaper cross-border payments</li>
+                <li>Supply chain transparency and traceability improvements</li>
+                <li>Healthcare data management with patient privacy protection</li>
+                <li>Government services modernization with blockchain</li>
+                <li>Digital asset creation and NFT marketplaces</li>
+                <li>Decentralized finance (DeFi) ecosystem growth</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Gained comprehensive understanding of blockchain fundamentals</li>
+                <li>Learned cryptographic principles underlying blockchain security</li>
+                <li>Understood different consensus mechanisms and their trade-offs</li>
+                <li>Explored smart contract development basics</li>
+                <li>Evaluated blockchain use cases across industries</li>
+                <li>Developed ability to assess when blockchain is appropriate</li>
+                <li>Enhanced knowledge of emerging database technologies</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Building on this blockchain foundation, potential areas for exploration include:</p>
+              <ul>
+                <li>Integrating blockchain with traditional database systems</li>
+                <li>Implementing blockchain for database audit trails</li>
+                <li>Exploring Hyperledger for enterprise solutions</li>
+                <li>Learning Solidity for smart contract development</li>
+                <li>Understanding Web3 infrastructure and databases</li>
+                <li>Evaluating blockchain databases (BigchainDB, etc.)</li>
+                <li>Staying current with blockchain innovations in data management</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

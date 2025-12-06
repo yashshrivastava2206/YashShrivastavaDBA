@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Introduction to Prompt Engineering for Generative AI - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #10a37f 0%, #0d8c6d 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #10a37f;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #e6f7f3;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #10a37f;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #d0ede6;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #10a37f;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #10a37f 0%, #0d8c6d 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .prompt-example {
+      background: #f8f9fa;
+      border-left: 4px solid #10a37f;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 5px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #10a37f 0%, #0d8c6d 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(16, 163, 127, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #e6f7f3;
+      border-left: 4px solid #10a37f;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Introduction to Prompt Engineering for Generative AI</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/prompt-cert.jpg" alt="Prompt Engineering Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/introduction-to-prompt-engineering-for-generative-ai-2023" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 1+ Hour
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Beginner to Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> AI Prompt Design & Optimization
+              </div>
+              <div class="info-item">
+                <strong>Tools:</strong> ChatGPT, GPT-4, Claude, Bard
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Introduction to Prompt Engineering for Generative AI certification from LinkedIn Learning provides essential training in crafting effective prompts for large language models (LLMs). This course covers fundamental techniques for communicating with AI systems like ChatGPT, GPT-4, Claude, and other generative AI models to achieve optimal results.
+              </p>
+              <p>
+                As a Database Administrator working with increasingly AI-enhanced tools, prompt engineering skills are crucial for leveraging AI assistance in database optimization, query generation, documentation creation, and troubleshooting. This knowledge enables me to effectively use AI tools for improving productivity, automating routine tasks, and solving complex database challenges.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Prompt Design</div>
+                <div class="skill-tag">Instruction Crafting</div>
+                <div class="skill-tag">Context Setting</div>
+                <div class="skill-tag">Few-Shot Learning</div>
+                <div class="skill-tag">Chain-of-Thought</div>
+                <div class="skill-tag">Role Assignment</div>
+                <div class="skill-tag">Output Formatting</div>
+                <div class="skill-tag">Iteration Techniques</div>
+                <div class="skill-tag">AI Model Understanding</div>
+                <div class="skill-tag">Constraint Definition</div>
+                <div class="skill-tag">Error Mitigation</div>
+                <div class="skill-tag">Best Practices</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Introduction to Generative AI</h4>
+              <ul>
+                <li>Understanding large language models (LLMs)</li>
+                <li>How AI models generate responses</li>
+                <li>Capabilities and limitations of AI</li>
+                <li>Different AI models (GPT-4, Claude, Bard)</li>
+                <li>Use cases for generative AI</li>
+                <li>Ethical considerations in AI usage</li>
+                <li>AI hallucinations and accuracy</li>
+              </ul>
+
+              <h4>2. Fundamentals of Prompt Engineering</h4>
+              <ul>
+                <li>What is prompt engineering</li>
+                <li>Why prompts matter for output quality</li>
+                <li>Basic prompt structure</li>
+                <li>Clear vs vague prompts</li>
+                <li>Specificity in instructions</li>
+                <li>Iterative prompt refinement</li>
+                <li>Understanding AI responses</li>
+              </ul>
+
+              <div class="prompt-example">
+                <strong>Poor Prompt:</strong><br>
+                "Write SQL query"<br><br>
+                <strong>Improved Prompt:</strong><br>
+                "Write a PostgreSQL query to retrieve the top 10 customers by total purchase amount in the last 30 days, including customer name, email, and total spent. Join the customers and orders tables."
+              </div>
+
+              <h4>3. Key Prompt Engineering Techniques</h4>
+              <ul>
+                <li>Zero-shot prompting</li>
+                <li>Few-shot learning with examples</li>
+                <li>Chain-of-thought prompting</li>
+                <li>Role-based prompting</li>
+                <li>Step-by-step instructions</li>
+                <li>Delimiters and structure</li>
+                <li>Context window management</li>
+              </ul>
+
+              <div class="prompt-example">
+                <strong>Few-Shot Example:</strong><br>
+                "You are a PostgreSQL expert. Analyze these queries:<br><br>
+                Example 1: SELECT * FROM users - Inefficient, retrieves all columns<br>
+                Example 2: SELECT id, name FROM users WHERE active=true - Better, specific columns<br><br>
+                Now analyze this query: [user's query]"
+              </div>
+
+              <h4>4. Structuring Effective Prompts</h4>
+              <ul>
+                <li>Setting context and background</li>
+                <li>Defining the task clearly</li>
+                <li>Specifying desired output format</li>
+                <li>Including constraints and requirements</li>
+                <li>Using examples when helpful</li>
+                <li>Breaking complex tasks into steps</li>
+                <li>Requesting explanations or reasoning</li>
+              </ul>
+
+              <div class="code-block">
+<br>Prompt Template Structure:
+<br>
+<br>1. ROLE: "You are a [specific expert]"
+<br>2. CONTEXT: "Given that [background information]"
+<br>3. TASK: "I need you to [specific action]"
+<br>4. FORMAT: "Please provide the output as [structure]"
+<br>5. CONSTRAINTS: "Ensure that [requirements/limitations]"
+<br>6. EXAMPLES: "Here are some examples: [samples]"
+              </div>
+
+              <h4>5. Advanced Prompting Strategies</h4>
+              <ul>
+                <li>Chain-of-thought for complex reasoning</li>
+                <li>Self-consistency checking</li>
+                <li>Asking AI to explain its process</li>
+                <li>Iterative refinement techniques</li>
+                <li>Combining multiple approaches</li>
+                <li>Temperature and parameter tuning</li>
+                <li>Prompt chaining for multi-step tasks</li>
+              </ul>
+
+              <h4>6. Common Pitfalls and Solutions</h4>
+              <ul>
+                <li>Avoiding ambiguous instructions</li>
+                <li>Preventing hallucinations with specific constraints</li>
+                <li>Handling incorrect or irrelevant responses</li>
+                <li>Dealing with context limitations</li>
+                <li>Mitigating bias in AI outputs</li>
+                <li>Verifying accuracy of AI-generated content</li>
+                <li>When to use vs not use AI assistance</li>
+              </ul>
+
+              <h4>7. Domain-Specific Applications</h4>
+              <ul>
+                <li>Technical writing and documentation</li>
+                <li>Code generation and debugging</li>
+                <li>Data analysis and interpretation</li>
+                <li>Problem-solving assistance</li>
+                <li>Learning and education</li>
+                <li>Creative content generation</li>
+                <li>Research and information synthesis</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-robot"></i> AI-Enhanced Database Work</h4>
+                <p>Prompt engineering enables effective use of AI for database tasks:</p>
+              </div>
+
+              <h4>SQL Query Optimization:</h4>
+              <ul>
+                <li>Generating optimized SQL queries with specific prompts</li>
+                <li>Analyzing query performance and suggesting improvements</li>
+                <li>Converting natural language requirements to SQL</li>
+                <li>Debugging complex queries with AI assistance</li>
+                <li>Learning new SQL techniques through targeted prompts</li>
+              </ul>
+
+              <div class="prompt-example">
+                <strong>Database Query Prompt:</strong><br>
+                "As a PostgreSQL DBA, I need to optimize this slow query [query here]. The table has 10M rows with indexes on id and created_at. Current execution time is 30 seconds. Please analyze the query, explain performance issues, and provide an optimized version with execution plan considerations."
+              </div>
+
+              <h4>Documentation and Scripting:</h4>
+              <ul>
+                <li>Creating comprehensive database documentation</li>
+                <li>Generating backup and recovery scripts</li>
+                <li>Writing migration procedures</li>
+                <li>Documenting database schemas</li>
+                <li>Creating runbooks for common tasks</li>
+              </ul>
+
+              <div class="prompt-example">
+                <strong>Documentation Prompt:</strong><br>
+                "Create a detailed runbook for PostgreSQL database backup and recovery procedures for a production system with 500GB database size, including pre-checks, step-by-step execution, rollback procedures, and post-validation steps. Format as a numbered checklist."
+              </div>
+
+              <h4>Troubleshooting and Problem-Solving:</h4>
+              <ul>
+                <li>Diagnosing database performance issues</li>
+                <li>Analyzing error messages and logs</li>
+                <li>Finding solutions to configuration problems</li>
+                <li>Understanding complex database behaviors</li>
+                <li>Learning about new database features</li>
+              </ul>
+
+              <div class="prompt-example">
+                <strong>Troubleshooting Prompt:</strong><br>
+                "I'm experiencing connection timeouts on my PostgreSQL 15 database. Error: 'could not connect to server: Connection timed out'. The database has 300 active connections, max_connections is set to 400. Server specs: 32GB RAM, 8 cores. Help diagnose the issue and provide solutions."
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Implementations</h3>
+              
+              <h4>Daily DBA Tasks Enhanced by AI:</h4>
+              <ul>
+                <li>Query optimization recommendations using AI analysis</li>
+                <li>Automated documentation generation with structured prompts</li>
+                <li>Script generation for routine maintenance tasks</li>
+                <li>Performance tuning suggestions based on metrics</li>
+                <li>Learning new PostgreSQL features through targeted questions</li>
+              </ul>
+
+              <h4>Complex Problem Solving:</h4>
+              <ul>
+                <li>Database migration planning with AI assistance</li>
+                <li>Schema design review and optimization</li>
+                <li>Capacity planning calculations and projections</li>
+                <li>Incident analysis and root cause identification</li>
+                <li>Best practices research for specific scenarios</li>
+              </ul>
+
+              <h4>Knowledge Management:</h4>
+              <ul>
+                <li>Creating searchable knowledge base articles</li>
+                <li>Summarizing complex technical documentation</li>
+                <li>Generating training materials for team members</li>
+                <li>Compiling troubleshooting guides</li>
+                <li>Documenting lessons learned from incidents</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Prompt Engineering Best Practices Learned</h3>
+              <ul>
+                <li><strong>Be Specific:</strong> Clear, detailed prompts produce better results</li>
+                <li><strong>Provide Context:</strong> Background information improves response relevance</li>
+                <li><strong>Use Examples:</strong> Sample inputs/outputs guide AI understanding</li>
+                <li><strong>Structure Requests:</strong> Organized prompts yield organized responses</li>
+                <li><strong>Iterate:</strong> Refine prompts based on initial outputs</li>
+                <li><strong>Verify:</strong> Always validate AI-generated technical content</li>
+                <li><strong>Combine Techniques:</strong> Use multiple strategies for complex tasks</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Real-World Examples</h3>
+              
+              <h4>Example 1: Query Generation</h4>
+              <div class="prompt-example">
+                <strong>Prompt:</strong> "Generate a PostgreSQL query that retrieves monthly revenue trends for the last 12 months, grouped by product category. The database has tables: orders (id, date, total), order_items (order_id, product_id, quantity, price), products (id, name, category_id), categories (id, name). Include month name, category name, and total revenue. Order by month descending."<br><br>
+                <strong>Result:</strong> Accurate, optimized SQL query with proper joins and aggregation
+              </div>
+
+              <h4>Example 2: Performance Analysis</h4>
+              <div class="prompt-example">
+                <strong>Prompt:</strong> "Analyze this EXPLAIN output [paste output]. The query retrieves user activity from a 50M row table. Identify performance bottlenecks, explain the execution plan, and suggest 3 specific optimizations with expected impact."<br><br>
+                <strong>Result:</strong> Detailed analysis with actionable optimization recommendations
+              </div>
+
+              <h4>Example 3: Documentation</h4>
+              <div class="prompt-example">
+                <strong>Prompt:</strong> "Create a comprehensive guide for setting up PostgreSQL streaming replication. Include prerequisites, step-by-step configuration for primary and standby servers, testing procedures, and common troubleshooting issues. Target audience: intermediate DBAs."<br><br>
+                <strong>Result:</strong> Professional, detailed documentation ready for use
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered fundamentals of effective prompt design</li>
+                <li>Learned various prompting techniques and when to use them</li>
+                <li>Developed ability to structure complex multi-step prompts</li>
+                <li>Gained understanding of AI capabilities and limitations</li>
+                <li>Acquired skills to iterate and improve prompt effectiveness</li>
+                <li>Built expertise in domain-specific AI applications</li>
+                <li>Enhanced productivity through AI assistance</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Productivity</h3>
+              <p>
+                Prompt engineering skills have dramatically improved my workflow:
+              </p>
+              <ul>
+                <li>Reduced time spent on routine query optimization by 60%</li>
+                <li>Accelerated documentation creation and maintenance</li>
+                <li>Faster troubleshooting through AI-assisted problem analysis</li>
+                <li>Improved learning speed for new technologies and features</li>
+                <li>Enhanced ability to explain complex concepts to stakeholders</li>
+                <li>More effective knowledge sharing within the team</li>
+                <li>Increased capacity to handle complex database challenges</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Ethical Considerations</h3>
+              <p>The course emphasized responsible AI usage:</p>
+              <ul>
+                <li>Always verify AI-generated code before implementation</li>
+                <li>Understand that AI can make mistakes (hallucinations)</li>
+                <li>Protect sensitive data - never share confidential information</li>
+                <li>Use AI as a tool to enhance, not replace, human expertise</li>
+                <li>Be transparent when using AI-generated content</li>
+                <li>Consider bias and accuracy in AI outputs</li>
+                <li>Maintain professional judgment in decision-making</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to leverage prompt engineering for:</p>
+              <ul>
+                <li>Advanced database automation using AI agents</li>
+                <li>Developing custom AI-powered DBA tools</li>
+                <li>Creating intelligent monitoring and alerting systems</li>
+                <li>Building conversational interfaces for database management</li>
+                <li>Enhancing database testing and quality assurance</li>
+                <li>Automating incident response and resolution</li>
+                <li>Generating predictive analytics for capacity planning</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

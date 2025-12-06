@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Cisco CCNA 200-301: Network Fundamentals - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #1ba0e2 0%, #0c5aa6 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #1ba0e2;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #e8f4f9;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #1ba0e2;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #d0e8f2;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #1ba0e2;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #1ba0e2 0%, #0c5aa6 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #1ba0e2 0%, #0c5aa6 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(27, 160, 226, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #e8f4f9;
+      border-left: 4px solid #1ba0e2;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Cisco CCNA 200-301: Network Fundamentals and Access</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/ccna-cert.jpg" alt="CCNA Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/cisco-ccna-200-301-cert-prep-1-network-fundamentals-and-access" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 4+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Intermediate to Advanced
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Network Fundamentals & Infrastructure
+              </div>
+              <div class="info-item">
+                <strong>Technologies:</strong> Cisco IOS, Routing, Switching
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Cisco CCNA 200-301 certification preparation course from LinkedIn Learning provides comprehensive training in network fundamentals and infrastructure access. This course covers essential networking concepts required for the Cisco Certified Network Associate (CCNA) certification, focusing on network architecture, protocols, and Cisco device configuration.
+              </p>
+              <p>
+                As a Database Administrator managing systems across network infrastructure, understanding networking fundamentals is crucial for troubleshooting connectivity issues, optimizing database communication, configuring secure connections, and ensuring high availability. This knowledge directly impacts database performance and reliability in distributed environments.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">Network Fundamentals</div>
+                <div class="skill-tag">OSI & TCP/IP Models</div>
+                <div class="skill-tag">IP Addressing</div>
+                <div class="skill-tag">Subnetting</div>
+                <div class="skill-tag">VLANs</div>
+                <div class="skill-tag">Routing Protocols</div>
+                <div class="skill-tag">Switching</div>
+                <div class="skill-tag">Network Security</div>
+                <div class="skill-tag">Cisco IOS</div>
+                <div class="skill-tag">Network Troubleshooting</div>
+                <div class="skill-tag">Wireless Networking</div>
+                <div class="skill-tag">Network Design</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Network Fundamentals</h4>
+              <ul>
+                <li>Network components (routers, switches, firewalls)</li>
+                <li>Network topologies (star, mesh, hybrid)</li>
+                <li>Network types (LAN, WAN, MAN, WLAN)</li>
+                <li>Client-server vs peer-to-peer architecture</li>
+                <li>Network performance metrics (bandwidth, throughput, latency)</li>
+                <li>Physical and logical network diagrams</li>
+                <li>Network documentation best practices</li>
+              </ul>
+
+              <h4>2. OSI and TCP/IP Models</h4>
+              <ul>
+                <li>Seven layers of OSI model in detail</li>
+                <li>TCP/IP model and protocol suite</li>
+                <li>Layer functions and protocols at each level</li>
+                <li>Encapsulation and de-encapsulation process</li>
+                <li>Protocol Data Units (PDUs)</li>
+                <li>How data flows through network layers</li>
+                <li>Troubleshooting using layer models</li>
+              </ul>
+
+              <div class="code-block">
+<br>OSI Model Layers:
+<br>7. Application  - HTTP, FTP, DNS, SMTP
+<br>6. Presentation - SSL/TLS, Data Encryption
+<br>5. Session      - Session Management
+<br>4. Transport    - TCP, UDP
+<br>3. Network      - IP, ICMP, Routing
+<br>2. Data Link    - Ethernet, MAC, Switches
+<br>1. Physical     - Cables, Hubs, Physical Media
+<br>
+<br>TCP/IP Model:
+<br>4. Application  - Combines OSI 5-7
+<br>3. Transport    - TCP, UDP
+<br>2. Internet     - IP, ICMP, ARP
+<br>1. Network Access - Combines OSI 1-2
+              </div>
+
+              <h4>3. IP Addressing and Subnetting</h4>
+              <ul>
+                <li>IPv4 addressing structure and classes</li>
+                <li>Public vs private IP addresses</li>
+                <li>Subnetting fundamentals and calculations</li>
+                <li>CIDR notation and VLSM</li>
+                <li>IPv6 addressing and format</li>
+                <li>IPv6 address types (unicast, multicast, anycast)</li>
+                <li>Network Address Translation (NAT)</li>
+                <li>DHCP configuration and operation</li>
+              </ul>
+
+              <div class="code-block">
+<br># IPv4 Subnetting Example
+<br>Network: 192.168.10.0/24
+<br>Subnet Mask: 255.255.255.0
+<br>
+<br>Creating 4 subnets:
+<br>Subnet 1: 192.168.10.0/26   (Hosts: 192.168.10.1-62)
+<br>Subnet 2: 192.168.10.64/26  (Hosts: 192.168.10.65-126)
+<br>Subnet 3: 192.168.10.128/26 (Hosts: 192.168.10.129-190)
+<br>Subnet 4: 192.168.10.192/26 (Hosts: 192.168.10.193-254)
+<br>
+<br>Each subnet provides 62 usable host addresses
+              </div>
+
+              <h4>4. Ethernet and Switching</h4>
+              <ul>
+                <li>Ethernet standards and frame format</li>
+                <li>MAC addressing structure</li>
+                <li>Switch operation and MAC address table</li>
+                <li>Collision domains and broadcast domains</li>
+                <li>Spanning Tree Protocol (STP)</li>
+                <li>VLANs and VLAN trunking (802.1Q)</li>
+                <li>Inter-VLAN routing</li>
+                <li>Port security and switch hardening</li>
+              </ul>
+
+              <h4>5. Routing Fundamentals</h4>
+              <ul>
+                <li>Router operation and routing tables</li>
+                <li>Static routing configuration</li>
+                <li>Dynamic routing protocols overview</li>
+                <li>Distance vector vs link-state protocols</li>
+                <li>RIP, EIGRP, OSPF basics</li>
+                <li>Default routes and route summarization</li>
+                <li>Administrative distance and metrics</li>
+                <li>Routing protocol selection criteria</li>
+              </ul>
+
+              <div class="code-block">
+<br>! Basic Cisco Router Configuration
+<br>Router> enable
+<br>Router# configure terminal
+<br>Router(config)# hostname MainRouter
+<br>MainRouter(config)# interface GigabitEthernet0/0
+<br>MainRouter(config-if)# ip address 192.168.1.1 255.255.255.0
+<br>MainRouter(config-if)# no shutdown
+<br>MainRouter(config-if)# exit
+<br>
+<br>! Static route example
+<br>MainRouter(config)# ip route 10.0.0.0 255.255.255.0 192.168.1.254
+<br>
+<br>! Show routing table
+<br>MainRouter# show ip route
+              </div>
+
+              <h4>6. Wireless Networking</h4>
+              <ul>
+                <li>Wi-Fi standards (802.11a/b/g/n/ac/ax)</li>
+                <li>Wireless LAN components (AP, controller)</li>
+                <li>SSID and wireless security (WPA2, WPA3)</li>
+                <li>Wireless channels and frequency bands</li>
+                <li>Site surveys and coverage planning</li>
+                <li>Roaming and handoff mechanisms</li>
+                <li>Wireless troubleshooting techniques</li>
+              </ul>
+
+              <h4>7. Network Services</h4>
+              <ul>
+                <li>DHCP (Dynamic Host Configuration Protocol)</li>
+                <li>DNS (Domain Name System) operation</li>
+                <li>NTP (Network Time Protocol)</li>
+                <li>SNMP (Simple Network Management Protocol)</li>
+                <li>Syslog for network logging</li>
+                <li>FTP, TFTP, and file transfer protocols</li>
+                <li>Quality of Service (QoS) basics</li>
+              </ul>
+
+              <h4>8. Network Security Fundamentals</h4>
+              <ul>
+                <li>Security threats and vulnerabilities</li>
+                <li>Access Control Lists (ACLs)</li>
+                <li>Port security on switches</li>
+                <li>AAA (Authentication, Authorization, Accounting)</li>
+                <li>VPN types and implementations</li>
+                <li>Firewall technologies</li>
+                <li>Network security best practices</li>
+                <li>Cisco security features</li>
+              </ul>
+
+              <div class="code-block">
+<br>! Access Control List (ACL) Example
+<br>Router(config)# access-list 10 permit 192.168.1.0 0.0.0.255
+<br>Router(config)# access-list 10 deny any
+<br>Router(config)# interface GigabitEthernet0/1
+<br>Router(config-if)# ip access-group 10 in
+<br>
+<br>! Port Security on Switch
+<br>Switch(config)# interface FastEthernet0/1
+<br>Switch(config-if)# switchport mode access
+<br>Switch(config-if)# switchport port-security
+<br>Switch(config-if)# switchport port-security maximum 2
+<br>Switch(config-if)# switchport port-security violation restrict
+              </div>
+
+              <h4>9. Cisco IOS Basics</h4>
+              <ul>
+                <li>IOS navigation and command modes</li>
+                <li>Device configuration (running vs startup)</li>
+                <li>Password configuration and security</li>
+                <li>Banner messages and descriptions</li>
+                <li>Configuration backup and restore</li>
+                <li>IOS file management</li>
+                <li>Common show commands</li>
+                <li>Basic troubleshooting commands</li>
+              </ul>
+
+              <h4>10. Network Troubleshooting</h4>
+              <ul>
+                <li>Structured troubleshooting methodology</li>
+                <li>Ping, traceroute, and connectivity testing</li>
+                <li>Show commands for diagnosis</li>
+                <li>Debug commands and logging</li>
+                <li>Cable testing and physical layer issues</li>
+                <li>Protocol analyzer tools (Wireshark)</li>
+                <li>Common network problems and solutions</li>
+                <li>Documentation during troubleshooting</li>
+              </ul>
+
+              <div class="code-block">
+<br>! Common Troubleshooting Commands
+<br>Router# show ip interface brief
+<br>Router# show running-config
+<br>Router# show ip route
+<br>Router# show vlan brief
+<br>Router# show interfaces status
+<br>Router# ping 8.8.8.8
+<br>Router# traceroute google.com
+<br>Router# show cdp neighbors
+<br>Router# show mac address-table
+<br>Router# show spanning-tree
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-hdd-network"></i> Networking for Database Systems</h4>
+                <p>Network knowledge is essential for effective database administration:</p>
+              </div>
+
+              <h4>Database Connectivity:</h4>
+              <ul>
+                <li><strong>TCP/IP Configuration:</strong> Understanding how databases communicate over networks using TCP ports</li>
+                <li><strong>Network Latency:</strong> Diagnosing and resolving database performance issues caused by network delays</li>
+                <li><strong>Firewall Rules:</strong> Configuring ACLs and firewall rules for database access security</li>
+                <li><strong>VPN Setup:</strong> Securing remote database connections using VPN technologies</li>
+                <li><strong>Load Balancing:</strong> Understanding network load balancing for database high availability</li>
+              </ul>
+
+              <h4>Troubleshooting Database Connectivity:</h4>
+              <ul>
+                <li>Using ping and traceroute to diagnose connection issues</li>
+                <li>Analyzing network traffic with packet capture tools</li>
+                <li>Identifying network bottlenecks affecting database performance</li>
+                <li>Resolving DNS issues for database hostname resolution</li>
+                <li>Troubleshooting replication issues across WAN connections</li>
+              </ul>
+
+              <h4>Database Network Security:</h4>
+              <ul>
+                <li>Implementing database access through secure network segments</li>
+                <li>Configuring VLAN isolation for database servers</li>
+                <li>Setting up encrypted connections (SSL/TLS) for database traffic</li>
+                <li>Restricting database access using IP-based ACLs</li>
+                <li>Monitoring network traffic for suspicious database access patterns</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Database Networking Scenarios</h3>
+              
+              <h4>PostgreSQL Network Configuration:</h4>
+              <ul>
+                <li>Configuring pg_hba.conf with network subnets for access control</li>
+                <li>Setting up SSL certificates for encrypted PostgreSQL connections</li>
+                <li>Optimizing TCP parameters for PostgreSQL replication</li>
+                <li>Troubleshooting network timeout issues in database connections</li>
+                <li>Implementing connection pooling across network segments</li>
+              </ul>
+
+              <h4>Cloud Database Networking:</h4>
+              <ul>
+                <li>Configuring security groups for AWS RDS instances</li>
+                <li>Setting up VPC peering for database access</li>
+                <li>Understanding latency impacts on cloud database performance</li>
+                <li>Implementing private endpoints for secure database connections</li>
+                <li>Managing bandwidth for database backup and replication</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Real-World Applications</h3>
+              <ul>
+                <li>Diagnosed and resolved database connection timeout issues caused by network congestion</li>
+                <li>Configured firewall rules for secure database access across multiple locations</li>
+                <li>Optimized database replication performance by identifying network bottlenecks</li>
+                <li>Implemented network monitoring for database traffic analysis</li>
+                <li>Set up VPN tunnels for secure remote database administration</li>
+                <li>Troubleshot DNS resolution issues affecting database cluster communication</li>
+                <li>Configured QoS policies to prioritize database traffic during peak hours</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered fundamental networking concepts and protocols</li>
+                <li>Gained proficiency in IP addressing and subnetting</li>
+                <li>Learned Cisco device configuration and management</li>
+                <li>Developed network troubleshooting methodology and skills</li>
+                <li>Understood network security principles and implementations</li>
+                <li>Acquired knowledge of routing and switching technologies</li>
+                <li>Built foundation for advanced network administration</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on DBA Work</h3>
+              <p>
+                This networking certification has significantly enhanced my database administration capabilities:
+              </p>
+              <ul>
+                <li>Faster diagnosis of database connectivity issues</li>
+                <li>Better understanding of network-related performance problems</li>
+                <li>Improved collaboration with network teams</li>
+                <li>Enhanced security configuration for database systems</li>
+                <li>More effective troubleshooting of distributed database systems</li>
+                <li>Ability to optimize database network communication</li>
+                <li>Stronger foundation for cloud database management</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Continuing Education</h3>
+              <p>Building on this networking foundation, areas for further development include:</p>
+              <ul>
+                <li>Advanced routing protocols for multi-site database deployments</li>
+                <li>Software-defined networking (SDN) for database infrastructure</li>
+                <li>Network automation using Python and Ansible</li>
+                <li>Advanced network security for database protection</li>
+                <li>Cloud networking architectures (AWS VPC, Azure VNet)</li>
+                <li>Network performance monitoring and optimization tools</li>
+                <li>Container networking for containerized databases</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

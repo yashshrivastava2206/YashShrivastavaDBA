@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>HTML Essential Training - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #e34c26 0%, #f06529 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #e34c26;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #fff5f2;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #e34c26;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ffe5dc;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #e34c26;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #e34c26 0%, #f06529 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #e34c26 0%, #f06529 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(227, 76, 38, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #fff5f2;
+      border-left: 4px solid #e34c26;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>HTML Essential Training</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/html-cert.jpg" alt="HTML Essential Training Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/html-essential-training-2020" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 5+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Beginner to Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Modern HTML5 & Web Development
+              </div>
+              <div class="info-item">
+                <strong>Technologies:</strong> HTML5, Semantic HTML, Forms
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The HTML Essential Training certification from LinkedIn Learning provides comprehensive instruction in modern HTML5 web development. This course covers everything from basic HTML structure to advanced semantic markup, forms, multimedia integration, and web accessibility standards.
+              </p>
+              <p>
+                As a Database Administrator building monitoring dashboards, internal tools, and database documentation websites, HTML skills are essential for creating effective web interfaces. This certification has enabled me to develop custom database monitoring solutions, create interactive reporting tools, and build user-friendly interfaces for database management applications.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">HTML5 Fundamentals</div>
+                <div class="skill-tag">Semantic Markup</div>
+                <div class="skill-tag">Document Structure</div>
+                <div class="skill-tag">Forms & Input</div>
+                <div class="skill-tag">Tables & Lists</div>
+                <div class="skill-tag">Multimedia Integration</div>
+                <div class="skill-tag">Accessibility (A11Y)</div>
+                <div class="skill-tag">SEO Basics</div>
+                <div class="skill-tag">Responsive Design</div>
+                <div class="skill-tag">Web Standards</div>
+                <div class="skill-tag">HTML Validation</div>
+                <div class="skill-tag">Best Practices</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. HTML Fundamentals</h4>
+              <ul>
+                <li>HTML history and evolution to HTML5</li>
+                <li>Document structure and syntax</li>
+                <li>Elements, tags, and attributes</li>
+                <li>DOCTYPE declaration and importance</li>
+                <li>Character encoding (UTF-8)</li>
+                <li>HTML document anatomy</li>
+                <li>Browser rendering and compatibility</li>
+              </ul>
+
+              <div class="code-block">
+<br>&lt;!DOCTYPE html&gt;
+<br>&lt;html lang="en"&gt;
+<br>&lt;head&gt;
+<br>    &lt;meta charset="UTF-8"&gt;
+<br>    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+<br>    &lt;title&gt;Database Dashboard&lt;/title&gt;
+<br>&lt;/head&gt;
+<br>&lt;body&gt;
+<br>    &lt;h1&gt;Welcome to Database Monitoring&lt;/h1&gt;
+<br>&lt;/body&gt;
+<br>&lt;/html&gt;
+              </div>
+
+              <h4>2. Semantic HTML5 Elements</h4>
+              <ul>
+                <li>Importance of semantic markup</li>
+                <li>header, nav, main, article, section, aside</li>
+                <li>footer and address elements</li>
+                <li>figure and figcaption for media</li>
+                <li>time element for dates</li>
+                <li>Using semantic elements effectively</li>
+                <li>Document outline and structure</li>
+              </ul>
+
+              <div class="code-block">
+<br>&lt;header&gt;
+<br>    &lt;nav&gt;
+<br>        &lt;ul&gt;
+<br>            &lt;li&gt;&lt;a href="#dashboard"&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+<br>            &lt;li&gt;&lt;a href="#databases"&gt;Databases&lt;/a&gt;&lt;/li&gt;
+<br>            &lt;li&gt;&lt;a href="#monitoring"&gt;Monitoring&lt;/a&gt;&lt;/li&gt;
+<br>        &lt;/ul&gt;
+<br>    &lt;/nav&gt;
+<br>&lt;/header&gt;
+<br>
+<br>&lt;main&gt;
+<br>    &lt;article&gt;
+<br>        &lt;h2&gt;Database Performance Report&lt;/h2&gt;
+<br>        &lt;time datetime="2024-12-06"&gt;December 6, 2024&lt;/time&gt;
+<br>        &lt;p&gt;Current system metrics and analysis...&lt;/p&gt;
+<br>    &lt;/article&gt;
+<br>&lt;/main&gt;
+              </div>
+
+              <h4>3. Text Formatting and Typography</h4>
+              <ul>
+                <li>Headings hierarchy (h1-h6)</li>
+                <li>Paragraphs and line breaks</li>
+                <li>Strong and emphasis elements</li>
+                <li>Blockquotes and citations</li>
+                <li>Pre-formatted text and code blocks</li>
+                <li>Subscript and superscript</li>
+                <li>Mark and highlight text</li>
+                <li>Abbreviations and definitions</li>
+              </ul>
+
+              <h4>4. Links and Navigation</h4>
+              <ul>
+                <li>Anchor element and href attribute</li>
+                <li>Absolute vs relative URLs</li>
+                <li>Internal page links (anchors)</li>
+                <li>Opening links in new tabs (target)</li>
+                <li>Email and telephone links</li>
+                <li>Download links</li>
+                <li>Navigation best practices</li>
+                <li>Link accessibility considerations</li>
+              </ul>
+
+              <h4>5. Lists and Tables</h4>
+              <ul>
+                <li>Unordered lists (ul, li)</li>
+                <li>Ordered lists and numbering</li>
+                <li>Description lists (dl, dt, dd)</li>
+                <li>Nested lists</li>
+                <li>Table structure (table, tr, td, th)</li>
+                <li>Table headers and footers</li>
+                <li>Column and row spanning</li>
+                <li>Accessible table markup</li>
+              </ul>
+
+              <div class="code-block">
+<br>&lt;table&gt;
+<br>    &lt;thead&gt;
+<br>        &lt;tr&gt;
+<br>            &lt;th&gt;Database Name&lt;/th&gt;
+<br>            &lt;th&gt;Size (GB)&lt;/th&gt;
+<br>            &lt;th&gt;Status&lt;/th&gt;
+<br>            &lt;th&gt;Last Backup&lt;/th&gt;
+<br>        &lt;/tr&gt;
+<br>    &lt;/thead&gt;
+<br>    &lt;tbody&gt;
+<br>        &lt;tr&gt;
+<br>            &lt;td&gt;production_db&lt;/td&gt;
+<br>            &lt;td&gt;250&lt;/td&gt;
+<br>            &lt;td&gt;Active&lt;/td&gt;
+<br>            &lt;td&gt;2024-12-06 03:00&lt;/td&gt;
+<br>        &lt;/tr&gt;
+<br>    &lt;/tbody&gt;
+<br>&lt;/table&gt;
+              </div>
+
+              <h4>6. Forms and Input Elements</h4>
+              <ul>
+                <li>Form element and attributes (action, method)</li>
+                <li>Input types (text, email, password, number, date)</li>
+                <li>Textarea for multi-line text</li>
+                <li>Select dropdowns and option elements</li>
+                <li>Radio buttons and checkboxes</li>
+                <li>Form labels and fieldsets</li>
+                <li>HTML5 input validation attributes</li>
+                <li>Submit and reset buttons</li>
+              </ul>
+
+              <div class="code-block">
+<br>&lt;form action="/api/database-query" method="POST"&gt;
+<br>    &lt;fieldset&gt;
+<br>        &lt;legend&gt;Database Query Tool&lt;/legend&gt;
+<br>        
+<br>        &lt;label for="db-select"&gt;Select Database:&lt;/label&gt;
+<br>        &lt;select id="db-select" name="database" required&gt;
+<br>            &lt;option value=""&gt;Choose a database&lt;/option&gt;
+<br>            &lt;option value="prod"&gt;Production&lt;/option&gt;
+<br>            &lt;option value="dev"&gt;Development&lt;/option&gt;
+<br>        &lt;/select&gt;
+<br>        
+<br>        &lt;label for="query"&gt;SQL Query:&lt;/label&gt;
+<br>        &lt;textarea id="query" name="query" rows="6" required&gt;&lt;/textarea&gt;
+<br>        
+<br>        &lt;button type="submit"&gt;Execute Query&lt;/button&gt;
+<br>    &lt;/fieldset&gt;
+<br>&lt;/form&gt;
+              </div>
+
+              <h4>7. HTML5 Input Types and Validation</h4>
+              <ul>
+                <li>Email and URL input validation</li>
+                <li>Number input with min/max/step</li>
+                <li>Date, time, and datetime-local inputs</li>
+                <li>Range sliders</li>
+                <li>Color picker input</li>
+                <li>Search input type</li>
+                <li>Pattern attribute for regex validation</li>
+                <li>Required and placeholder attributes</li>
+              </ul>
+
+              <h4>8. Multimedia Integration</h4>
+              <ul>
+                <li>Images (img element and attributes)</li>
+                <li>Alt text for accessibility</li>
+                <li>Responsive images (srcset, sizes)</li>
+                <li>Figure and figcaption for image captions</li>
+                <li>Audio element and formats</li>
+                <li>Video element and controls</li>
+                <li>Embedding content (iframe)</li>
+                <li>SVG integration</li>
+              </ul>
+
+              <h4>9. Web Accessibility (A11Y)</h4>
+              <ul>
+                <li>WCAG guidelines overview</li>
+                <li>ARIA roles and attributes</li>
+                <li>Screen reader compatibility</li>
+                <li>Keyboard navigation support</li>
+                <li>Color contrast requirements</li>
+                <li>Skip navigation links</li>
+                <li>Form accessibility best practices</li>
+                <li>Testing with accessibility tools</li>
+              </ul>
+
+              <h4>10. Best Practices and Standards</h4>
+              <ul>
+                <li>HTML validation with W3C validator</li>
+                <li>Code organization and formatting</li>
+                <li>Comments and documentation</li>
+                <li>SEO-friendly markup</li>
+                <li>Performance considerations</li>
+                <li>Progressive enhancement</li>
+                <li>Cross-browser compatibility</li>
+                <li>Mobile-first responsive design</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-code-square"></i> HTML for Database Tools</h4>
+                <p>HTML skills enable creation of custom database management interfaces:</p>
+              </div>
+
+              <h4>Database Monitoring Dashboards:</h4>
+              <ul>
+                <li>Built real-time database performance monitoring dashboards</li>
+                <li>Created interactive tables displaying database metrics</li>
+                <li>Developed forms for database query execution tools</li>
+                <li>Designed status pages for database health monitoring</li>
+                <li>Implemented alert notification interfaces</li>
+              </ul>
+
+              <h4>Internal Tools and Utilities:</h4>
+              <ul>
+                <li>Database backup management interface</li>
+                <li>User access control panel with forms</li>
+                <li>Query builder with HTML form inputs</li>
+                <li>Database migration status tracker</li>
+                <li>Documentation portal for database procedures</li>
+              </ul>
+
+              <h4>Reporting Interfaces:</h4>
+              <ul>
+                <li>Custom report generation forms</li>
+                <li>Data visualization embedding</li>
+                <li>Scheduled report dashboards</li>
+                <li>Database audit log viewers</li>
+                <li>Performance analytics displays</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Real-World Projects</h3>
+              
+              <h4>Database Monitoring Dashboard:</h4>
+              <ul>
+                <li>Created comprehensive monitoring interface using semantic HTML</li>
+                <li>Implemented real-time metrics display with tables</li>
+                <li>Built navigation system for different database views</li>
+                <li>Added forms for filtering and customizing dashboard views</li>
+                <li>Ensured accessibility for all team members</li>
+              </ul>
+
+              <h4>Internal Documentation Portal:</h4>
+              <ul>
+                <li>Developed searchable database documentation website</li>
+                <li>Organized content with semantic HTML structure</li>
+                <li>Created navigation hierarchy for easy access</li>
+                <li>Implemented code blocks for SQL examples</li>
+                <li>Added interactive forms for feedback</li>
+              </ul>
+
+              <h4>Database Query Tool:</h4>
+              <ul>
+                <li>Built web-based SQL query execution interface</li>
+                <li>Created dropdown selectors for database selection</li>
+                <li>Implemented textarea for SQL input with validation</li>
+                <li>Designed result tables with proper markup</li>
+                <li>Added export functionality with download links</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Takeaways</h3>
+              <ul>
+                <li><strong>Semantic HTML:</strong> Using meaningful elements improves accessibility and SEO</li>
+                <li><strong>Accessibility First:</strong> Proper markup ensures tools are usable by everyone</li>
+                <li><strong>Form Design:</strong> Well-structured forms enhance user experience</li>
+                <li><strong>Standards Compliance:</strong> Valid HTML ensures cross-browser compatibility</li>
+                <li><strong>Document Structure:</strong> Clear hierarchy improves maintainability</li>
+                <li><strong>Progressive Enhancement:</strong> Starting with solid HTML foundation</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Integration with Other Technologies</h3>
+              <p>HTML serves as the foundation for building complete web applications:</p>
+              <ul>
+                <li><strong>CSS Styling:</strong> HTML provides structure for visual presentation</li>
+                <li><strong>JavaScript Interactivity:</strong> DOM manipulation for dynamic features</li>
+                <li><strong>Backend Integration:</strong> Forms connect to database APIs</li>
+                <li><strong>Frameworks:</strong> HTML knowledge applies to React, Vue, Angular</li>
+                <li><strong>Template Engines:</strong> Jinja2, EJS for dynamic HTML generation</li>
+                <li><strong>API Documentation:</strong> Creating developer portals</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Mastered HTML5 markup and modern web standards</li>
+                <li>Developed skills in semantic and accessible HTML</li>
+                <li>Learned form design and validation techniques</li>
+                <li>Gained expertise in document structure and organization</li>
+                <li>Understood multimedia integration and responsive design</li>
+                <li>Built foundation for full-stack web development</li>
+                <li>Acquired skills to create professional web interfaces</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Database Work</h3>
+              <p>
+                HTML skills have significantly enhanced my ability to create database tools:
+              </p>
+              <ul>
+                <li>Developed custom monitoring dashboards replacing third-party tools</li>
+                <li>Created intuitive interfaces for database management tasks</li>
+                <li>Built internal documentation improving team efficiency</li>
+                <li>Designed forms reducing errors in database operations</li>
+                <li>Improved accessibility of database tools for all users</li>
+                <li>Enhanced communication through better data visualization</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Applications</h3>
+              <p>Continuing to leverage HTML skills for:</p>
+              <ul>
+                <li>Building progressive web apps (PWAs) for database management</li>
+                <li>Creating responsive dashboards for mobile database monitoring</li>
+                <li>Developing automated report generation systems</li>
+                <li>Implementing real-time database analytics interfaces</li>
+                <li>Building self-service database query tools for users</li>
+                <li>Creating interactive database documentation</li>
+                <li>Designing database backup and recovery interfaces</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

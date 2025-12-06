@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Artificial Intelligence Foundations: Machine Learning - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .cert-detail-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 80px 0 60px;
+    }
+
+    .cert-detail-header h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .cert-badge-large {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 10px 25px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cert-detail-content {
+      padding: 60px 0;
+    }
+
+    .cert-image-container {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cert-image-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-section {
+      margin-bottom: 40px;
+    }
+
+    .detail-section h3 {
+      color: #173b6c;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+    }
+
+    .detail-section h4 {
+      color: #173b6c;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 25px 0 15px 0;
+    }
+
+    .detail-section p {
+      color: #666;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: #f5f7ff;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 4px solid #667eea;
+    }
+
+    .info-box h4 {
+      color: #173b6c;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #e0e7ff;
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      color: #667eea;
+      margin-right: 10px;
+    }
+
+    .skills-learned {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .skill-tag {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      color: white;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #f5f7ff;
+      border-left: 4px solid #667eea;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="cert-detail-header">
+    <div class="container">
+      <div class="cert-badge-large">
+        <i class="bi bi-award-fill"></i> LINKEDIN LEARNING CERTIFICATION
+      </div>
+      <h1>Artificial Intelligence Foundations: Machine Learning</h1>
+      <p style="font-size: 18px; opacity: 0.9;">Issued by LinkedIn Learning</p>
+    </div>
+  </div>
+
+  <main>
+    <section class="cert-detail-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="cert-image-container">
+              <img src="assets/img/certifications/ml-cert.jpg" alt="Machine Learning Certificate">
+            </div>
+
+            <div class="info-box">
+              <h4>Certification Information</h4>
+              <div class="info-item">
+                <strong>Issuing Organization:</strong> LinkedIn Learning
+              </div>
+              <div class="info-item">
+                <strong>Course URL:</strong> <a href="https://www.linkedin.com/learning/artificial-intelligence-foundations-machine-learning-22345868" target="_blank">View Course</a>
+              </div>
+              <div class="info-item">
+                <strong>Completion Date:</strong> 2024
+              </div>
+              <div class="info-item">
+                <strong>Duration:</strong> 2+ Hours
+              </div>
+              <div class="info-item">
+                <strong>Skills Level:</strong> Beginner to Intermediate
+              </div>
+            </div>
+
+            <div class="info-box">
+              <h4>Key Topics</h4>
+              <div class="info-item">
+                <strong>Focus:</strong> Machine Learning Fundamentals
+              </div>
+              <div class="info-item">
+                <strong>Tools:</strong> Python, Scikit-learn, TensorFlow
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="detail-section">
+              <h3>About This Certification</h3>
+              <p>
+                The Artificial Intelligence Foundations: Machine Learning certification from LinkedIn Learning provides a comprehensive introduction to machine learning concepts, algorithms, and practical applications. This course covers essential ML fundamentals, from supervised and unsupervised learning to neural networks and deep learning basics.
+              </p>
+              <p>
+                As a Database Administrator working with large datasets, understanding machine learning is crucial for implementing intelligent data analysis, predictive maintenance, and automated optimization. This knowledge enables me to leverage ML techniques for database performance tuning, anomaly detection, and data-driven decision making in database management.
+              </p>
+            </div>
+
+            <div class="detail-section">
+              <h3>Skills Acquired</h3>
+              <div class="skills-learned">
+                <div class="skill-tag">ML Fundamentals</div>
+                <div class="skill-tag">Supervised Learning</div>
+                <div class="skill-tag">Unsupervised Learning</div>
+                <div class="skill-tag">Classification</div>
+                <div class="skill-tag">Regression Analysis</div>
+                <div class="skill-tag">Clustering</div>
+                <div class="skill-tag">Neural Networks</div>
+                <div class="skill-tag">Deep Learning Basics</div>
+                <div class="skill-tag">Model Training</div>
+                <div class="skill-tag">Feature Engineering</div>
+                <div class="skill-tag">Model Evaluation</div>
+                <div class="skill-tag">Python for ML</div>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <h3>Course Content Covered</h3>
+              
+              <h4>1. Introduction to Machine Learning</h4>
+              <ul>
+                <li>What is machine learning and AI</li>
+                <li>Types of machine learning: Supervised, Unsupervised, Reinforcement</li>
+                <li>Real-world ML applications</li>
+                <li>ML workflow and lifecycle</li>
+                <li>When to use machine learning</li>
+                <li>ML vs traditional programming</li>
+                <li>Key ML terminology and concepts</li>
+              </ul>
+
+              <h4>2. Data Preparation and Features</h4>
+              <ul>
+                <li>Understanding datasets and data types</li>
+                <li>Feature selection and engineering</li>
+                <li>Data cleaning and preprocessing</li>
+                <li>Handling missing values</li>
+                <li>Data normalization and standardization</li>
+                <li>Train-test-validation split</li>
+                <li>Feature scaling techniques</li>
+              </ul>
+
+              <div class="code-block">
+<br># Data preparation example
+<br>import pandas as pd
+<br>from sklearn.model_selection import train_test_split
+<br>from sklearn.preprocessing import StandardScaler
+<br>
+<br># Load and prepare data
+<br>data = pd.read_csv('database_metrics.csv')
+<br>X = data.drop('target', axis=1)
+<br>y = data['target']
+<br>
+<br># Split data
+<br>X_train, X_test, y_train, y_test = train_test_split(
+<br>    X, y, test_size=0.2, random_state=42
+<br>)
+<br>
+<br># Scale features
+<br>scaler = StandardScaler()
+<br>X_train_scaled = scaler.fit_transform(X_train)
+<br>X_test_scaled = scaler.transform(X_test)
+              </div>
+
+              <h4>3. Supervised Learning - Classification</h4>
+              <ul>
+                <li>Classification concepts and use cases</li>
+                <li>Decision Trees and Random Forests</li>
+                <li>K-Nearest Neighbors (KNN)</li>
+                <li>Support Vector Machines (SVM)</li>
+                <li>Naive Bayes classifier</li>
+                <li>Logistic Regression</li>
+                <li>Multi-class classification</li>
+                <li>Binary vs multi-class problems</li>
+              </ul>
+
+              <h4>4. Supervised Learning - Regression</h4>
+              <ul>
+                <li>Linear regression fundamentals</li>
+                <li>Multiple linear regression</li>
+                <li>Polynomial regression</li>
+                <li>Ridge and Lasso regression</li>
+                <li>Gradient descent optimization</li>
+                <li>Cost functions and loss minimization</li>
+                <li>Regression metrics (MSE, RMSE, R²)</li>
+              </ul>
+
+              <div class="code-block">
+<br># Simple classification example
+<br>from sklearn.ensemble import RandomForestClassifier
+<br>from sklearn.metrics import accuracy_score, classification_report
+<br>
+<br># Train model
+<br>model = RandomForestClassifier(n_estimators=100, random_state=42)
+<br>model.fit(X_train_scaled, y_train)
+<br>
+<br># Make predictions
+<br>y_pred = model.predict(X_test_scaled)
+<br>
+<br># Evaluate
+<br>accuracy = accuracy_score(y_test, y_pred)
+<br>print(f"Accuracy: {accuracy:.2f}")
+<br>print(classification_report(y_test, y_pred))
+              </div>
+
+              <h4>5. Unsupervised Learning</h4>
+              <ul>
+                <li>Clustering algorithms (K-Means, Hierarchical)</li>
+                <li>DBSCAN for density-based clustering</li>
+                <li>Dimensionality reduction (PCA)</li>
+                <li>t-SNE for visualization</li>
+                <li>Association rules and market basket analysis</li>
+                <li>Anomaly detection techniques</li>
+                <li>Use cases for unsupervised learning</li>
+              </ul>
+
+              <h4>6. Model Training and Optimization</h4>
+              <ul>
+                <li>Training process and convergence</li>
+                <li>Hyperparameter tuning</li>
+                <li>Cross-validation techniques</li>
+                <li>Grid search and random search</li>
+                <li>Learning curves analysis</li>
+                <li>Bias-variance tradeoff</li>
+                <li>Overfitting and underfitting</li>
+                <li>Regularization techniques</li>
+              </ul>
+
+              <h4>7. Model Evaluation and Metrics</h4>
+              <ul>
+                <li>Confusion matrix interpretation</li>
+                <li>Accuracy, Precision, Recall, F1-score</li>
+                <li>ROC curves and AUC</li>
+                <li>Mean Absolute Error (MAE)</li>
+                <li>Mean Squared Error (MSE)</li>
+                <li>R-squared and adjusted R-squared</li>
+                <li>Choosing appropriate metrics</li>
+              </ul>
+
+              <div class="code-block">
+<br># Model evaluation example
+<br>from sklearn.metrics import confusion_matrix, roc_auc_score
+<br>import matplotlib.pyplot as plt
+<br>
+<br># Confusion matrix
+<br>cm = confusion_matrix(y_test, y_pred)
+<br>print("Confusion Matrix:")
+<br>print(cm)
+<br>
+<br># ROC AUC score
+<br>y_proba = model.predict_proba(X_test_scaled)[:, 1]
+<br>auc_score = roc_auc_score(y_test, y_proba)
+<br>print(f"ROC AUC Score: {auc_score:.3f}")
+              </div>
+
+              <h4>8. Neural Networks and Deep Learning</h4>
+              <ul>
+                <li>Artificial neural networks basics</li>
+                <li>Neurons and activation functions</li>
+                <li>Forward and backward propagation</li>
+                <li>Multi-layer perceptrons</li>
+                <li>Deep learning introduction</li>
+                <li>Convolutional Neural Networks (CNN) overview</li>
+                <li>Recurrent Neural Networks (RNN) basics</li>
+                <li>Transfer learning concepts</li>
+              </ul>
+
+              <h4>9. Practical ML Tools and Libraries</h4>
+              <ul>
+                <li>Python for machine learning</li>
+                <li>Scikit-learn library</li>
+                <li>Pandas for data manipulation</li>
+                <li>NumPy for numerical computing</li>
+                <li>Matplotlib and Seaborn for visualization</li>
+                <li>TensorFlow and Keras basics</li>
+                <li>Jupyter notebooks for ML development</li>
+              </ul>
+
+              <h4>10. ML Best Practices and Ethics</h4>
+              <ul>
+                <li>Data quality and collection ethics</li>
+                <li>Bias in machine learning models</li>
+                <li>Model interpretability and explainability</li>
+                <li>Privacy and security considerations</li>
+                <li>Responsible AI development</li>
+                <li>Model deployment considerations</li>
+                <li>Monitoring and maintaining ML systems</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Application in Database Administration</h3>
+              <div class="highlight-box">
+                <h4><i class="bi bi-cpu"></i> ML for Database Management</h4>
+                <p>Machine learning enhances database administration in numerous ways:</p>
+              </div>
+
+              <h4>Predictive Database Maintenance:</h4>
+              <ul>
+                <li><strong>Performance Prediction:</strong> Using regression models to forecast database performance degradation</li>
+                <li><strong>Capacity Planning:</strong> Predicting storage and resource needs based on historical trends</li>
+                <li><strong>Query Performance:</strong> ML models to predict slow query patterns before they impact users</li>
+                <li><strong>Index Recommendations:</strong> Automated index suggestion based on query patterns</li>
+              </ul>
+
+              <h4>Anomaly Detection:</h4>
+              <ul>
+                <li>Detecting unusual database access patterns indicating security threats</li>
+                <li>Identifying performance anomalies before they cause outages</li>
+                <li>Monitoring for data quality issues automatically</li>
+                <li>Clustering similar workload patterns for optimization</li>
+              </ul>
+
+              <h4>Automated Optimization:</h4>
+              <ul>
+                <li>ML-driven query optimization recommendations</li>
+                <li>Automated tuning of database parameters</li>
+                <li>Intelligent backup scheduling based on usage patterns</li>
+                <li>Resource allocation optimization using reinforcement learning</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Practical Implementations</h3>
+              
+              <h4>Database Performance Monitoring:</h4>
+              <ul>
+                <li>Built anomaly detection system for identifying unusual database metrics</li>
+                <li>Created predictive models for disk space utilization</li>
+                <li>Implemented clustering for grouping similar database workloads</li>
+                <li>Developed classification models for query performance categorization</li>
+              </ul>
+
+              <h4>Data Analysis Projects:</h4>
+              <ul>
+                <li>Time series forecasting for database growth trends</li>
+                <li>Pattern recognition in query execution plans</li>
+                <li>User behavior analysis for access optimization</li>
+                <li>Predictive maintenance scheduling for database systems</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Key Algorithms Mastered</h3>
+              <ul>
+                <li><strong>Decision Trees & Random Forests:</strong> For classification of database events</li>
+                <li><strong>K-Means Clustering:</strong> For grouping similar database workloads</li>
+                <li><strong>Linear Regression:</strong> For resource usage prediction</li>
+                <li><strong>Isolation Forest:</strong> For anomaly detection in metrics</li>
+                <li><strong>DBSCAN:</strong> For identifying unusual access patterns</li>
+                <li><strong>Neural Networks:</strong> For complex pattern recognition in logs</li>
+                <li><strong>Time Series Analysis:</strong> For trend prediction and forecasting</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Learning Outcomes</h3>
+              <ul>
+                <li>Gained solid foundation in machine learning concepts and algorithms</li>
+                <li>Learned to prepare and preprocess data for ML models</li>
+                <li>Mastered model training, evaluation, and optimization techniques</li>
+                <li>Developed practical skills in Python ML libraries</li>
+                <li>Understood when and how to apply different ML algorithms</li>
+                <li>Built capability to implement ML solutions for database problems</li>
+                <li>Acquired knowledge to evaluate ML model performance effectively</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Impact on Professional Growth</h3>
+              <p>
+                This machine learning certification has significantly enhanced my database administration capabilities:
+              </p>
+              <ul>
+                <li>Enabled data-driven decision making for database optimization</li>
+                <li>Improved ability to predict and prevent database issues</li>
+                <li>Enhanced capacity planning accuracy using predictive models</li>
+                <li>Automated routine monitoring tasks with ML algorithms</li>
+                <li>Developed innovative solutions for complex database challenges</li>
+                <li>Positioned for emerging roles in ML-enhanced database systems</li>
+              </ul>
+            </div>
+
+            <div class="detail-section">
+              <h3>Future Learning Path</h3>
+              <p>Building on this ML foundation, areas for continued development include:</p>
+              <ul>
+                <li>Advanced deep learning for complex database analytics</li>
+                <li>Natural Language Processing for SQL query optimization</li>
+                <li>AutoML tools for automated model development</li>
+                <li>MLOps for deploying ML models in production</li>
+                <li>Time series analysis for database metrics forecasting</li>
+                <li>Reinforcement learning for automated database tuning</li>
+                <li>Integration of ML with database management systems</li>
+              </ul>
+            </div>
+
+            <a href="/index.html#certifications" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
