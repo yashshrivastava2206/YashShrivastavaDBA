@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>DBA Task Automation Framework - Yash Shrivastava</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .project-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0 60px;
+      margin-bottom: 60px;
+    }
+
+    .project-header h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .project-header .tech-badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 20px;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    .project-meta {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .project-meta .meta-item {
+      padding: 15px 0;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .project-meta .meta-item:last-child {
+      border-bottom: none;
+    }
+
+    .project-meta strong {
+      color: #667eea;
+      margin-right: 10px;
+    }
+
+    .section-title {
+      color: #173b6c;
+      font-size: 28px;
+      font-weight: 700;
+      margin: 40px 0 20px 0;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #667eea;
+    }
+
+    .feature-box {
+      background: #fff;
+      border: 2px solid #667eea;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .feature-box h4 {
+      color: #667eea;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .feature-box i {
+      font-size: 32px;
+      color: #667eea;
+      margin-bottom: 15px;
+    }
+
+    .code-block {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .metric-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .metric-card h3 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .metric-card p {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .component-diagram {
+      background: #f8f9fa;
+      padding: 30px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border: 2px solid #667eea;
+    }
+
+    .architecture-box {
+      background: white;
+      border: 2px solid #dee2e6;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .architecture-box h5 {
+      color: #667eea;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .arrow-down {
+      text-align: center;
+      font-size: 24px;
+      color: #667eea;
+      margin: 10px 0;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 40px;
+      transition: transform 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      color: white;
+    }
+
+    .highlight-box {
+      background: #f0f4ff;
+      border-left: 4px solid #667eea;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Project Header -->
+  <div class="project-header">
+    <div class="container">
+      <h1>DBA Task Automation Framework</h1>
+      <p style="font-size: 18px; opacity: 0.9; margin-bottom: 20px;">Enterprise-grade automation solution reducing manual DBA effort by 70%</p>
+      <div class="tech-stack">
+        <span class="tech-badge"><i class="bi bi-terminal"></i> Shell Scripting</span>
+        <span class="tech-badge"><i class="bi bi-code-square"></i> Java</span>
+        <span class="tech-badge"><i class="bi bi-clock"></i> Cron</span>
+        <span class="tech-badge"><i class="bi bi-gear"></i> Ansible</span>
+        <span class="tech-badge"><i class="bi bi-database"></i> PostgreSQL</span>
+        <span class="tech-badge"><i class="bi bi-envelope"></i> Zimbra Mail</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="project-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="project-meta">
+              <h4 style="color: #667eea; margin-bottom: 20px;"><i class="bi bi-info-circle"></i> Project Information</h4>
+              <div class="meta-item">
+                <strong>Role:</strong> Lead Database Administrator
+              </div>
+              <div class="meta-item">
+                <strong>Duration:</strong> 6 Months Development + Ongoing
+              </div>
+              <div class="meta-item">
+                <strong>Environment:</strong> 40+ Production PostgreSQL Servers
+              </div>
+              <div class="meta-item">
+                <strong>Team Size:</strong> 3 DBAs
+              </div>
+              <div class="meta-item">
+                <strong>Status:</strong> <span style="color: #28a745;">Production / Active</span>
+              </div>
+            </div>
+
+            <div class="project-meta">
+              <h4 style="color: #667eea; margin-bottom: 20px;"><i class="bi bi-graph-up"></i> Key Metrics</h4>
+              <div class="meta-item">
+                <strong>Manual Effort Reduction:</strong> 70%
+              </div>
+              <div class="meta-item">
+                <strong>Servers Monitored:</strong> 40+
+              </div>
+              <div class="meta-item">
+                <strong>Reports Generated:</strong> 80+ daily
+              </div>
+              <div class="meta-item">
+                <strong>Alert Response Time:</strong> < 5 minutes
+              </div>
+              <div class="meta-item">
+                <strong>Uptime Improvement:</strong> 99.9%
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <div class="section-title">
+              <i class="bi bi-journal-text"></i> Project Overview
+            </div>
+            <p>
+              The DBA Task Automation Framework is a comprehensive enterprise solution designed to automate routine database administration tasks across 40+ production PostgreSQL servers. This framework integrates multiple automation tools, monitoring systems, and reporting mechanisms to create a centralized, self-managing database infrastructure.
+            </p>
+            <p>
+              Built using a combination of Shell scripting, Java, Cron scheduling, and Ansible configuration management, the framework handles everything from automated backups and health checks to performance monitoring and intelligent alerting. The system has successfully reduced manual DBA effort by 70% while improving database reliability and performance visibility.
+            </p>
+
+            <div class="highlight-box">
+              <h5 style="color: #667eea;"><i class="bi bi-star-fill"></i> Key Achievement</h5>
+              <p style="margin: 0;">Transformed manual, time-consuming DBA processes into an automated, intelligent system that monitors, reports, and maintains 40+ database servers with minimal human intervention, allowing the DBA team to focus on strategic improvements and optimization.</p>
+            </div>
+
+            <div class="section-title">
+              <i class="bi bi-bullseye"></i> Business Challenge
+            </div>
+            <p>
+              Managing 40+ production PostgreSQL servers manually was becoming increasingly challenging and resource-intensive. Key problems included:
+            </p>
+            <ul>
+              <li><strong>Time-Consuming Manual Tasks:</strong> DBAs spent 60-70% of their time on routine maintenance, backups, and monitoring</li>
+              <li><strong>Delayed Problem Detection:</strong> Issues were discovered reactively, often after impacting users</li>
+              <li><strong>Inconsistent Monitoring:</strong> Manual checks were inconsistent across servers and prone to human error</li>
+              <li><strong>Limited Visibility:</strong> No centralized view of database health and performance across all servers</li>
+              <li><strong>Reactive Management:</strong> Team was constantly firefighting instead of proactive optimization</li>
+              <li><strong>Report Generation Overhead:</strong> Manual report generation consumed significant time</li>
+              <li><strong>Communication Gaps:</strong> Stakeholders lacked timely information about database status</li>
+            </ul>
+
+            <div class="section-title">
+              <i class="bi bi-lightbulb"></i> Solution Architecture
+            </div>
+
+            <div class="component-diagram">
+              <h5 style="color: #667eea; text-align: center; margin-bottom: 30px;">Automation Framework Architecture</h5>
+              
+              <div class="architecture-box">
+                <h5><i class="bi bi-cloud"></i> 40+ Production PostgreSQL Servers</h5>
+                <p style="margin: 0; font-size: 14px;">PostgreSQL 12-15 on Linux (Ubuntu/CentOS)</p>
+              </div>
+
+              <div class="arrow-down">
+                <i class="bi bi-arrow-down-circle-fill"></i>
+              </div>
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="architecture-box">
+                    <h5><i class="bi bi-terminal"></i> Shell Scripts</h5>
+                    <p style="margin: 0; font-size: 12px;">Data Collection & Monitoring</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="architecture-box">
+                    <h5><i class="bi bi-code-square"></i> Java Services</h5>
+                    <p style="margin: 0; font-size: 12px;">Processing & Orchestration</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="architecture-box">
+                    <h5><i class="bi bi-gear"></i> Ansible</h5>
+                    <p style="margin: 0; font-size: 12px;">Configuration Management</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="arrow-down">
+                <i class="bi bi-arrow-down-circle-fill"></i>
+              </div>
+
+              <div class="architecture-box">
+                <h5><i class="bi bi-server"></i> Centralized Monitoring Server</h5>
+                <p style="margin: 0; font-size: 14px;">Report Storage, Web Interface, Alert Engine</p>
+              </div>
+
+              <div class="arrow-down">
+                <i class="bi bi-arrow-down-circle-fill"></i>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="architecture-box">
+                    <h5><i class="bi bi-globe"></i> Web Dashboard</h5>
+                    <p style="margin: 0; font-size: 12px;">Real-time Reports & Metrics</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="architecture-box">
+                    <h5><i class="bi bi-envelope"></i> Email Alerts</h5>
+                    <p style="margin: 0; font-size: 12px;">Zimbra Mail Integration</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-title">
+              <i class="bi bi-grid"></i> Core Components
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="feature-box">
+                  <i class="bi bi-file-earmark-text"></i>
+                  <h4>1. pg_profile Report Generation</h4>
+                  <ul>
+                    <li>Automated pg_profile reports for all 40+ servers</li>
+                    <li>Generated twice daily (morning & evening)</li>
+                    <li>Centralized storage on monitoring server</li>
+                    <li>Web interface for easy access</li>
+                    <li>Email summaries via Zimbra mail</li>
+                    <li>Historical report retention (30 days)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <h4>2. pgBadger Log Analysis</h4>
+                  <ul>
+                    <li>Real-time log analysis for all servers</li>
+                    <li>Updated every hour automatically</li>
+                    <li>Slow query identification</li>
+                    <li>Error pattern detection</li>
+                    <li>Performance trend analysis</li>
+                    <li>Interactive HTML reports</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box">
+                  <i class="bi bi-hdd"></i>
+                  <h4>3. Automated Backup System</h4>
+                  <ul>
+                    <li>Scheduled database backups with compression</li>
+                    <li>Backup verification and validation</li>
+                    <li>Retention policy enforcement (7/30/90 days)</li>
+                    <li>Backup status monitoring</li>
+                    <li>Failure alerts and notifications</li>
+                    <li>Remote backup replication</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box">
+                  <i class="bi bi-heart-pulse"></i>
+                  <h4>4. Health Check Automation</h4>
+                  <ul>
+                    <li>Connection pool monitoring</li>
+                    <li>Replication lag detection</li>
+                    <li>Disk space utilization tracking</li>
+                    <li>Long-running query alerts</li>
+                    <li>Database bloat detection</li>
+                    <li>Service availability checks</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box">
+                  <i class="bi bi-bell"></i>
+                  <h4>5. Intelligent Alerting</h4>
+                  <ul>
+                    <li>Threshold-based alerts</li>
+                    <li>Priority-based escalation</li>
+                    <li>Email and dashboard notifications</li>
+                    <li>Alert deduplication</li>
+                    <li>Historical alert tracking</li>
+                    <li>Custom alert rules</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="feature-box">
+                  <i class="bi bi-globe"></i>
+                  <h4>6. Web Dashboard</h4>
+                  <ul>
+                    <li>Real-time server status overview</li>
+                    <li>Centralized report access</li>
+                    <li>Performance metrics visualization</li>
+                    <li>Historical trend analysis</li>
+                    <li>Server comparison views</li>
+                    <li>Mobile-responsive design</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-title">
+              <i class="bi bi-code-slash"></i> Technical Implementation
+            </div>
+
+            <h4 style="color: #667eea; margin-top: 30px;">1. pg_profile Automation Script</h4>
+            <div class="code-block">
+<br>#!/bin/bash
+<br># Automated pg_profile Report Generation
+<br># Runs twice daily via cron: 0 9,18 * * *
+<br>
+<br>SERVERS_LIST="/etc/dba-automation/servers.txt"
+<br>REPORT_DIR="/var/reports/pg_profile"
+<br>CENTRAL_SERVER="monitoring-server.company.com"
+<br>DATE=$(date +%Y%m%d_%H%M)
+<br>MAIL_LIST="dba-team@company.com"
+<br>
+<br># Create report directory
+<br>mkdir -p $REPORT_DIR/$DATE
+<br>
+<br># Function to generate pg_profile report
+<br>generate_report() {
+<br>    local server=$1
+<br>    local db=$2
+<br>    
+<br>    echo "Generating pg_profile for $server/$db..."
+<br>    
+<br>    psql -h $server -U monitor -d $db -c "
+<br>        SELECT profile_create_report(
+<br>            (SELECT max(server_id) FROM servers WHERE server_name='$server'),
+<br>            (SELECT max(sample_id)-48 FROM samples),
+<br>            (SELECT max(sample_id) FROM samples),
+<br>            'daily_report'
+<br>        );" > $REPORT_DIR/$DATE/${server}_${db}_profile.html
+<br>    
+<br>    if [ $? -eq 0 ]; then
+<br>        echo "✓ Report generated: ${server}_${db}"
+<br>        return 0
+<br>    else
+<br>        echo "✗ Failed: ${server}_${db}"
+<br>        return 1
+<br>    fi
+<br>}
+<br>
+<br># Generate reports for all servers
+<br>while IFS='|' read -r server database; do
+<br>    generate_report "$server" "$database" &
+<br>done < $SERVERS_LIST
+<br>
+<br>wait
+<br>
+<br># Transfer to central server
+<br>rsync -avz $REPORT_DIR/$DATE/ \
+<br>    $CENTRAL_SERVER:/var/www/html/reports/pg_profile/$DATE/
+<br>
+<br># Generate summary email
+<br>generate_summary() {
+<br>    echo "pg_profile Report Summary - $(date)"
+<br>    echo "=================================="
+<br>    echo "Total Servers: $(wc -l < $SERVERS_LIST)"
+<br>    echo "Reports Generated: $(ls $REPORT_DIR/$DATE/*.html 2>/dev/null | wc -l)"
+<br>    echo "Failed Reports: $(grep -l "✗ Failed" /var/log/pg_profile.log | wc -l)"
+<br>    echo ""
+<br>    echo "View reports at: http://$CENTRAL_SERVER/reports/pg_profile/$DATE/"
+<br>}
+<br>
+<br># Send email via Zimbra
+<br>generate_summary | mail -s "pg_profile Daily Report - $DATE" $MAIL_LIST
+<br>
+<br># Cleanup old reports (keep 30 days)
+<br>find $REPORT_DIR -type d -mtime +30 -exec rm -rf {} \;
+            </div>
+
+            <h4 style="color: #667eea; margin-top: 30px;">2. pgBadger Hourly Update Script</h4>
+            <div class="code-block">
+<br>#!/bin/bash
+<br># pgBadger Hourly Log Analysis
+<br># Runs every hour via cron: 0 * * * *
+<br>
+<br>SERVERS_LIST="/etc/dba-automation/servers.txt"
+<br>LOG_DIR="/var/lib/postgresql/logs"
+<br>REPORT_DIR="/var/www/html/pgbadger"
+<br>TEMP_DIR="/tmp/pgbadger"
+<br>
+<br>mkdir -p $TEMP_DIR
+<br>
+<br># Function to process logs
+<br>process_server_logs() {
+<br>    local server=$1
+<br>    local server_clean=$(echo $server | tr '.' '_')
+<br>    
+<br>    echo "Processing logs for $server..."
+<br>    
+<br>    # Fetch last hour's logs
+<br>    ssh postgres@$server "cat $LOG_DIR/postgresql-*.log | \
+<br>        awk -v d=\"\$(date -d '1 hour ago' '+%Y-%m-%d %H')\" '\$0 >= d'" \
+<br>        > $TEMP_DIR/${server_clean}_latest.log
+<br>    
+<br>    # Generate pgBadger report
+<br>    pgbadger --prefix '%t [%p]: [%l-1] user=%u,db=%d,app=%a,client=%h ' \
+<br>        --outfile $REPORT_DIR/${server_clean}.html \
+<br>        --incremental \
+<br>        --retention 7 \
+<br>        $TEMP_DIR/${server_clean}_latest.log
+<br>    
+<br>    # Extract top slow queries
+<br>    grep -A 5 "Slowest queries" $REPORT_DIR/${server_clean}.html | \
+<br>        grep -E "duration:|query:" > $TEMP_DIR/${server_clean}_slow.txt
+<br>    
+<br>    # Alert if critical slow queries found
+<br>    if grep -q "duration: [5-9][0-9]\{3\}" $TEMP_DIR/${server_clean}_slow.txt; then
+<br>        echo "ALERT: Critical slow queries on $server" | \
+<br>            mail -s "Slow Query Alert - $server" dba-team@company.com
+<br>    fi
+<br>}
+<br>
+<br># Process all servers in parallel
+<br>while read -r server; do
+<br>    process_server_logs "$server" &
+<br>done < $SERVERS_LIST
+<br>
+<br>wait
+<br>
+<br># Update index page
+<br>generate_index_html
+<br>
+<br># Cleanup temp files
+<br>rm -rf $TEMP_DIR/*
+            </div>
+
+            <h4 style="color: #667eea; margin-top: 30px;">3. Health Check & Alerting Script</h4>
+            <div class="code-block">
+<br>#!/bin/bash
+<br># Database Health Check & Alerting
+<br># Runs every 5 minutes via cron
+<br>
+<br>check_database_health() {
+<br>    local server=$1
+<br>    local alerts=()
+<br>    
+<br>    # Check connections
+<br>    local conn_count=$(psql -h $server -U monitor -t -c \
+<br>        "SELECT count(*) FROM pg_stat_activity;")
+<br>    local max_conn=$(psql -h $server -U monitor -t -c \
+<br>        "SHOW max_connections;" | xargs)
+<br>    local conn_pct=$((conn_count * 100 / max_conn))
+<br>    
+<br>    if [ $conn_pct -gt 80 ]; then
+<br>        alerts+=("High connection usage: ${conn_pct}%")
+<br>    fi
+<br>    
+<br>    # Check replication lag
+<br>    local lag=$(psql -h $server -U monitor -t -c \
+<br>        "SELECT EXTRACT(EPOCH FROM (now() - pg_last_xact_replay_timestamp()));" 2>/dev/null)
+<br>    
+<br>    if [ ! -z "$lag" ] && [ $(echo "$lag > 60" | bc) -eq 1 ]; then
+<br>        alerts+=("Replication lag: ${lag}s")
+<br>    fi
+<br>    
+<br>    # Check disk space
+<br>    local disk_usage=$(ssh $server "df -h /var/lib/postgresql | tail -1 | awk '{print \$5}' | sed 's/%//'")
+<br>    
+<br>    if [ $disk_usage -gt 85 ]; then
+<br>        alerts+=("High disk usage: ${disk_usage}%")
+<br>    fi
+<br>    
+<br>    # Check for long-running queries
+<br>    local long_queries=$(psql -h $server -U monitor -t -c \
+<br>        "SELECT count(*) FROM pg_stat_activity 
+<br>         WHERE state = 'active' 
+<br>         AND now() - query_start > interval '10 minutes';")
+<br>    
+<br>    if [ $long_queries -gt 0 ]; then
+<br>        alerts+=("Long-running queries: ${long_queries}")
+<br>    fi
+<br>    
+<br>    # Send alerts if any issues found
+<br>    if [ ${#alerts[@]} -gt 0 ]; then
+<br>        {
+<br>            echo "Database Health Alert - $server"
+<br>            echo "================================"
+<br>            echo "Timestamp: $(date)"
+<br>            echo ""
+<br>            for alert in "${alerts[@]}"; do
+<br>                echo "⚠ $alert"
+<br>            done
+<br>        } | mail -s "Health Alert - $server" dba-team@company.com
+<br>    fi
+<br>}
+<br>
+<br># Run health checks for all servers
+<br>while read -r server; do
+<br>    check_database_health "$server"
+<br>done < /etc/dba-automation/servers.txt
+            </div>
+
+            <h4 style="color: #667eea; margin-top: 30px;">4. Ansible Playbook for Configuration</h4>
+            <div class="code-block">
+<br>---
+<br># Ansible playbook for DBA automation deployment
+<br>- name: Deploy DBA Automation Framework
+<br>  hosts: postgresql_servers
+<br>  become: yes
+<br>  
+<br>  vars:
+<br>    automation_dir: /opt/dba-automation
+<br>    scripts_dir: "{{ automation_dir }}/scripts"
+<br>    log_dir: /var/log/dba-automation
+<br>    
+<br>  tasks:
+<br>    - name: Create automation directories
+<br>      file:
+<br>        path: "{{ item }}"
+<br>        state: directory
+<br>        owner: postgres
+<br>        group: postgres
+<br>        mode: '0755'
+<br>      loop:
+<br>        - "{{ automation_dir }}"
+<br>        - "{{ scripts_dir }}"
+<br>        - "{{ log_dir }}"
+<br>    
+<br>    - name: Copy automation scripts
+<br>      copy:
+<br>        src: "{{ item }}"
+<br>        dest: "{{ scripts_dir }}/"
+<br>        owner: postgres
+<br>        group: postgres
+<br>        mode: '0750'
+<br>      loop:
+<br>        - pg_profile_generate.sh
+<br>        - pgbadger_update.sh
+<br>        - health_check.sh
+<br>        - backup_automation.sh
+<br>    
+<br>    - name: Configure cron jobs
+<br>      cron:
+<br>        name: "{{ item.name }}"
+<br>        minute: "{{ item.minute }}"
+<br>        hour: "{{ item.hour }}"
+<br>        job: "{{ scripts_dir }}/{{ item.script }} >> {{ log_dir }}/{{ item.log }} 2>&1"
+<br>        user: postgres
+<br>      loop:
+<br>        - { name: "pg_profile morning", minute: "0", hour: "9", 
+<br>            script: "pg_profile_generate.sh", log: "pg_profile.log" }
+<br>        - { name: "pg_profile evening", minute: "0", hour: "18", 
+<br>            script: "pg_profile_generate.sh", log: "pg_profile.log" }
+<br>        - { name: "pgbadger hourly", minute: "0", hour: "*", 
+<br>            script: "pgbadger_update.sh", log: "pgbadger.log" }
+<br>        - { name: "health check", minute: "*/5", hour: "*", 
+<br>            script: "health_check.sh", log: "health_check.log" }
+<br>    
+<br>    - name: Install required packages
+<br>      package:
+<br>        name:
+<br>          - postgresql-contrib
+<br>          - pgbadger
+<br>          - rsync
+<br>        state: present
+            </div>
+
+            <div class="section-title">
+              <i class="bi bi-trophy"></i> Results & Impact
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <h3>70%</h3>
+                  <p>Manual Effort Reduction</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <h3>40+</h3>
+                  <p>Servers Automated</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <h3>80+</h3>
+                  <p>Daily Reports</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="metric-card">
+                  <h3>99.9%</h3>
+                  <p>System Uptime</p>
+                </div>
+              </div>
+            </div>
+
+            <h4 style="color: #667eea; margin-top: 30px;">Quantifiable Benefits:</h4>
+            <ul>
+              <li><strong>Time Savings:</strong> Reduced manual DBA tasks from ~28 hours/week to ~8 hours/week</li>
+              <li><strong>Faster Detection:</strong> Issues now detected within 5 minutes vs 2-3 hours previously</li>
+              <li><strong>Improved Visibility:</strong> 100% coverage across all servers vs 60% manual coverage</li>
+              <li><strong>Report Generation:</strong> 80+ automated reports daily vs 5-10 manual reports</li>
+              <li><strong>Proactive Management:</strong> 85% of issues now detected before user impact</li>
+              <li><strong>Zero Missed Backups:</strong> 100% backup success rate with automated verification</li>
+              <li><strong>Cost Savings:</strong> Equivalent to 1.5 FTE saved annually</li>
+            </ul>
+
+            <h4 style="color: #667eea; margin-top: 30px;">Qualitative Benefits:</h4>
+            <ul>
+              <li><strong>Team Productivity:</strong> DBAs now focus on optimization and strategic improvements</li>
+              <li><strong>Reduced Stress:</strong> Elimination of after-hours manual checks and alerts</li>
+              <li><strong>Better Decisions:</strong> Data-driven insights from comprehensive reporting</li>
+              <li><strong>Improved Reliability:</strong> Consistent, error-free execution of routine tasks</li>
+              <li><strong>Stakeholder Confidence:</strong> Transparent, real-time visibility into database health</li>
+              <li><strong>Knowledge Preservation:</strong> Automated processes document best practices</li>
+            </ul>
+
+            <div class="section-title">
+              <i class="bi bi-gear-fill"></i> Technologies & Tools
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 style="color: #667eea;">Scripting & Automation</h5>
+                <ul>
+                  <li><strong>Bash/Shell:</strong> Core automation scripts (5,000+ lines)</li>
+                  <li><strong>Java:</strong> Report processing and orchestration services</li>
+                  <li><strong>Python:</strong> Data processing and API integrations</li>
+                  <li><strong>Cron:</strong> Job scheduling and timing</li>
+                  <li><strong>Systemd:</strong> Service management</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 style="color: #667eea;">Configuration Management</h5>
+                <ul>
+                  <li><strong>Ansible:</strong> Infrastructure as code, deployment automation</li>
+                  <li><strong>Git:</strong> Version control for scripts and configurations</li>
+                  <li><strong>YAML:</strong> Configuration files</li>
+                  <li><strong>Templates:</strong> Jinja2 templates for dynamic configs</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 style="color: #667eea;">Monitoring & Reporting</h5>
+                <ul>
+                  <li><strong>pg_profile:</strong> PostgreSQL performance profiling</li>
+                  <li><strong>pgBadger:</strong> Log analysis and reporting</li>
+                  <li><strong>PostgreSQL Stats:</strong> pg_stat_* views</li>
+                  <li><strong>Custom Metrics:</strong> In-house monitoring queries</li>
+                  <li><strong>HTML/CSS/JS:</strong> Web dashboard development</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 style="color: #667eea;">Communication & Storage</h5>
+                <ul>
+                  <li><strong>Zimbra Mail:</strong> Email notification system</li>
+                  <li><strong>Nginx:</strong> Web server for dashboard</li>
+                  <li><strong>Rsync:</strong> File synchronization</li>
+                  <li><strong>SSH:</strong> Secure remote execution</li>
+                  <li><strong>PostgreSQL:</strong> Metadata and log storage</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section-title">
+              <i class="bi bi-puzzle"></i> Challenges & Solutions
+            </div>
+
+            <div class="feature-box">
+              <h4><i class="bi bi-exclamation-triangle"></i> Challenge 1: Scale - 40+ Servers</h4>
+              <p><strong>Problem:</strong> Sequential execution would take too long for timely reports</p>
+              <p><strong>Solution:</strong> Implemented parallel processing using bash background jobs with wait commands, reducing total execution time from 2 hours to 15 minutes</p>
+            </div>
+
+            <div class="feature-box">
+              <h4><i class="bi bi-exclamation-triangle"></i> Challenge 2: Network Reliability</h4>
+              <p><strong>Problem:</strong> Network issues causing script failures and incomplete reports</p>
+              <p><strong>Solution:</strong> Added retry logic, timeout handling, and failure recovery mechanisms. Implemented circuit breaker pattern for persistent failures</p>
+            </div>
+
+            <div class="feature-box">
+              <h4><i class="bi bi-exclamation-triangle"></i> Challenge 3: Report Storage</h4>
+              <p><strong>Problem:</strong> Rapid growth of report files consuming disk space</p>
+              <p><strong>Solution:</strong> Implemented intelligent retention policies (hourly: 7 days, daily: 30 days, weekly: 90 days) with automatic compression and archival</p>
+            </div>
+
+            <div class="feature-box">
+              <h4><i class="bi bi-exclamation-triangle"></i> Challenge 4: Alert Fatigue</h4>
+              <p><strong>Problem:</strong> Too many alerts causing team to ignore notifications</p>
+              <p><strong>Solution:</strong> Implemented intelligent alerting with priority levels, deduplication, and threshold tuning based on historical patterns</p>
+            </div>
+
+            <div class="section-title">
+              <i class="bi bi-book"></i> Lessons Learned
+            </div>
+
+            <ul>
+              <li><strong>Start Small, Scale Gradually:</strong> Began with 5 servers before rolling out to all 40+</li>
+              <li><strong>Robust Error Handling:</strong> Network and server issues are inevitable; planning for failures is critical</li>
+              <li><strong>Idempotency Matters:</strong> Scripts should be safe to run multiple times without side effects</li>
+              <li><strong>Logging is Essential:</strong> Comprehensive logging made debugging and optimization possible</li>
+              <li><strong>Monitoring the Monitors:</strong> Built self-health checks for the automation system itself</li>
+              <li><strong>Documentation:</strong> Thorough documentation enabled team adoption and maintenance</li>
+              <li><strong>Feedback Loops:</strong> Regular team feedback led to continuous improvements</li>
+            </ul>
+
+            <div class="section-title">
+              <i class="bi bi-arrow-right-circle"></i> Future Enhancements
+            </div>
+
+            <ul>
+              <li><strong>Machine Learning Integration:</strong> Predictive analytics for capacity planning and anomaly detection</li>
+              <li><strong>Self-Healing Capabilities:</strong> Automated remediation for common issues</li>
+              <li><strong>API Development:</strong> RESTful API for external system integration</li>
+              <li><strong>Mobile App:</strong> Native mobile application for on-the-go monitoring</li>
+              <li><strong>Advanced Visualization:</strong> Interactive dashboards with Grafana integration</li>
+              <li><strong>Cloud Integration:</strong> Support for cloud-hosted PostgreSQL instances</li>
+              <li><strong>Chatops Integration:</strong> Slack/Teams bot for interactive management</li>
+              <li><strong>Automated Tuning:</strong> AI-powered performance optimization recommendations</li>
+            </ul>
+
+            <div class="section-title">
+              <i class="bi bi-person-check"></i> Skills Demonstrated
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 style="color: #667eea;">Technical Skills</h5>
+                <ul>
+                  <li>Advanced Shell Scripting</li>
+                  <li>Java Development</li>
+                  <li>PostgreSQL Administration</li>
+                  <li>Ansible/Configuration Management</li>
+                  <li>Linux System Administration</li>
+                  <li>Web Development (HTML/CSS/JS)</li>
+                  <li>API Integration</li>
+                  <li>Performance Optimization</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 style="color: #667eea;">Soft Skills</h5>
+                <ul>
+                  <li>Project Planning & Execution</li>
+                  <li>Problem Solving</li>
+                  <li>Team Leadership</li>
+                  <li>Stakeholder Communication</li>
+                  <li>Documentation</li>
+                  <li>Process Improvement</li>
+                  <li>Change Management</li>
+                  <li>Continuous Learning</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 40px;">
+              <h4 style="color: #667eea;"><i class="bi bi-chat-quote"></i> Team Feedback</h4>
+              <p style="margin: 0; font-style: italic;">
+                "This automation framework has been transformational for our team. What used to take hours of manual work is now handled automatically with better accuracy. We've shifted from reactive firefighting to proactive optimization, significantly improving both our database reliability and our work-life balance."
+              </p>
+              <p style="margin-top: 10px; margin-bottom: 0; font-weight: 600;">— Senior DBA Team Lead</p>
+            </div>
+
+            <a href="/YashShrivastavaDBA/index.html#projects" class="back-button">
+              <i class="bi bi-arrow-left"></i> Back to All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS Files -->
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
