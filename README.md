@@ -14,7 +14,8 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-shrivastava-8388561a0)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white)](https://github.com/yashshrivastava2206)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:yash.shrivastava.2206@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=flat&logo=google-chrome&logoColor=white)](https://yashshrivastava2206.github.io/PostgreSQL_DBA/)
+[![Resume/CV](https://img.shields.io/badge/Resume-FF57112?style=flat&logo=google-chrome&logoColor=white)](https://yashshrivastava2206.github.io/PostgreSQL_DBA/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=flat&logo=google-chrome&logoColor=white)](https://yashshrivastava2206.github.io/YashShrivastavaDBA/)
 
 📱 +91 7237092938 | 📍 Noida, Uttar Pradesh, India
 
@@ -359,7 +360,8 @@ I'm always interested in discussing database challenges, optimization opportunit
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-shrivastava-8388561a0)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yashshrivastava2206)
-[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://yashshrivastava2206.github.io/PostgreSQL_DBA/)
+[![Resume/CV](https://img.shields.io/badge/Resume-FF57112?style=flat&logo=google-chrome&logoColor=white)](https://yashshrivastava2206.github.io/PostgreSQL_DBA/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=flat&logo=google-chrome&logoColor=white)](https://yashshrivastava2206.github.io/YashShrivastavaDBA/)
 
 </div>
 
@@ -396,3 +398,4 @@ I'm always interested in discussing database challenges, optimization opportunit
 *Last Updated: January 2026*
 
 </div>
+
